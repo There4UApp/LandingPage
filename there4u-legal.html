@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>There4U: Legal</title>
+<style>
+  /* ── There4U Design Tokens ── */
+  :root {
+    --primary: #F55E00;
+    --primary-hover: #D24F00;
+    --accent: #FF8C42;
+    --bg-base: #0A0A0B;
+    --bg-surface: #141415;
+    --bg-surface-2: #1C1C1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A5;
+    --text-dim: #6B6B70;
+    --border: rgba(255,255,255,0.08);
+    --max-w: 800px;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-base);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Navigation ── */
+  .legal-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,11,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+  }
+  .legal-nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .legal-nav .brand {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .legal-nav .back-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .legal-nav .back-link:hover { color: var(--primary); }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-bar-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .tab-btn:hover { color: var(--text-secondary); }
+  .tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+
+  /* ── Content ── */
+  .legal-content {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+  .legal-section { display: none; }
+  .legal-section.active { display: block; }
+
+  /* ── Typography ── */
+  .legal-title {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+  .legal-subtitle {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+  .effective-date {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2.section-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2.5rem 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  h2.section-heading:first-of-type { margin-top: 0; }
+
+  h3.sub-heading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  p { margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--text-secondary);
+  }
+  li { margin-bottom: 0.4rem; }
+  li::marker { color: var(--primary); }
+
+  strong { color: var(--text-primary); font-weight: 600; }
+
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Info card ── */
+  .info-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .info-card p { margin-bottom: 0; font-size: 0.9rem; }
+
+  /* ── Data table ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.875rem;
+  }
+  .data-table th {
+    text-align: left;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(245,94,0,0.2);
+    background: var(--bg-surface);
+  }
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+
+  /* ── Footer ── */
+  .legal-footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .legal-footer p {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .legal-content { padding: 2rem 1.25rem 4rem; }
+    .tab-btn { padding: 0.85rem 1rem; font-size: 0.8rem; }
+    .data-table { font-size: 0.8rem; }
+    .data-table th, .data-table td { padding: 0.6rem 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="legal-nav">
+  <div class="legal-nav-inner">
+    <a href="https://there4u.app/" class="brand">There4U</a>
+    <a href="https://there4u.app/" class="back-link">&larr; Back to Home</a>
+  </div>
+</nav>
+
+<!-- Tabs -->
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" data-tab="privacy">Privacy Policy</button>
+    <button class="tab-btn" data-tab="terms">Terms of Service</button>
+    <button class="tab-btn" data-tab="cookies">Cookie Policy</button>
+  </div>
+</div>
+
+<div class="legal-content">
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PRIVACY POLICY                                          -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="legal-section active" id="privacy">
+  <div class="legal-subtitle">Legal</div>
+  <h1 class="legal-title">Privacy Policy</h1>
+  <p class="effective-date">Effective date: 19 April 2026 &nbsp;·&nbsp; Last updated: 19 April 2026</p>
+
+  <h2 class="section-heading">1. Introduction</h2>
+  <p>There4U ("we", "us", "our") is a mobile emergency-alert application that delivers one-tap WhatsApp alerts containing a member's name, medical details, and GPS location to their chosen emergency contacts. We are committed to protecting your personal information and your right to privacy.</p>
+  <p>This Privacy Policy explains what information we collect, how we use it, who we share it with, and what rights you have in relation to it. It applies to all users of the There4U mobile application and the there4u.app website.</p>
+  <p>We process personal information in accordance with the Protection of Personal Information Act, 2013 (POPIA) for South African users and the General Data Protection Regulation (GDPR) for users in the European Union and European Economic Area. Where we expand into additional markets, we comply with applicable local data protection legislation, including the UAE's PDPL, Kenya's DPA 2019, and India's DPDP Act.</p>
+
+  <div class="info-card">
+    <p><strong>Our guiding principle:</strong> We collect the minimum data necessary for the app to function. Your personal information exists to help you get help, nothing more.</p>
+  </div>
+
+  <h2 class="section-heading">2. Information We Collect</h2>
+
+  <h3 class="sub-heading">2.1 Information you provide directly</h3>
+  <p>When you register and use There4U, we collect the following categories of personal information:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Data Category</th><th>Examples</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Account credentials</strong></td>
+        <td>Email address, social login tokens (Google, Apple)</td>
+        <td>Account creation, authentication, and account recovery</td>
+      </tr>
+      <tr>
+        <td><strong>Member profile</strong></td>
+        <td>Full name, date of birth, city</td>
+        <td>Personalising the emergency alert message sent to your contacts</td>
+      </tr>
+      <tr>
+        <td><strong>Medical information</strong></td>
+        <td>Medical aid provider, member number, medical conditions</td>
+        <td>Including relevant medical context in the alert message so responders can act appropriately</td>
+      </tr>
+      <tr>
+        <td><strong>Emergency contacts</strong></td>
+        <td>Contact name, mobile phone number</td>
+        <td>Delivering the WhatsApp alert to the people you have chosen</td>
+      </tr>
+      <tr>
+        <td><strong>Payment information</strong></td>
+        <td>Subscription plan selection, transaction identifiers</td>
+        <td>Managing your subscription. We do not store card numbers; payments are processed by Apple App Store, Google Play, or our payment processors (RevenueCat, Stripe)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-heading">2.2 Information about Members added via Shared Setup</h3>
+  <p>If you are a Main Member and you add a second Member (for example, a parent, child, or partner), you provide their profile and emergency contact information on their behalf. By doing so, you confirm that you have obtained the necessary consent from that person, or that you have legal authority to provide their information (for example, as a parent or legal guardian).</p>
+  <p>The added Member does not create an account. Their device is authenticated using a device-bound token stored securely in the platform's native keychain (iOS Keychain or Android Keystore). We do not collect passwords or additional credentials from added Members.</p>
+
+  <h3 class="sub-heading">2.3 Information collected automatically</h3>
+  <ul>
+    <li><strong>Location data:</strong> When you trigger an alert, we access your device's GPS coordinates to include a location link in the WhatsApp message sent to your emergency contacts. We also store a last-known high-accuracy fix as a fallback. Location data is accessed only at the moment of an alert; we do not track your location continuously.</li>
+    <li><strong>Device information:</strong> Device type, operating system version, app version, and a unique device identifier for authentication purposes.</li>
+    <li><strong>Usage data:</strong> App interaction events (such as alert triggers, widget installs, and subscription events) used to improve the product and measure performance. This data is aggregated and does not identify you personally.</li>
+  </ul>
+
+  <h3 class="sub-heading">2.4 Information we do not collect</h3>
+  <p>We do not collect call logs, SMS content, browsing history, contacts beyond those you explicitly add as emergency contacts, photos, or any content from your WhatsApp conversations. We do not engage in continuous location tracking or background surveillance of any kind.</p>
+
+  <h2 class="section-heading">3. How We Use Your Information</h2>
+  <p>We use your personal information for the following purposes:</p>
+  <ul>
+    <li><strong>Delivering emergency alerts:</strong> Composing and sending personalised WhatsApp messages containing your name, medical details, and GPS location to your emergency contacts when you trigger the alert.</li>
+    <li><strong>Account management:</strong> Creating and maintaining your account, authenticating your identity, and managing your subscription and alert quota.</li>
+    <li><strong>Shared Setup:</strong> Enabling the Main Member to configure and manage a second Member's profile and device access.</li>
+    <li><strong>Product improvement:</strong> Analysing aggregated, anonymised usage patterns to improve app performance, reliability, and user experience.</li>
+    <li><strong>Support:</strong> Responding to your enquiries and providing customer support.</li>
+    <li><strong>Legal compliance:</strong> Meeting our obligations under applicable data protection laws and responding to lawful requests from authorities.</li>
+  </ul>
+
+  <div class="info-card">
+    <p><strong>We will never</strong> sell your personal information, use it for advertising or profiling, or share it with third parties for their marketing purposes.</p>
+  </div>
+
+  <h2 class="section-heading">4. Legal Basis for Processing</h2>
+  <p>We process your personal information under the following legal bases:</p>
+  <ul>
+    <li><strong>Consent:</strong> You provide explicit consent when you create your account and enter your personal, medical, and emergency contact details. For POPIA, this consent is genuine, voluntary, and specific to the stated purposes.</li>
+    <li><strong>Performance of a contract:</strong> Processing is necessary to deliver the service you have subscribed to, specifically, sending emergency alerts to your chosen contacts.</li>
+    <li><strong>Legitimate interest:</strong> We may process limited data for product improvement and security purposes, where our legitimate interest does not override your fundamental rights.</li>
+    <li><strong>Legal obligation:</strong> We may process data where required by law, such as in response to a court order or regulatory requirement.</li>
+  </ul>
+
+  <h2 class="section-heading">5. How We Share Your Information</h2>
+  <p>Your personal information is shared only in the following limited circumstances:</p>
+  <ul>
+    <li><strong>With your emergency contacts:</strong> When you trigger an alert, the WhatsApp message containing your name, medical details, and GPS location is delivered to the emergency contacts you have designated. This is the core function of the service.</li>
+    <li><strong>With service providers:</strong> We use third-party services to operate There4U, including cloud hosting providers, subscription management (RevenueCat), payment processing (Apple App Store, Google Play, Stripe), deep linking services, and analytics tools. These providers process data on our behalf under strict data processing agreements and are prohibited from using your data for their own purposes.</li>
+    <li><strong>Where required by law:</strong> We may disclose information in response to valid legal requests from law enforcement or regulatory authorities, subject to our assessment of the request's legitimacy.</li>
+  </ul>
+  <p>We do not sell, rent, or trade your personal information to any third party.</p>
+
+  <h2 class="section-heading">6. Data Security</h2>
+  <p>We take the security of your personal information seriously and implement appropriate technical and organisational measures, including:</p>
+  <ul>
+    <li>All API communication is encrypted using TLS 1.3.</li>
+    <li>Device-bound authentication tokens are stored in platform-native secure storage (iOS Keychain, Android Keystore).</li>
+    <li>Shared-setup tokens are cryptographically signed, time-limited, and single-use.</li>
+    <li>No sensitive personal data is stored in local logs or unencrypted storage.</li>
+    <li>We follow the OWASP Mobile Top 10 security guidelines.</li>
+  </ul>
+  <p>While we implement commercially reasonable security measures, no method of electronic storage or transmission is 100% secure. We encourage you to protect your device with a screen lock and keep your operating system up to date.</p>
+
+  <h2 class="section-heading">7. Data Retention</h2>
+  <p>We retain your personal information only for as long as necessary to provide the service and fulfil the purposes described in this policy. Specifically:</p>
+  <ul>
+    <li><strong>Active accounts:</strong> Your data is retained for the duration of your active subscription.</li>
+    <li><strong>Lapsed accounts:</strong> If your subscription lapses, we retain your data for a reasonable grace period (typically 90 days) to allow for renewal, after which it is scheduled for deletion.</li>
+    <li><strong>Deleted accounts:</strong> When the Main Member deletes their account, all associated data, including any added Member's data, is permanently deleted within 30 days.</li>
+    <li><strong>Alert history:</strong> Records of triggered alerts are retained for a limited period for support and safety purposes and are deleted in accordance with our retention schedule.</li>
+  </ul>
+
+  <h2 class="section-heading">8. Your Rights</h2>
+  <p>Depending on your location, you have the following rights regarding your personal information:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Right</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Access</strong></td><td>Request a copy of the personal information we hold about you.</td></tr>
+      <tr><td><strong>Correction</strong></td><td>Request that we correct any inaccurate or incomplete information. Main Members can update their own and their added Member's details directly in the app.</td></tr>
+      <tr><td><strong>Erasure</strong></td><td>Request that we delete your personal information. The Main Member can delete the entire account and all associated data, including any added Member's data.</td></tr>
+      <tr><td><strong>Restriction</strong></td><td>Request that we restrict processing of your personal information in certain circumstances.</td></tr>
+      <tr><td><strong>Data portability</strong></td><td>Request your data in a structured, commonly used, machine-readable format (applicable under GDPR).</td></tr>
+      <tr><td><strong>Objection</strong></td><td>Object to the processing of your personal information where we rely on legitimate interest as our legal basis.</td></tr>
+      <tr><td><strong>Withdraw consent</strong></td><td>Withdraw your consent at any time. This will not affect the lawfulness of processing carried out before the withdrawal.</td></tr>
+    </tbody>
+  </table>
+
+  <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@there4u.app">privacy@there4u.app</a>. We will respond within 30 days (or the timeframe required by applicable law).</p>
+
+  <h2 class="section-heading">9. International Data Transfers</h2>
+  <p>There4U operates across multiple markets. Your personal information may be transferred to, stored, and processed in countries other than your country of residence. Where we transfer data internationally, we ensure appropriate safeguards are in place, including standard contractual clauses approved by relevant authorities, data processing agreements with all third-party service providers, and compliance with the cross-border transfer requirements of POPIA, GDPR, and other applicable legislation.</p>
+
+  <h2 class="section-heading">10. Children's Privacy</h2>
+  <p>There4U may be used by Members under the age of 18 where a parent or legal guardian acts as the Main Member and provides the child's information through the delegated registration (Shared Setup) flow. We do not knowingly collect personal information directly from children under 13. If you believe we have inadvertently collected information from a child without appropriate consent, please contact us at <a href="mailto:privacy@there4u.app">privacy@there4u.app</a> and we will promptly delete the information.</p>
+
+  <h2 class="section-heading">11. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We will notify you of any material changes by posting a prominent notice in the app or by email. The "Last updated" date at the top of this policy indicates when the most recent revision took effect.</p>
+
+  <h2 class="section-heading">12. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy or our data practices, or if you wish to exercise any of your rights, please contact us:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:privacy@there4u.app">privacy@there4u.app</a></li>
+    <li><strong>Website:</strong> <a href="https://there4u.app">there4u.app</a></li>
+  </ul>
+  <p>If you are unsatisfied with our response, you have the right to lodge a complaint with your local data protection authority. In South Africa, this is the Information Regulator (<a href="https://inforegulator.org.za">inforegulator.org.za</a>). In the EU, you may contact your national supervisory authority.</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- TERMS OF SERVICE                                        -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="legal-section" id="terms">
+  <div class="legal-subtitle">Legal</div>
+  <h1 class="legal-title">Terms of Service</h1>
+  <p class="effective-date">Effective date: 19 April 2026 &nbsp;·&nbsp; Last updated: 19 April 2026</p>
+
+  <h2 class="section-heading">1. Agreement to Terms</h2>
+  <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and There4U ("we", "us", "our") governing your access to and use of the There4U mobile application and related services (collectively, the "Service"). By downloading, installing, or using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the Service.</p>
+
+  <h2 class="section-heading">2. Description of the Service</h2>
+  <p>There4U is a personal-safety mobile application that enables users to send one-tap emergency alerts via WhatsApp to their designated emergency contacts. Each alert includes the Member's name, medical details, and GPS location. The Service operates on a delegated registration model in which a primary account holder (the "Main Member") manages setup, subscription, and configuration for themselves and, optionally, one additional person (a "Member").</p>
+
+  <div class="info-card">
+    <p><strong>Important:</strong> There4U is not an emergency service. It does not contact police, fire, ambulance, or any official emergency response agency. In the event of an emergency, always contact your local emergency services directly (e.g., 10111 in South Africa, 112 in the EU, 911 in the US).</p>
+  </div>
+
+  <h2 class="section-heading">3. Eligibility</h2>
+  <p>You must be at least 18 years old to create a Main Member account. Persons under 18 may use the Service as an added Member only where a parent or legal guardian serves as the Main Member and has provided their information through the Shared Setup process. By creating an account, you represent and warrant that you are at least 18 years of age and have the legal capacity to enter into these Terms.</p>
+
+  <h2 class="section-heading">4. Account Registration and Responsibilities</h2>
+
+  <h3 class="sub-heading">4.1 Main Member responsibilities</h3>
+  <p>As a Main Member, you are responsible for:</p>
+  <ul>
+    <li>Providing accurate, current, and complete information during registration and keeping it up to date.</li>
+    <li>Maintaining the security of your account credentials and devices.</li>
+    <li>All activity that occurs under your account, including actions taken by any Member you add.</li>
+    <li>Ensuring that any information you provide about an added Member is accurate, and that you have obtained the necessary consent or legal authority to provide that information.</li>
+    <li>Managing device re-issuance if an added Member's device is lost, stolen, or replaced.</li>
+  </ul>
+
+  <h3 class="sub-heading">4.2 Added Members</h3>
+  <p>A person added to the account via Shared Setup is authenticated through a device-bound token; they do not create a separate account. The Main Member is responsible for the added Member's profile information and emergency contacts. If the Main Member's subscription lapses or the account is deleted, the added Member's access is terminated.</p>
+
+  <h3 class="sub-heading">4.3 Emergency contacts</h3>
+  <p>Emergency contacts are individuals you designate to receive WhatsApp alert messages. They are not users of the app and are not required to install or register anything. By adding a person as an emergency contact, you confirm that you have informed them that they may receive emergency alert messages from There4U containing your name, medical details, and location.</p>
+
+  <h2 class="section-heading">5. Subscriptions, Payments, and Top-ups</h2>
+
+  <h3 class="sub-heading">5.1 Subscription plans</h3>
+  <p>Access to the Service requires an active subscription. We offer two headline plans: Monthly and Annual. Plan details, including pricing, included alert quotas, member limits, and emergency contact limits, are displayed at the point of purchase and may vary by market.</p>
+
+  <h3 class="sub-heading">5.2 Billing</h3>
+  <p>Subscriptions are billed through the Apple App Store, Google Play Store, or other payment processors as applicable to your market. All billing, renewals, and cancellations are governed by the terms of the relevant app store or payment processor. We do not store your credit card or payment details directly.</p>
+
+  <h3 class="sub-heading">5.3 Alert top-ups and add-ons</h3>
+  <p>Each subscription plan includes a defined number of alerts per billing period. If you exceed your included quota, you may purchase additional alert top-up bundles. An additional tiered fee may apply if you wish to add a Member beyond your plan's included allowance. Top-ups and add-on fees are non-refundable once purchased. Importantly, help is never blocked: top-ups are offered after an alert is sent, not before.</p>
+
+  <h3 class="sub-heading">5.4 Cancellation and refunds</h3>
+  <p>You may cancel your subscription at any time through your device's app store settings. Upon cancellation, you retain access to the Service until the end of your current billing period. Refund eligibility is subject to the refund policies of the Apple App Store or Google Play Store.</p>
+
+  <h2 class="section-heading">6. Use of the Service</h2>
+
+  <h3 class="sub-heading">6.1 Acceptable use</h3>
+  <p>You agree to use the Service only for its intended purpose: personal safety and emergency alerting. You must not:</p>
+  <ul>
+    <li>Use the Service to send false, misleading, or malicious alerts.</li>
+    <li>Attempt to reverse-engineer, decompile, disassemble, or otherwise derive the source code of the application.</li>
+    <li>Use the Service to harass, stalk, threaten, or intimidate any person.</li>
+    <li>Interfere with or disrupt the Service or its underlying infrastructure.</li>
+    <li>Use the Service in any manner that violates applicable law or regulation.</li>
+    <li>Share, transfer, or sell your account or subscription to any other person.</li>
+  </ul>
+
+  <h3 class="sub-heading">6.2 WhatsApp dependency</h3>
+  <p>The Service relies on WhatsApp for delivering emergency alerts. Alert delivery is subject to WhatsApp's availability, your device's internet connectivity, and the recipient's ability to receive WhatsApp messages. We do not guarantee that alerts will be delivered successfully in all circumstances, including situations where there is no internet connectivity, WhatsApp is unavailable, or the recipient's device is off or unreachable.</p>
+
+  <h3 class="sub-heading">6.3 Location accuracy</h3>
+  <p>GPS location data included in alerts is provided on a best-effort basis. Accuracy may be reduced in indoor environments, dense urban areas, or areas with limited satellite visibility. The alert message may include both a current best-effort fix and a last-known high-accuracy fix where available.</p>
+
+  <h2 class="section-heading">7. Intellectual Property</h2>
+  <p>The There4U name, logo, power-icon brand mark, visual design, content, and underlying software are the intellectual property of There4U and are protected by applicable copyright, trademark, and other intellectual property laws. You are granted a limited, non-exclusive, non-transferable, revocable licence to use the Service for personal, non-commercial purposes in accordance with these Terms. You may not reproduce, modify, distribute, or create derivative works from any part of the Service without our prior written consent.</p>
+
+  <h2 class="section-heading">8. Disclaimer of Warranties</h2>
+  <p>The Service is provided "as is" and "as available" without warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement. Without limiting the foregoing, we do not warrant that:</p>
+  <ul>
+    <li>The Service will be uninterrupted, timely, secure, or error-free.</li>
+    <li>Alerts will be delivered to all emergency contacts in all circumstances.</li>
+    <li>Location data will be accurate or available at all times.</li>
+    <li>The Service will meet your specific requirements or expectations.</li>
+  </ul>
+
+  <h2 class="section-heading">9. Limitation of Liability</h2>
+  <p>To the maximum extent permitted by applicable law, There4U and its directors, employees, contractors, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, data, use, goodwill, or other intangible losses, arising out of or in connection with:</p>
+  <ul>
+    <li>Your use of or inability to use the Service.</li>
+    <li>Any failure or delay in the delivery of an emergency alert.</li>
+    <li>Inaccurate location data included in an alert.</li>
+    <li>Unauthorised access to, or alteration of, your data.</li>
+    <li>Any other matter relating to the Service.</li>
+  </ul>
+  <p>Our total aggregate liability for all claims arising from or relating to the Service shall not exceed the amount you have paid us in subscription fees in the twelve (12) months preceding the claim. Nothing in these Terms excludes or limits liability that cannot be lawfully excluded or limited under applicable law, including liability for death or personal injury caused by negligence.</p>
+
+  <h2 class="section-heading">10. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless There4U and its directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising out of or in connection with your use of the Service, your breach of these Terms, or your violation of any third party's rights.</p>
+
+  <h2 class="section-heading">11. Termination</h2>
+  <p>We may suspend or terminate your access to the Service at any time, with or without notice, if we reasonably believe you have violated these Terms. You may terminate your account at any time by cancelling your subscription and requesting account deletion through the app or by contacting us at <a href="mailto:support@there4u.app">support@there4u.app</a>. Upon termination, all data associated with your account, including any added Member's data, will be deleted in accordance with our Privacy Policy.</p>
+
+  <h2 class="section-heading">12. Governing Law and Disputes</h2>
+  <p>These Terms are governed by and construed in accordance with the laws of the Republic of South Africa. Any disputes arising from or relating to these Terms or the Service shall be subject to the exclusive jurisdiction of the courts of South Africa. If you are located in the European Union, nothing in this clause affects your rights as a consumer under mandatory EU consumer protection laws.</p>
+
+  <h2 class="section-heading">13. Changes to These Terms</h2>
+  <p>We reserve the right to modify these Terms at any time. If we make material changes, we will notify you by posting a notice in the app or by email at least 30 days before the changes take effect. Your continued use of the Service after the effective date of revised Terms constitutes your acceptance of those changes.</p>
+
+  <h2 class="section-heading">14. General Provisions</h2>
+  <ul>
+    <li><strong>Entire agreement:</strong> These Terms, together with our Privacy Policy and Cookie Policy, constitute the entire agreement between you and There4U regarding the Service.</li>
+    <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.</li>
+    <li><strong>Waiver:</strong> Our failure to enforce any right or provision of these Terms shall not constitute a waiver of that right or provision.</li>
+    <li><strong>Assignment:</strong> You may not assign or transfer your rights under these Terms without our prior written consent. We may assign our rights and obligations without restriction.</li>
+  </ul>
+
+  <h2 class="section-heading">15. Contact Us</h2>
+  <p>If you have any questions about these Terms, please contact us:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:support@there4u.app">support@there4u.app</a></li>
+    <li><strong>Website:</strong> <a href="https://there4u.app">there4u.app</a></li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- COOKIE POLICY                                           -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="legal-section" id="cookies">
+  <div class="legal-subtitle">Legal</div>
+  <h1 class="legal-title">Cookie Policy</h1>
+  <p class="effective-date">Effective date: 19 April 2026 &nbsp;·&nbsp; Last updated: 19 April 2026</p>
+
+  <h2 class="section-heading">1. What Are Cookies?</h2>
+  <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently, provide a better user experience, and give website operators useful information about how visitors interact with their site.</p>
+  <p>This Cookie Policy explains how There4U ("we", "us", "our") uses cookies and similar technologies on the there4u.app website (the "Website"). It does not cover the There4U mobile application, which does not use cookies but may use device-level storage for authentication and functionality as described in our Privacy Policy.</p>
+
+  <h2 class="section-heading">2. How We Use Cookies</h2>
+  <p>We use cookies on our Website for the following purposes:</p>
+
+  <h3 class="sub-heading">2.1 Strictly necessary cookies</h3>
+  <p>These cookies are essential for the Website to function properly. They enable core features such as page navigation, access to secure areas, and form submission. The Website cannot function without these cookies, and they cannot be disabled.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Cookie</th><th>Purpose</th><th>Duration</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Session ID</td><td>Maintains your browsing session</td><td>Session (deleted when you close the browser)</td></tr>
+      <tr><td>Cookie consent</td><td>Remembers your cookie preferences</td><td>12 months</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-heading">2.2 Analytics cookies</h3>
+  <p>These cookies help us understand how visitors interact with our Website by collecting information about pages visited, time spent on the site, and any errors encountered. The data collected is aggregated and anonymous; it does not identify you personally. We use this information to improve the Website's performance and content.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Provider</th><th>Purpose</th><th>Duration</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Google Analytics (or privacy-focused alternative)</td><td>Measures website traffic and usage patterns</td><td>Up to 24 months</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-heading">2.3 Functional cookies</h3>
+  <p>These cookies enable enhanced functionality and personalisation, such as remembering your preferred language or region. They may be set by us or by third-party providers whose services we have added to our pages.</p>
+
+  <h3 class="sub-heading">2.4 Cookies we do not use</h3>
+  <p>We do not use advertising or targeting cookies. We do not serve ads on our Website, and we do not allow third-party advertisers to place cookies on your device through our Website. We do not track you across other websites or build profiles for advertising purposes.</p>
+
+  <div class="info-card">
+    <p><strong>Our approach:</strong> We use the minimum number of cookies necessary. We do not serve ads, and we do not use cookies for advertising, targeting, or behavioural profiling.</p>
+  </div>
+
+  <h2 class="section-heading">3. Third-Party Cookies</h2>
+  <p>Some cookies on our Website may be set by third-party services that we use, such as analytics providers or embedded content. These third parties have their own privacy and cookie policies, which we encourage you to review. We ensure that any third-party service we use complies with applicable data protection laws and does not use data collected from our Website for their own advertising purposes.</p>
+
+  <h2 class="section-heading">4. Managing Your Cookie Preferences</h2>
+  <p>When you first visit our Website, you will see a cookie consent banner that allows you to accept or decline non-essential cookies. You can change your preferences at any time by clicking the "Cookie Settings" link in the footer of our Website.</p>
+  <p>You can also manage cookies through your browser settings. Most browsers allow you to block or delete cookies. Please note that if you block strictly necessary cookies, some parts of the Website may not function properly. Here are links to cookie management instructions for common browsers:</p>
+  <ul>
+    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+    <li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+    <li><a href="https://support.apple.com/en-us/HT201265" target="_blank" rel="noopener">Safari (iOS)</a></li>
+    <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471" target="_blank" rel="noopener">Safari (macOS)</a></li>
+    <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+  </ul>
+
+  <h2 class="section-heading">5. Similar Technologies</h2>
+  <p>In addition to cookies, we may use similar technologies such as web beacons (also known as pixel tags or clear GIFs) and local storage. Web beacons are tiny image files embedded in web pages or emails that help us count visitors, track email opens, and measure the effectiveness of our communications. Local storage (such as HTML5 local storage) functions similarly to cookies but can store larger amounts of data. These technologies are subject to the same rules and preferences described in this policy.</p>
+
+  <h2 class="section-heading">6. Changes to This Policy</h2>
+  <p>We may update this Cookie Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date. If we make material changes to how we use cookies, we will notify you through the cookie consent mechanism on the Website.</p>
+
+  <h2 class="section-heading">7. Contact Us</h2>
+  <p>If you have any questions about our use of cookies or this Cookie Policy, please contact us:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:privacy@there4u.app">privacy@there4u.app</a></li>
+    <li><strong>Website:</strong> <a href="https://there4u.app">there4u.app</a></li>
+  </ul>
+</div>
+
+</div><!-- /.legal-content -->
+
+<!-- Footer -->
+<footer class="legal-footer">
+  <p>&copy; 2026 There4U. All rights reserved. &nbsp;·&nbsp; Made with care in South Africa 🇿🇦</p>
+</footer>
+
+<script>
+  // Tab switching
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sections = document.querySelectorAll('.legal-section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Support hash-based navigation
+  function activateFromHash() {
+    const hash = window.location.hash.replace('#', '');
+    if (['privacy', 'terms', 'cookies'].includes(hash)) {
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      document.querySelector(`[data-tab="${hash}"]`).classList.add('active');
+      document.getElementById(hash).classList.add('active');
+    }
+  }
+  activateFromHash();
+  window.addEventListener('hashchange', activateFromHash);
+</script>
+</body>
+</html>

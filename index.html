@@ -4,7 +4,148 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#0A0A0B">
-<title>There4U | One Tap. Instant Help.</title>
+
+<!-- Primary SEO tags -->
+<title>Emergency Alert App with WhatsApp Alerts | There4U</title>
+<meta name="description" content="There4U sends an instant WhatsApp alert with your GPS location to every emergency contact — with one tap. No logins, no delays. iOS & Android.">
+<link rel="canonical" href="https://there4u.app/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn link previews) -->
+<!-- NOTE: create /assets/og-image.png at 1200x630px — dark Onyx background,
+     There4U logo + "One tap. Instant help." works well. WhatsApp previews
+     are your highest-value share surface, so don't skip this image. -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://there4u.app/">
+<meta property="og:site_name" content="There4U">
+<meta property="og:title" content="There4U — One Tap. Instant Help.">
+<meta property="og:description" content="Send an instant WhatsApp alert with your name, medical details and GPS location to your emergency contacts — with one tap. Launching in South Africa.">
+<meta property="og:image" content="https://there4u.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_ZA">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="There4U — One Tap. Instant Help.">
+<meta name="twitter:description" content="One-tap WhatsApp emergency alerts with GPS location. No logins. No delays. iOS & Android.">
+<meta name="twitter:image" content="https://there4u.app/assets/og-image.png">
+
+<!-- ============================================================
+     STRUCTURED DATA (JSON-LD)
+     Three blocks: SoftwareApplication, Organization, FAQPage.
+     Validate after deploying: https://search.google.com/test/rich-results
+     ============================================================ -->
+
+<!-- 1. SoftwareApplication — tells search & AI engines what the app is,
+        what it runs on, and what it costs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "There4U",
+  "url": "https://there4u.app/",
+  "description": "There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap — no login required.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "iOS, Android",
+  "countriesSupported": "ZA",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Monthly Plan",
+      "price": "40.00",
+      "priceCurrency": "ZAR",
+      "description": "R40/month — 1 member, 2 emergency contacts, 10 alerts per month. Top-ups available."
+    },
+    {
+      "@type": "Offer",
+      "name": "Annual Plan",
+      "price": "100.00",
+      "priceCurrency": "ZAR",
+      "description": "R100/year — 2 members, 4 emergency contacts per member, 200 alerts per year. Top-ups available."
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "There4U",
+    "url": "https://there4u.app/"
+  }
+}
+</script>
+
+<!-- 2. Organization — anchors the There4U entity for knowledge graphs.
+        NOTE: logo must be a real hosted file, not base64. Add sameAs
+        links for TikTok/Instagram once profiles are live. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "There4U",
+  "url": "https://there4u.app/",
+  "logo": "https://there4u.app/assets/there4u-logo.png",
+  "email": "support@there4u.app",
+  "description": "There4U is a South African personal safety app company. Its app sends one-tap WhatsApp emergency alerts with GPS location and medical details to pre-configured emergency contacts.",
+  "foundingLocation": {
+    "@type": "Place",
+    "address": { "@type": "PostalAddress", "addressCountry": "ZA" }
+  },
+  "sameAs": []
+}
+</script>
+
+<!-- 3. FAQPage — mirrors the five FAQs already rendered on the page.
+        This is the highest-value block for AI answer engines and
+        Google rich results. Text matches on-page copy verbatim;
+        if you edit the visible FAQ, update this block to match. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the WhatsApp alert work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When you tap the button, There4U instantly sends a personalised WhatsApp message to every emergency contact on your list. The message includes your name, medical details, and a GPS link showing your location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I set it up for my parents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. As an admin user, you can register a profile for anyone — a parent, a child, or a partner. Send them a download link or QR code. They'll open the app with everything pre-loaded and ready to go. No login needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I run out of alerts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Top-up bundles are available for both monthly and annual billing, or take advantage of an early renewal. Your profile and contacts remain active regardless."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the app need to be open?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The recommended way to use There4U is via the home screen widget. One tap from your home screen triggers the alert — no need to open the app first. Available on iOS and Android."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my personal data secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your data is encrypted and stored securely. We never share your information with third parties. Your details are only transmitted to your chosen emergency contacts when you trigger an alert."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="icon" type="image/png" href="data:image/png;base64,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">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,6 +261,10 @@ body::after{
 .subtext{
   font-size:clamp(0.95rem,1.1vw,1.1rem);color:var(--text-2);
   line-height:1.75;max-width:520px;
+}
+.t4u-summary{
+  font-size:0.82rem;color:var(--text-3);
+  line-height:1.65;max-width:520px;margin:-1.25rem auto 2rem;
 }
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
@@ -642,6 +787,7 @@ body::after{
       <div class="hero-tag"><span class="dot"></span> Emergency Alert System</div>
       <h1 class="heading xl">One tap.<br>Instant <span style="color:var(--primary)">help</span>.</h1>
       <p class="subtext">There4U sends an instant WhatsApp alert with your location to every emergency contact the moment you need it. No logins. No delays. Just one button.</p>
+      <p class="t4u-summary">There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap — no login required. It launches in South Africa in August 2026, with plans from R40 per month.</p>
       <div class="hero-btns">
         <a href="there4u-early-access.html" class="btn btn-primary"><i class="ph-bold ph-play"></i> Start Free Trial</a>
         <a href="#how" class="btn btn-ghost">How It Works</a>

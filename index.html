@@ -299,17 +299,7 @@ body::after{
   text-align:center;
 }
 .hero-content{max-width:560px;margin:0 auto}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  background:rgba(245,94,0,0.08);border:1px solid var(--border-orange);
-  border-radius:100px;padding:0.35rem 1rem;margin-bottom:2rem;
-  font-family:var(--font-display);font-size:0.7rem;font-weight:600;
-  letter-spacing:0.06em;text-transform:uppercase;color:var(--primary);
-  animation:fadeUp 0.7s var(--ease) both;
-}
-.hero-tag .dot{width:6px;height:6px;background:var(--primary);border-radius:50%;animation:pulse 2.5s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(1.8)}}
-.hero .heading{animation:fadeUp 0.7s 0.1s var(--ease) both}
+.hero .heading{animation:fadeUp 0.7s var(--ease) both}
 .hero .subtext{margin:0 auto 2.5rem;animation:fadeUp 0.7s 0.2s var(--ease) both}
 .hero-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s var(--ease) both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
@@ -784,7 +774,6 @@ body::after{
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-content">
-      <div class="hero-tag"><span class="dot"></span> Emergency Alert System</div>
       <h1 class="heading xl">One tap.<br>Instant <span style="color:var(--primary)">help</span>.</h1>
       <p class="subtext">There4U sends an instant WhatsApp alert with your location to every emergency contact the moment you need it. No logins. No delays. Just one button.</p>
       <p class="t4u-summary">There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap — no login required. It launches in South Africa in August 2026, with plans from R40 per month.</p>

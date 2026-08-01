@@ -7,19 +7,19 @@
 
 <!-- Primary SEO tags -->
 <title>Emergency Alert App with WhatsApp Alerts | There4U</title>
-<meta name="description" content="There4U sends an instant WhatsApp alert with your GPS location to every emergency contact — with one tap. No logins, no delays. iOS & Android.">
+<meta name="description" content="There4U sends an instant WhatsApp alert with your GPS location to every emergency contact, with one tap. No logins, no delays. iOS & Android.">
 <link rel="canonical" href="https://there4u.app/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn link previews) -->
-<!-- NOTE: create /assets/og-image.png at 1200x630px — dark Onyx background,
+<!-- NOTE: create /assets/og-image.png at 1200x630px, dark Onyx background,
      There4U logo + "One tap. Instant help." works well. WhatsApp previews
      are your highest-value share surface, so don't skip this image. -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://there4u.app/">
 <meta property="og:site_name" content="There4U">
-<meta property="og:title" content="There4U — One Tap. Instant Help.">
-<meta property="og:description" content="Send an instant WhatsApp alert with your name, medical details and GPS location to your emergency contacts — with one tap. Launching in South Africa.">
+<meta property="og:title" content="There4U: One Tap. Instant Help.">
+<meta property="og:description" content="Send an instant WhatsApp alert with your name, medical details and GPS location to your emergency contacts, with one tap. Launching in South Africa.">
 <meta property="og:image" content="https://there4u.app/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
 
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="There4U — One Tap. Instant Help.">
+<meta name="twitter:title" content="There4U: One Tap. Instant Help.">
 <meta name="twitter:description" content="One-tap WhatsApp emergency alerts with GPS location. No logins. No delays. iOS & Android.">
 <meta name="twitter:image" content="https://there4u.app/assets/og-image.png">
 
@@ -37,7 +37,7 @@
      Validate after deploying: https://search.google.com/test/rich-results
      ============================================================ -->
 
-<!-- 1. SoftwareApplication — tells search & AI engines what the app is,
+<!-- 1. SoftwareApplication: tells search & AI engines what the app is,
         what it runs on, and what it costs -->
 <script type="application/ld+json">
 {
@@ -45,7 +45,7 @@
   "@type": "SoftwareApplication",
   "name": "There4U",
   "url": "https://there4u.app/",
-  "description": "There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap — no login required.",
+  "description": "There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap, no login required.",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "iOS, Android",
   "countriesSupported": "ZA",
@@ -55,14 +55,14 @@
       "name": "Monthly Plan",
       "price": "40.00",
       "priceCurrency": "ZAR",
-      "description": "R40/month — 1 member, 2 emergency contacts, 10 alerts per month. Top-ups available."
+      "description": "R40/month: 1 member, 2 emergency contacts, 10 alerts per month. Top-ups available."
     },
     {
       "@type": "Offer",
       "name": "Annual Plan",
       "price": "100.00",
       "priceCurrency": "ZAR",
-      "description": "R100/year — 2 members, 4 emergency contacts per member, 200 alerts per year. Top-ups available."
+      "description": "R100/year: 2 members, 4 emergency contacts per member, 200 alerts per year. Top-ups available."
     }
   ],
   "publisher": {
@@ -73,7 +73,7 @@
 }
 </script>
 
-<!-- 2. Organization — anchors the There4U entity for knowledge graphs.
+<!-- 2. Organization: anchors the There4U entity for knowledge graphs.
         NOTE: logo must be a real hosted file, not base64. Add sameAs
         links for TikTok/Instagram once profiles are live. -->
 <script type="application/ld+json">
@@ -93,7 +93,7 @@
 }
 </script>
 
-<!-- 3. FAQPage — mirrors the five FAQs already rendered on the page.
+<!-- 3. FAQPage: mirrors the five FAQs already rendered on the page.
         This is the highest-value block for AI answer engines and
         Google rich results. Text matches on-page copy verbatim;
         if you edit the visible FAQ, update this block to match. -->
@@ -115,7 +115,7 @@
       "name": "Can I set it up for my parents?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolutely. As an admin user, you can register a profile for anyone — a parent, a child, or a partner. Send them a download link or QR code. They'll open the app with everything pre-loaded and ready to go. No login needed."
+        "text": "Absolutely. As an admin user, you can register a profile for anyone: a parent, a child, or a partner. Send them a download link or QR code. They'll open the app with everything pre-loaded and ready to go. No login needed."
       }
     },
     {
@@ -131,7 +131,7 @@
       "name": "Does the app need to be open?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The recommended way to use There4U is via the home screen widget. One tap from your home screen triggers the alert — no need to open the app first. Available on iOS and Android."
+        "text": "No. The recommended way to use There4U is via the home screen widget. One tap from your home screen triggers the alert, no need to open the app first. Available on iOS and Android."
       }
     },
     {
@@ -452,26 +452,25 @@ body::after{
 .trust-item i{color:var(--primary);font-size:0.95rem}
 
 /* ===== HOW IT WORKS ===== */
-.steps{display:flex;flex-direction:column;gap:1rem;margin-top:0.5rem}
-.step{
-  background:var(--bg-elevated);border:1px solid var(--border);
-  border-radius:20px;padding:2rem;position:relative;overflow:hidden;
-  transition:border-color 0.4s,transform 0.4s var(--ease);
-}
-.step:hover{border-color:var(--border-orange);transform:translateY(-3px)}
-.step-head{display:flex;align-items:flex-start;gap:1.25rem}
-.step-num{
-  font-family:var(--font-display);font-size:2.5rem;font-weight:800;
-  color:rgba(245,94,0,0.25);line-height:1;min-width:50px;
-}
-.step h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:0.4rem}
-.step p{font-size:0.9rem;color:var(--text-2);line-height:1.65}
 .opt-tag{
   display:inline-block;font-family:var(--font-display);font-size:0.6rem;
   font-weight:600;color:var(--accent);letter-spacing:0.05em;text-transform:uppercase;
   background:rgba(255,154,92,0.08);padding:0.2rem 0.6rem;border-radius:100px;
   margin-bottom:0.4rem;
 }
+.picker{max-width:900px;margin:0.5rem auto 0}
+.picker-tabs{display:flex;gap:0.35rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:100px;padding:0.3rem;margin:0 auto 2.5rem;width:fit-content}
+.picker-tab{font-family:var(--font-display);font-weight:600;font-size:0.8rem;color:var(--text-3);padding:0.55rem 1.2rem;border-radius:100px;cursor:pointer;border:none;background:transparent;transition:color 0.3s var(--ease-out),background 0.3s var(--ease-out);white-space:nowrap}
+.picker-tab:hover{color:var(--text-1)}
+.picker-tab.active{background:var(--primary);color:#fff}
+.picker-panel{display:none;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;text-align:left}
+.picker-panel.active{display:grid;animation:panelIn 0.5s var(--ease-out)}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.picker-num{font-family:var(--font-display);font-weight:800;font-size:5.5rem;line-height:1;color:var(--primary);opacity:0.9;letter-spacing:-0.03em}
+.picker-panel h3{font-family:var(--font-display);font-weight:700;font-size:1.4rem;margin-bottom:0.6rem}
+.picker-panel p{color:var(--text-2);font-size:0.95rem;line-height:1.65;max-width:480px}
+.picker-panel .opt-tag{display:inline-block;font-family:var(--font-display);font-size:0.6rem;font-weight:600;color:var(--accent);letter-spacing:0.05em;text-transform:uppercase;background:rgba(255,154,92,0.08);padding:0.2rem 0.6rem;border-radius:100px;margin-bottom:0.6rem}
+@media(max-width:640px){.picker-panel{grid-template-columns:1fr;text-align:center}.picker-num{font-size:3.75rem}}
 
 /* ===== FEATURES ===== */
 .feat-grid{display:flex;flex-direction:column;gap:0.75rem}
@@ -719,7 +718,6 @@ body::after{
 /* ===== BREAKPOINTS ===== */
 @media(min-width:640px){
   :root{--px:2.5rem}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
   .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem}
   .price-grid{grid-template-columns:repeat(2,1fr);max-width:700px}
 }
@@ -738,7 +736,6 @@ body::after{
   .scr-widget .w-time{font-size:3.5rem}
   .emerg-layout{flex-direction:row;align-items:center;gap:5rem}
   .emerg-layout>div{flex:1}
-  .step:hover{transform:translateY(-5px)}
   .price-card:hover{transform:translateY(-6px)}
   .btn-primary:hover{box-shadow:0 16px 40px rgba(245,94,0,0.3)}
   .footer-layout{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
@@ -776,7 +773,7 @@ body::after{
     <div class="hero-content">
       <h1 class="heading xl">One tap.<br>Instant <span style="color:var(--primary)">help</span>.</h1>
       <p class="subtext">There4U sends an instant WhatsApp alert with your location to every emergency contact the moment you need it. No logins. No delays. Just one button.</p>
-      <p class="t4u-summary">There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap — no login required. It launches in South Africa in October 2026, with plans from R40 per month.</p>
+      <p class="t4u-summary">There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap, no login required. It launches in South Africa in October 2026, with plans from R40 per month.</p>
       <div class="hero-btns">
         <a href="there4u-early-access.html" class="btn btn-primary"><i class="ph-bold ph-play"></i> Start Free Trial</a>
         <a href="#how" class="btn btn-ghost">How It Works</a>
@@ -849,33 +846,32 @@ body::after{
     <div class="label" style="justify-content:center">How It Works</div>
     <h2 class="heading lg">Three steps. That's it.</h2>
     <p class="subtext" style="margin:0 auto 3rem">When you need help, every second matters. No passwords. No menus. Just press the button.</p>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-head">
-          <div class="step-num">01</div>
-          <div>
-            <h3>Register</h3>
-            <p>Create your profile, or set one up for a loved one. Add medical details and emergency contacts. Share a download link for instant access.</p>
-          </div>
+    <div class="picker reveal">
+      <div class="picker-tabs">
+        <button class="picker-tab active" data-tab="1" aria-controls="how-panel-1">01 Register</button>
+        <button class="picker-tab" data-tab="2" aria-controls="how-panel-2">02 Widget</button>
+        <button class="picker-tab" data-tab="3" aria-controls="how-panel-3">03 Press</button>
+      </div>
+      <div class="picker-panel active" id="how-panel-1">
+        <div class="picker-num">01</div>
+        <div>
+          <h3>Register</h3>
+          <p>Create your profile, or set one up for a loved one. Add medical details and emergency contacts. Share a download link for instant access.</p>
         </div>
       </div>
-      <div class="step reveal">
-        <div class="step-head">
-          <div class="step-num">02</div>
-          <div>
-            <div class="opt-tag">Optional, but recommended</div>
-            <h3>Add the Widget</h3>
-            <p>Place the There4U widget on your home screen. No need to open the app or log in. Your details are already loaded. Always ready.</p>
-          </div>
+      <div class="picker-panel" id="how-panel-2">
+        <div class="picker-num">02</div>
+        <div>
+          <span class="opt-tag">Optional, but recommended</span>
+          <h3>Add the Widget</h3>
+          <p>Place the There4U widget on your home screen. No need to open the app or log in, your details are already loaded. Always ready.</p>
         </div>
       </div>
-      <div class="step reveal">
-        <div class="step-head">
-          <div class="step-num">03</div>
-          <div>
-            <h3>Press the Button</h3>
-            <p>One tap triggers WhatsApp messages to every emergency contact, including your name, medical info, and GPS location.</p>
-          </div>
+      <div class="picker-panel" id="how-panel-3">
+        <div class="picker-num">03</div>
+        <div>
+          <h3>Press the Button</h3>
+          <p>One tap triggers WhatsApp messages to every emergency contact, including your name, medical info, and GPS location.</p>
         </div>
       </div>
     </div>
@@ -1161,6 +1157,16 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50)
 // Reveal
 const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// How It Works picker
+document.querySelectorAll('.picker-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.picker-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.picker-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('how-panel-'+tab.dataset.tab).classList.add('active');
+  });
+});
 
 // Phone rotation
 const scrApp=document.getElementById('scrApp'),scrWidget=document.getElementById('scrWidget');

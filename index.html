@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0A0A0B">
+
+<!-- Primary SEO tags -->
+<title>Emergency Alert App with WhatsApp Alerts | There4U</title>
+<meta name="description" content="There4U sends an instant WhatsApp alert with your GPS location to every emergency contact — with one tap. No logins, no delays. iOS & Android.">
+<link rel="canonical" href="https://there4u.app/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn link previews) -->
+<!-- NOTE: create /assets/og-image.png at 1200x630px — dark Onyx background,
+     There4U logo + "One tap. Instant help." works well. WhatsApp previews
+     are your highest-value share surface, so don't skip this image. -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://there4u.app/">
+<meta property="og:site_name" content="There4U">
+<meta property="og:title" content="There4U — One Tap. Instant Help.">
+<meta property="og:description" content="Send an instant WhatsApp alert with your name, medical details and GPS location to your emergency contacts — with one tap. Launching in South Africa.">
+<meta property="og:image" content="https://there4u.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_ZA">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="There4U — One Tap. Instant Help.">
+<meta name="twitter:description" content="One-tap WhatsApp emergency alerts with GPS location. No logins. No delays. iOS & Android.">
+<meta name="twitter:image" content="https://there4u.app/assets/og-image.png">
+
+<!-- ============================================================
+     STRUCTURED DATA (JSON-LD)
+     Three blocks: SoftwareApplication, Organization, FAQPage.
+     Validate after deploying: https://search.google.com/test/rich-results
+     ============================================================ -->
+
+<!-- 1. SoftwareApplication — tells search & AI engines what the app is,
+        what it runs on, and what it costs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "There4U",
+  "url": "https://there4u.app/",
+  "description": "There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap — no login required.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "iOS, Android",
+  "countriesSupported": "ZA",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Monthly Plan",
+      "price": "40.00",
+      "priceCurrency": "ZAR",
+      "description": "R40/month — 1 member, 2 emergency contacts, 10 alerts per month. Top-ups available."
+    },
+    {
+      "@type": "Offer",
+      "name": "Annual Plan",
+      "price": "100.00",
+      "priceCurrency": "ZAR",
+      "description": "R100/year — 2 members, 4 emergency contacts per member, 200 alerts per year. Top-ups available."
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "There4U",
+    "url": "https://there4u.app/"
+  }
+}
+</script>
+
+<!-- 2. Organization — anchors the There4U entity for knowledge graphs.
+        NOTE: logo must be a real hosted file, not base64. Add sameAs
+        links for TikTok/Instagram once profiles are live. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "There4U",
+  "url": "https://there4u.app/",
+  "logo": "https://there4u.app/assets/there4u-logo.png",
+  "email": "support@there4u.app",
+  "description": "There4U is a South African personal safety app company. Its app sends one-tap WhatsApp emergency alerts with GPS location and medical details to pre-configured emergency contacts.",
+  "foundingLocation": {
+    "@type": "Place",
+    "address": { "@type": "PostalAddress", "addressCountry": "ZA" }
+  },
+  "sameAs": []
+}
+</script>
+
+<!-- 3. FAQPage — mirrors the five FAQs already rendered on the page.
+        This is the highest-value block for AI answer engines and
+        Google rich results. Text matches on-page copy verbatim;
+        if you edit the visible FAQ, update this block to match. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the WhatsApp alert work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When you tap the button, There4U instantly sends a personalised WhatsApp message to every emergency contact on your list. The message includes your name, medical details, and a GPS link showing your location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I set it up for my parents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. As an admin user, you can register a profile for anyone — a parent, a child, or a partner. Send them a download link or QR code. They'll open the app with everything pre-loaded and ready to go. No login needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I run out of alerts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Top-up bundles are available for both monthly and annual billing, or take advantage of an early renewal. Your profile and contacts remain active regardless."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the app need to be open?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The recommended way to use There4U is via the home screen widget. One tap from your home screen triggers the alert — no need to open the app first. Available on iOS and Android."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my personal data secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your data is encrypted and stored securely. We never share your information with third parties. Your details are only transmitted to your chosen emergency contacts when you trigger an alert."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --primary:#F55E00;
+  --primary-hover:#FF8133;
+  --accent:#FF9A5C;
+  --bg-base:#0A0A0B;
+  --bg-surface:#1E1E24;
+  --bg-elevated:#16161A;
+  --text-1:#FFFFFF;
+  --text-2:#B2BDB9;
+  --text-3:#636869;
+  --glow:rgba(245,94,0,0.08);
+  --glow-strong:rgba(245,94,0,0.15);
+  --border:rgba(255,255,255,0.06);
+  --border-orange:rgba(245,94,0,0.12);
+  --font-display:'Sora',sans-serif;
+  --font-body:'Figtree',sans-serif;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --max-w:1200px;
+  --px:1.5rem;
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--bg-base);color:var(--text-1);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  font-size:16px;line-height:1.65;
+}
+img{max-width:100%;display:block}
+a{-webkit-tap-highlight-color:transparent;text-decoration:none}
+
+/* ===== GRAIN OVERLAY ===== */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:128px 128px;
+}
+
+/* ===== NAV ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:72px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(1.5rem,4vw,3rem);
+  background:rgba(10,10,11,0.7);
+  backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);
+  transition:background 0.4s var(--ease);
+}
+.nav.scrolled{background:rgba(10,10,11,0.92)}
+.nav-logo img{height:40px;display:block;border:none;outline:none;box-shadow:none}
+.nav-logo{display:flex;align-items:center;line-height:0}
+.nav-links{display:none;align-items:center;gap:2.25rem}
+.nav-links a{
+  color:var(--text-3);font-family:var(--font-display);font-size:0.8rem;
+  font-weight:500;letter-spacing:0.02em;transition:color 0.3s;
+}
+.nav-links a:hover{color:var(--text-1)}
+.nav-cta{
+  padding:0.55rem 1.4rem;border-radius:100px;
+  background:var(--primary);color:var(--bg-base)!important;
+  font-weight:600!important;transition:all 0.3s var(--ease)!important;
+}
+.nav-cta:hover{background:var(--primary-hover)!important;transform:translateY(-1px);box-shadow:0 6px 24px rgba(245,94,0,0.25)}
+.hamburger{
+  width:44px;height:44px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:5px;cursor:pointer;border:none;background:none;
+}
+.hamburger span{display:block;width:20px;height:1.5px;background:var(--text-1);border-radius:2px;transition:all 0.3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mob-menu{
+  position:fixed;top:72px;left:0;right:0;bottom:0;z-index:99;
+  background:rgba(10,10,11,0.97);backdrop-filter:blur(30px);
+  display:flex;flex-direction:column;padding:2.5rem var(--px);
+  transform:translateX(100%);transition:transform 0.4s var(--ease-out);
+}
+.mob-menu.open{transform:translateX(0)}
+.mob-menu a{
+  padding:1rem 0;color:var(--text-1);font-family:var(--font-display);
+  font-size:1.1rem;font-weight:600;border-bottom:1px solid var(--border);
+}
+.mob-menu .m-cta{
+  margin-top:2rem;background:var(--primary);color:var(--bg-base);
+  text-align:center;border-radius:100px;border:none;padding:1rem;font-weight:700;
+}
+
+/* ===== SHARED ===== */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 var(--px)}
+.section{padding:clamp(4rem,10vw,8rem) 0}
+.label{
+  font-family:var(--font-display);font-size:0.7rem;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--primary);
+  margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;
+}
+.heading{
+  font-family:var(--font-display);font-weight:700;
+  line-height:1.12;letter-spacing:-0.03em;
+  margin-bottom:1.25rem;
+}
+.heading.xl{font-size:clamp(2.25rem,5.5vw,4rem)}
+.heading.lg{font-size:clamp(1.75rem,3.5vw,2.75rem)}
+.subtext{
+  font-size:clamp(0.95rem,1.1vw,1.1rem);color:var(--text-2);
+  line-height:1.75;max-width:520px;
+}
+.t4u-summary{
+  font-size:0.82rem;color:var(--text-3);
+  line-height:1.65;max-width:520px;margin:-1.25rem auto 2rem;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+  padding:0.9rem 2rem;border-radius:100px;
+  font-family:var(--font-display);font-weight:600;font-size:0.9rem;
+  border:none;cursor:pointer;transition:all 0.35s var(--ease);
+  min-height:50px;text-decoration:none;
+}
+.btn-primary{background:var(--primary);color:var(--bg-base)}
+.btn-primary:hover{background:var(--primary-hover);transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,94,0,0.3)}
+.btn-ghost{background:transparent;color:var(--text-1);border:1.5px solid rgba(255,255,255,0.12)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+.btn i{font-size:1.1rem}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease-out)}
+.reveal.vis{opacity:1;transform:none}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100svh;display:flex;align-items:center;
+  padding:calc(72px + 3rem) 0 3rem;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-40%;right:-25%;
+  width:70vw;height:70vw;
+  background:radial-gradient(circle,var(--glow),transparent 65%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;
+  text-align:center;
+}
+.hero-content{max-width:560px;margin:0 auto}
+.hero .heading{animation:fadeUp 0.7s var(--ease) both}
+.hero .subtext{margin:0 auto 2.5rem;animation:fadeUp 0.7s 0.2s var(--ease) both}
+.hero-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s var(--ease) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* Phone */
+.hero-phone{
+  display:flex;justify-content:center;position:relative;
+  animation:fadeUp 0.8s 0.4s var(--ease) both;
+}
+.phone-wrap{position:relative}
+.phone{
+  width:240px;height:490px;border-radius:38px;position:relative;
+  background:#111113;
+  border:2.5px solid #2a2a2e;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 20px 60px rgba(0,0,0,0.6),
+    0 40px 80px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  overflow:hidden;
+}
+/* Top bar (dynamic island style) */
+.phone-island{
+  position:absolute;top:10px;left:50%;transform:translateX(-50%);
+  width:90px;height:26px;background:#000;border-radius:20px;z-index:10;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+/* Side buttons */
+.phone::before{
+  content:'';position:absolute;right:-3.5px;top:110px;
+  width:3px;height:40px;background:#2a2a2e;border-radius:0 2px 2px 0;
+}
+.phone::after{
+  content:'';position:absolute;left:-3.5px;top:90px;
+  width:3px;height:28px;background:#2a2a2e;border-radius:2px 0 0 2px;
+}
+/* Screen inner area */
+.phone-screen{
+  position:absolute;inset:0;border-radius:36px;overflow:hidden;
+  transition:opacity 0.8s var(--ease);
+}
+.phone-screen.hidden{opacity:0;pointer-events:none}
+.phone-screen.visible{opacity:1}
+
+/* App screen */
+.scr-app{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:2rem;background:var(--bg-base);height:100%;
+}
+.scr-app .pwr-btn{
+  width:110px;height:110px;border-radius:50%;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 45% 40%,rgba(245,94,0,0.1),transparent 70%);
+}
+.scr-app .pwr-btn svg{filter:drop-shadow(0 0 18px rgba(245,94,0,0.35))}
+.scr-app .pwr-btn::before{
+  content:'';position:absolute;inset:-12px;border-radius:50%;
+  border:1.5px solid rgba(245,94,0,0.1);
+  animation:ring 3s ease-out infinite;
+}
+.scr-app .pwr-btn::after{
+  content:'';position:absolute;inset:-24px;border-radius:50%;
+  border:1px solid rgba(245,94,0,0.05);
+  animation:ring 3s 0.8s ease-out infinite;
+}
+@keyframes ring{0%{transform:scale(1);opacity:1}100%{transform:scale(1.3);opacity:0}}
+.scr-app .scr-label{
+  margin-top:1.5rem;font-family:var(--font-display);font-size:0.55rem;
+  color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;
+}
+
+/* Widget screen */
+.scr-widget{
+  display:flex;flex-direction:column;padding:3.5rem 1rem 2rem;
+  background:linear-gradient(170deg,#151520,#0c0c10);height:100%;
+}
+.scr-widget .w-time{
+  font-family:var(--font-display);font-size:3rem;font-weight:300;
+  letter-spacing:-0.02em;margin-bottom:0.1rem;text-align:center;
+}
+.scr-widget .w-date{font-size:0.65rem;color:var(--text-3);margin-bottom:2rem;text-align:center}
+.scr-widget .w-card{
+  background:rgba(30,30,36,0.8);border-radius:18px;padding:0.9rem;
+  border:1px solid var(--border-orange);
+  display:flex;align-items:center;gap:0.7rem;
+  backdrop-filter:blur(8px);
+}
+.scr-widget .w-icon{
+  width:44px;height:44px;min-width:44px;border-radius:12px;
+  background:var(--bg-base);border:1px solid rgba(245,94,0,0.1);
+  display:flex;align-items:center;justify-content:center;
+}
+.scr-widget .w-icon svg{width:24px;height:24px}
+.scr-widget .w-name{font-family:var(--font-display);font-size:0.75rem;font-weight:600}
+.scr-widget .w-desc{font-size:0.55rem;color:var(--text-3)}
+.scr-widget .w-tag{
+  margin-top:1rem;font-size:0.5rem;color:var(--text-3);
+  font-family:var(--font-display);letter-spacing:0.1em;text-transform:uppercase;
+  text-align:center;
+}
+
+/* Phone rotation dots */
+.phone-dots{
+  display:flex;gap:5px;justify-content:center;margin-top:1.25rem;
+}
+.phone-dots span{
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,0.12);transition:all 0.4s var(--ease);
+}
+.phone-dots span.on{background:var(--primary);width:16px;border-radius:3px}
+
+/* Float badges */
+.fbadge{
+  position:absolute;
+  background:rgba(14,14,16,0.88);backdrop-filter:blur(16px);
+  border:1px solid var(--border);border-radius:14px;
+  padding:0.55rem 0.85rem;display:flex;align-items:center;gap:0.5rem;
+  animation:float 5s ease-in-out infinite;white-space:nowrap;
+  box-shadow:0 8px 24px rgba(0,0,0,0.4);
+}
+.fbadge.f1{top:15%;right:-12px;animation-delay:0s}
+.fbadge.f2{bottom:20%;left:-16px;animation-delay:2s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.fbadge-icon{
+  width:26px;height:26px;border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+}
+.fbadge-icon.grn{background:rgba(34,197,94,0.12)}
+.fbadge-icon.grn i{color:#22C55E;font-size:0.85rem}
+.fbadge-icon.blu{background:rgba(59,130,246,0.12)}
+.fbadge-icon.blu i{color:#3B82F6;font-size:0.85rem}
+.fbadge-txt{font-family:var(--font-display);font-size:0.65rem;font-weight:600;line-height:1.3}
+.fbadge-sub{font-size:0.55rem;color:var(--text-3);font-weight:400}
+
+/* ===== TRUST ===== */
+.trust{
+  padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.trust::-webkit-scrollbar{display:none}
+.trust-inner{
+  display:flex;gap:2rem;min-width:max-content;padding:0 var(--px);
+  max-width:var(--max-w);margin:0 auto;justify-content:center;
+}
+.trust-item{
+  display:flex;align-items:center;gap:0.4rem;
+  font-family:var(--font-display);font-size:0.75rem;
+  color:var(--text-2);font-weight:500;white-space:nowrap;
+}
+.trust-item i{color:var(--primary);font-size:0.95rem}
+
+/* ===== HOW IT WORKS ===== */
+.steps{display:flex;flex-direction:column;gap:1rem;margin-top:0.5rem}
+.step{
+  background:var(--bg-elevated);border:1px solid var(--border);
+  border-radius:20px;padding:2rem;position:relative;overflow:hidden;
+  transition:border-color 0.4s,transform 0.4s var(--ease);
+}
+.step:hover{border-color:var(--border-orange);transform:translateY(-3px)}
+.step-head{display:flex;align-items:flex-start;gap:1.25rem}
+.step-num{
+  font-family:var(--font-display);font-size:2.5rem;font-weight:800;
+  color:rgba(245,94,0,0.25);line-height:1;min-width:50px;
+}
+.step h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:0.4rem}
+.step p{font-size:0.9rem;color:var(--text-2);line-height:1.65}
+.opt-tag{
+  display:inline-block;font-family:var(--font-display);font-size:0.6rem;
+  font-weight:600;color:var(--accent);letter-spacing:0.05em;text-transform:uppercase;
+  background:rgba(255,154,92,0.08);padding:0.2rem 0.6rem;border-radius:100px;
+  margin-bottom:0.4rem;
+}
+
+/* ===== FEATURES ===== */
+.feat-grid{display:flex;flex-direction:column;gap:0.75rem}
+.feat{
+  background:var(--bg-elevated);border:1px solid var(--border);
+  border-radius:20px;padding:1.75rem;display:flex;gap:1.25rem;
+  transition:border-color 0.4s,transform 0.4s var(--ease);
+}
+.feat:hover{border-color:var(--border-orange);transform:translateY(-2px)}
+.feat-icon{
+  width:48px;height:48px;min-width:48px;border-radius:14px;
+  background:rgba(245,94,0,0.08);border:1px solid rgba(245,94,0,0.08);
+  display:flex;align-items:center;justify-content:center;
+}
+.feat-icon i{color:var(--primary);font-size:1.35rem}
+.feat h4{font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:0.3rem}
+.feat p{font-size:0.88rem;color:var(--text-2);line-height:1.6}
+
+/* ===== EMERGENCY ===== */
+.emerg-bg{background:var(--bg-surface)}
+.emerg-layout{display:flex;flex-direction:column;gap:3rem}
+.emerg-text .detail{color:var(--text-3);font-size:0.88rem;line-height:1.7;margin-top:1rem}
+.ecard{
+  background:var(--bg-base);border:1px solid var(--border-orange);
+  border-radius:24px;padding:1.75rem;max-width:360px;margin:0 auto;
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+}
+.ecard-head{
+  text-align:center;margin-bottom:1.25rem;padding-bottom:0.75rem;
+  border-bottom:1px solid var(--border);
+}
+.ecard-head svg{display:block;margin:0 auto 0.5rem}
+.ecard-title{font-family:var(--font-display);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);font-weight:600}
+.ecard-time{font-size:0.55rem;color:var(--text-3);margin-top:0.15rem}
+.ecard-block{margin-bottom:1rem}
+.ecard-lbl{
+  font-family:var(--font-display);font-size:0.55rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--primary);font-weight:600;
+  margin-bottom:0.5rem;display:flex;align-items:center;gap:0.35rem;
+}
+.ecard-lbl i{font-size:0.75rem}
+.ecard-row{
+  display:flex;justify-content:space-between;
+  padding:0.35rem 0;border-bottom:1px solid rgba(255,255,255,0.03);
+  font-size:0.78rem;
+}
+.ecard-row .l{color:var(--text-3)}
+.ecard-row .v{color:var(--text-1);font-weight:500;font-family:var(--font-display);text-align:right}
+.ecard-contact{
+  background:rgba(245,94,0,0.04);border-radius:12px;padding:0.65rem;margin-top:0.35rem;
+}
+.ecard-contact-name{font-family:var(--font-display);font-weight:600;font-size:0.8rem}
+.ecard-contact-num{font-size:0.7rem;color:var(--text-3)}
+
+/* ===== PRICING ===== */
+.price-grid{
+  display:grid;grid-template-columns:1fr;gap:1.25rem;max-width:420px;margin:0 auto;
+}
+.price-card{
+  background:var(--bg-elevated);border:1px solid var(--border);
+  border-radius:24px;padding:2.25rem 2rem;text-align:center;
+  position:relative;transition:border-color 0.4s,transform 0.4s var(--ease);
+}
+.price-card:hover{transform:translateY(-4px)}
+.price-card.pop{
+  border-color:var(--primary);
+  background:linear-gradient(180deg,rgba(245,94,0,0.05),var(--bg-elevated));
+  box-shadow:0 0 60px rgba(245,94,0,0.06);
+}
+.pop-badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--primary);color:var(--bg-base);
+  font-family:var(--font-display);font-size:0.6rem;font-weight:700;
+  padding:0.3rem 1rem;border-radius:100px;letter-spacing:0.06em;text-transform:uppercase;
+}
+.price-card h3{font-family:var(--font-display);font-size:1rem;font-weight:600;margin-top:0.25rem}
+.price-amt{
+  font-family:var(--font-display);font-size:3rem;font-weight:800;
+  color:var(--primary);line-height:1;margin:1rem 0 0.2rem;letter-spacing:-0.03em;
+}
+.price-amt span{font-size:0.85rem;font-weight:500;color:var(--text-3);letter-spacing:0}
+.price-period{font-size:0.75rem;color:var(--text-3);margin-bottom:1.25rem}
+.price-alerts{
+  font-family:var(--font-display);font-size:0.8rem;font-weight:600;
+  background:rgba(245,94,0,0.08);padding:0.4rem 0.9rem;
+  border-radius:100px;display:inline-block;margin-bottom:1.5rem;
+}
+.price-list{list-style:none;text-align:left;margin-bottom:2rem}
+.price-list li{
+  padding:0.4rem 0;font-size:0.88rem;color:var(--text-2);
+  display:flex;align-items:center;gap:0.6rem;
+}
+.price-list li i{color:var(--primary);font-size:0.9rem;min-width:16px}
+.btn-block{width:100%}
+
+/* ===== FAQ ===== */
+.faq-bg{background:var(--bg-surface)}
+.faq-list{max-width:640px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item summary{
+  font-family:var(--font-display);font-weight:600;font-size:0.95rem;
+  padding:1.15rem 0;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;min-height:52px;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-icon{color:var(--primary);font-size:1.1rem;transition:transform 0.25s var(--ease)}
+.faq-item[open] .faq-icon{transform:rotate(45deg)}
+.faq-item p{color:var(--text-2);font-size:0.9rem;line-height:1.75;padding-bottom:1.25rem}
+
+/* ===== CTA ===== */
+.cta-section{
+  padding:clamp(5rem,12vw,9rem) 0;text-align:center;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);width:500px;height:500px;
+  background:radial-gradient(circle,var(--glow-strong),transparent 65%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;z-index:2;max-width:560px;margin:0 auto;padding:0 var(--px)}
+.cta-inner .heading{margin-bottom:1rem}
+.cta-inner .subtext{margin:0 auto 2.5rem}
+.store-row{display:flex;gap:0.75rem;justify-content:center;margin-top:2rem;flex-wrap:wrap}
+.store-row a{display:inline-block;line-height:0;border:none;outline:none;box-shadow:none;background:transparent}
+.store-row img{
+  height:44px;display:block;
+  border:none!important;outline:none!important;box-shadow:none!important;
+  background:transparent;
+  transition:transform 0.3s var(--ease);
+}
+.store-row a:hover img{transform:translateY(-2px)}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:var(--bg-elevated);border-top:1px solid var(--border);
+  padding:3.5rem var(--px) 1.5rem;
+}
+.footer-inner{max-width:var(--max-w);margin:0 auto}
+.footer-top{margin-bottom:2.5rem}
+.footer-top img{height:40px;margin-bottom:1rem;display:block;border:none;box-shadow:none}
+.footer-top p{color:var(--text-3);font-size:0.85rem;max-width:280px;line-height:1.7}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.footer-col h4{
+  font-family:var(--font-display);font-size:0.65rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);margin-bottom:0.8rem;
+}
+.footer-col a{display:flex;align-items:center;color:var(--text-2);font-size:0.85rem;padding:0.25rem 0;min-height:32px;transition:color 0.3s}
+.footer-col a:hover{color:var(--primary)}
+.footer-bottom{
+  padding-top:1.5rem;border-top:1px solid var(--border);
+  text-align:center;font-size:0.72rem;color:var(--text-3);
+  display:flex;flex-direction:column;gap:0.35rem;
+}
+
+/* ===== TESTIMONIALS ===== */
+.t4u-testimonials{
+  background:#0A0A0B;
+  padding:5rem 1.5rem;
+  font-family:var(--font-display,-apple-system,BlinkMacSystemFont,sans-serif);
+}
+.t4u-test-inner{max-width:960px;margin:0 auto}
+.t4u-test-head{text-align:center;margin-bottom:3rem}
+.t4u-test-eyebrow{
+  color:var(--primary,#F55E00);
+  font-size:0.7rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:1rem;
+  display:inline-flex;align-items:center;gap:0.5rem;
+}
+.t4u-test-dot{
+  width:4px;height:4px;border-radius:50%;
+  background:var(--primary,#F55E00);display:inline-block;
+}
+.t4u-test-title{
+  color:#FFFFFF;
+  font-size:clamp(2rem,4vw,2.75rem);
+  font-weight:800;line-height:1.1;
+  letter-spacing:-0.03em;
+  margin:0 0 1rem;
+}
+.t4u-test-sub{
+  color:#B2BDB9;font-size:1rem;line-height:1.7;
+  margin:0 auto;max-width:580px;
+}
+.t4u-marquee{
+  max-width:960px;margin:3rem auto 0;
+  position:relative;height:460px;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 88%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 88%,transparent 100%);
+}
+.t4u-col{display:flex;flex-direction:column;gap:20px;will-change:transform}
+.t4u-col-a{animation:t4uScrollUp 42s linear infinite}
+.t4u-col-b{animation:t4uScrollUp 48s linear infinite}
+.t4u-col:hover{animation-play-state:paused}
+@keyframes t4uScrollUp{
+  0%  {transform:translateY(0)}
+  100%{transform:translateY(-50%)}
+}
+.t4u-card{
+  background:#1E1E24;
+  border:1px solid rgba(245,94,0,0.15);
+  border-radius:16px;
+  padding:24px;
+  flex-shrink:0;
+}
+.t4u-card header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:14px;
+}
+.t4u-avatar{
+  width:42px;height:42px;border-radius:50%;
+  color:#0A0A0B;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:0.85rem;
+  flex-shrink:0;letter-spacing:0.02em;
+}
+.t4u-av-primary  {background:var(--primary,#F55E00)}
+.t4u-av-secondary{background:#FF8133}
+.t4u-av-accent   {background:#FF9A5C}
+.t4u-name{
+  color:#FFFFFF;font-weight:600;font-size:0.92rem;
+  line-height:1.2;
+}
+.t4u-city{
+  color:#636869;font-size:0.78rem;margin-top:2px;
+}
+.t4u-card p{
+  color:#B2BDB9;font-size:0.9rem;line-height:1.65;margin:0;
+}
+/* Mobile: single column */
+@media(max-width:640px){
+  .t4u-marquee{grid-template-columns:1fr;height:480px}
+  .t4u-col-b{display:none}
+}
+/* Respect reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .t4u-col-a,.t4u-col-b{animation:none}
+  .t4u-marquee{
+    height:auto;overflow:visible;
+    mask-image:none;-webkit-mask-image:none;
+  }
+}
+
+/* ===== BREAKPOINTS ===== */
+@media(min-width:640px){
+  :root{--px:2.5rem}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem}
+  .price-grid{grid-template-columns:repeat(2,1fr);max-width:700px}
+}
+@media(min-width:1024px){
+  :root{--px:3rem}
+  .hamburger{display:none}
+  .nav-links{display:flex}
+  .hero-grid{grid-template-columns:1fr 1fr;text-align:left;gap:5rem}
+  .hero-content{margin:0}
+  .hero-btns{justify-content:flex-start}
+  .phone{width:280px;height:570px;border-radius:44px}
+  .phone-island{width:100px;height:28px;top:12px}
+  .phone-screen{border-radius:42px}
+  .scr-app .pwr-btn{width:130px;height:130px}
+  .scr-app .pwr-btn svg{width:80px;height:80px}
+  .scr-widget .w-time{font-size:3.5rem}
+  .emerg-layout{flex-direction:row;align-items:center;gap:5rem}
+  .emerg-layout>div{flex:1}
+  .step:hover{transform:translateY(-5px)}
+  .price-card:hover{transform:translateY(-6px)}
+  .btn-primary:hover{box-shadow:0 16px 40px rgba(245,94,0,0.3)}
+  .footer-layout{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
+  .footer-top{margin-bottom:0}
+  .footer-cols{display:contents}
+  .footer-bottom{flex-direction:row;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo"><img src="assets/there4u-logo-nav.png" alt="There4U"></a>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="there4u-early-access.html" class="nav-cta">Get Started</a>
+  </div>
+  <button class="hamburger" id="hbtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mob">
+  <a href="#how" onclick="closeM()">How It Works</a>
+  <a href="#features" onclick="closeM()">Features</a>
+  <a href="#pricing" onclick="closeM()">Pricing</a>
+  <a href="#faq" onclick="closeM()">FAQ</a>
+  <a href="there4u-early-access.html" class="m-cta" onclick="closeM()">Get Started</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1 class="heading xl">One tap.<br>Instant <span style="color:var(--primary)">help</span>.</h1>
+      <p class="subtext">There4U sends an instant WhatsApp alert with your location to every emergency contact the moment you need it. No logins. No delays. Just one button.</p>
+      <p class="t4u-summary">There4U is a personal safety app for iOS and Android that sends a WhatsApp alert containing your name, medical details, and live GPS location to your emergency contacts with a single tap — no login required. It launches in South Africa in October 2026, with plans from R40 per month.</p>
+      <div class="hero-btns">
+        <a href="there4u-early-access.html" class="btn btn-primary"><i class="ph-bold ph-play"></i> Start Free Trial</a>
+        <a href="#how" class="btn btn-ghost">How It Works</a>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <div class="phone-wrap">
+        <div class="fbadge f1">
+          <div class="fbadge-icon grn"><i class="ph-bold ph-check-circle"></i></div>
+          <div><div class="fbadge-txt">Alert Sent</div><div class="fbadge-sub">WhatsApp delivered</div></div>
+        </div>
+        <div class="fbadge f2">
+          <div class="fbadge-icon blu"><i class="ph-bold ph-map-pin"></i></div>
+          <div><div class="fbadge-txt">Location Shared</div><div class="fbadge-sub">GPS coordinates sent</div></div>
+        </div>
+        <div class="phone">
+          <div class="phone-island"></div>
+          <!-- App Screen -->
+          <div class="phone-screen scr-app visible" id="scrApp">
+            <div class="pwr-btn">
+              <svg viewBox="0 0 256 256" width="72" height="72" fill="none">
+                <path d="M128 24v80" stroke="#F55E00" stroke-width="22" stroke-linecap="round"/>
+                <path d="M176.77 55.23A96 96 0 1 1 79.23 55.23" stroke="#F55E00" stroke-width="22" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <div class="scr-label">Tap to alert your contacts</div>
+          </div>
+          <!-- Widget Screen -->
+          <div class="phone-screen scr-widget hidden" id="scrWidget">
+            <div class="w-time" id="wClock">09:41</div>
+            <div class="w-date" id="wDate">Friday, 10 April</div>
+            <div class="w-card">
+              <div class="w-icon">
+                <svg viewBox="0 0 256 256" width="24" height="24" fill="none">
+                  <path d="M128 24v80" stroke="#F55E00" stroke-width="22" stroke-linecap="round"/>
+                  <path d="M176.77 55.23A96 96 0 1 1 79.23 55.23" stroke="#F55E00" stroke-width="22" stroke-linecap="round" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <div class="w-name">There4U</div>
+                <div class="w-desc">Tap to alert your contacts</div>
+              </div>
+            </div>
+            <div class="w-tag">Home screen widget</div>
+          </div>
+        </div>
+        <div class="phone-dots">
+          <span class="on" id="d0"></span>
+          <span id="d1"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><i class="ph-bold ph-lightning"></i> Instant WhatsApp Alerts</div>
+    <div class="trust-item"><i class="ph-bold ph-map-pin"></i> GPS Location</div>
+    <div class="trust-item"><i class="ph-bold ph-device-mobile"></i> iOS & Android</div>
+    <div class="trust-item"><i class="ph-bold ph-lock"></i> Secure & Private</div>
+    <div class="trust-item"><i class="ph-bold ph-hand-tap"></i> One-Tap Access</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="container" style="text-align:center">
+    <div class="label" style="justify-content:center">How It Works</div>
+    <h2 class="heading lg">Three steps. That's it.</h2>
+    <p class="subtext" style="margin:0 auto 3rem">When you need help, every second matters. No passwords. No menus. Just press the button.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-head">
+          <div class="step-num">01</div>
+          <div>
+            <h3>Register</h3>
+            <p>Create your profile, or set one up for a loved one. Add medical details and emergency contacts. Share a download link for instant access.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-head">
+          <div class="step-num">02</div>
+          <div>
+            <div class="opt-tag">Optional, but recommended</div>
+            <h3>Add the Widget</h3>
+            <p>Place the There4U widget on your home screen. No need to open the app or log in. Your details are already loaded. Always ready.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-head">
+          <div class="step-num">03</div>
+          <div>
+            <h3>Press the Button</h3>
+            <p>One tap triggers WhatsApp messages to every emergency contact, including your name, medical info, and GPS location.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features" style="background:linear-gradient(180deg,var(--bg-base),rgba(245,94,0,0.015),var(--bg-base))">
+  <div class="container" style="text-align:center">
+    <div class="label" style="justify-content:center">Features</div>
+    <h2 class="heading lg">Built for the moment<br>you can't afford to wait.</h2>
+    <p class="subtext" style="margin:0 auto 3rem">Every feature exists to remove friction between you and the help you need.</p>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="feat-icon"><i class="ph ph-whatsapp-logo"></i></div>
+        <div style="text-align:left">
+          <h4>WhatsApp Alerts</h4>
+          <p>Personalised emergency messages sent instantly via WhatsApp, the platform your contacts already use.</p>
+        </div>
+      </div>
+      <div class="feat reveal">
+        <div class="feat-icon"><i class="ph ph-map-pin"></i></div>
+        <div style="text-align:left">
+          <h4>Location Sharing</h4>
+          <p>Your GPS coordinates are included in every alert so responders can find you fast.</p>
+        </div>
+      </div>
+      <div class="feat reveal">
+        <div class="feat-icon"><i class="ph ph-users-three"></i></div>
+        <div style="text-align:left">
+          <h4>Register for Others</h4>
+          <p>Set up There4U for a parent, child, or partner. Send them a link and they're instantly protected.</p>
+        </div>
+      </div>
+      <div class="feat reveal">
+        <div class="feat-icon"><i class="ph ph-lock-key-open"></i></div>
+        <div style="text-align:left">
+          <h4>No Login Required</h4>
+          <p>Once set up, the app opens straight to the alert button. Zero passwords, zero friction.</p>
+        </div>
+      </div>
+      <div class="feat reveal">
+        <div class="feat-icon"><i class="ph ph-first-aid"></i></div>
+        <div style="text-align:left">
+          <h4>Emergency Info Display</h4>
+          <p>Your screen shows vital info, including your name, age, medical aid, and conditions, for anyone assisting you.</p>
+        </div>
+      </div>
+      <div class="feat reveal">
+        <div class="feat-icon"><i class="ph ph-device-mobile"></i></div>
+        <div style="text-align:left">
+          <h4>Home Screen Widget</h4>
+          <p>Place There4U directly on your home screen. The fastest path from crisis to help.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY DISPLAY -->
+<section class="section emerg-bg">
+  <div class="container emerg-layout">
+    <div class="emerg-text">
+      <div class="label" style="justify-content:center">Emergency Display</div>
+      <h2 class="heading lg">Your vital info, ready when you <span style="color:var(--primary)">can't</span> speak.</h2>
+      <p class="subtext">When you press the button, your screen transforms into a clear emergency information card. If you're unable to communicate, anyone assisting you can see exactly what they need.</p>
+      <p class="detail">The display stays active and prevents the app from closing, ensuring critical information remains visible to paramedics or first responders.</p>
+    </div>
+    <div>
+      <div class="ecard reveal">
+        <div class="ecard-head">
+          <svg viewBox="0 0 256 256" width="28" height="28" fill="none" style="margin:0 auto 0.4rem;display:block">
+            <path d="M128 24v80" stroke="#F55E00" stroke-width="22" stroke-linecap="round"/>
+            <path d="M176.77 55.23A96 96 0 1 1 79.23 55.23" stroke="#F55E00" stroke-width="22" stroke-linecap="round" fill="none"/>
+          </svg>
+          <div class="ecard-title">There4U: Emergency Alert Active</div>
+          <div class="ecard-time">Alert triggered • 14:32 SAST</div>
+        </div>
+        <div class="ecard-block">
+          <div class="ecard-lbl"><i class="ph ph-user"></i> Personal Details</div>
+          <div class="ecard-row"><span class="l">Full Name</span><span class="v">Sarah van der Merwe</span></div>
+          <div class="ecard-row"><span class="l">Age</span><span class="v">34</span></div>
+          <div class="ecard-row"><span class="l">Location</span><span class="v">Claremont, Cape Town</span></div>
+          <div class="ecard-row"><span class="l">Medical Aid</span><span class="v">Discovery Gold</span></div>
+          <div class="ecard-row"><span class="l">Conditions</span><span class="v">Asthma, Penicillin allergy</span></div>
+        </div>
+        <div class="ecard-block">
+          <div class="ecard-lbl"><i class="ph ph-siren"></i> Emergency Contacts</div>
+          <div class="ecard-contact">
+            <div class="ecard-contact-name">James van der Merwe</div>
+            <div class="ecard-contact-num">+27 82 555 1234</div>
+          </div>
+          <div class="ecard-contact" style="margin-top:0.3rem">
+            <div class="ecard-contact-name">Dr. Naidoo (GP)</div>
+            <div class="ecard-contact-num">+27 21 683 9900</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="t4u-testimonials" id="testimonials" aria-label="Member testimonials">
+  <div class="t4u-test-inner">
+    <div class="t4u-test-head">
+      <div class="t4u-test-eyebrow"><span class="t4u-test-dot"></span>Real Stories</div>
+      <h2 class="t4u-test-title">What our members<br>are saying.</h2>
+      <p class="t4u-test-sub">Everyday people, everyday moments, and the peace of mind that makes the difference.</p>
+    </div>
+
+    <div class="t4u-marquee">
+      <!-- Column A: 42s upward scroll -->
+      <div class="t4u-col t4u-col-a">
+        <!-- 6 originals -->
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-primary">SM</span><div><div class="t4u-name">Sarah M.</div><div class="t4u-city">Cape Town</div></div></header><p>&ldquo;I travel alone often. Knowing my family gets instantly notified if something goes wrong lets me live without that knot in my stomach.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-secondary">PN</span><div><div class="t4u-name">Priya N.</div><div class="t4u-city">Durban</div></div></header><p>&ldquo;As a nurse working late shifts, There4U is the one app I never leave home without. Setup took five minutes and it&rsquo;s saved me real worry.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-accent">AO</span><div><div class="t4u-name">Amara O.</div><div class="t4u-city">Bloemfontein</div></div></header><p>&ldquo;My daughter uses this for her morning runs. I know she&rsquo;s safe without being intrusive, which is exactly what every parent needs.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-primary">NB</span><div><div class="t4u-name">Nomsa B.</div><div class="t4u-city">Pretoria</div></div></header><p>&ldquo;First-year student, new city, anxious parents. There4U made the whole transition easier. My mom finally sleeps at night.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-secondary">JP</span><div><div class="t4u-name">Jason P.</div><div class="t4u-city">Stellenbosch</div></div></header><p>&ldquo;I cycle solo on remote routes most weekends. One tap and my whole group knows where I am. It&rsquo;s changed how I ride.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-accent">ZK</span><div><div class="t4u-name">Zanele K.</div><div class="t4u-city">Soweto</div></div></header><p>&ldquo;My taxi commute used to stress me out. Now my sister tracks me home every night. Small thing, huge difference.&rdquo;</p></article>
+        <!-- 6 duplicates (seamless loop) -->
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-primary">SM</span><div><div class="t4u-name">Sarah M.</div><div class="t4u-city">Cape Town</div></div></header><p>&ldquo;I travel alone often. Knowing my family gets instantly notified if something goes wrong lets me live without that knot in my stomach.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-secondary">PN</span><div><div class="t4u-name">Priya N.</div><div class="t4u-city">Durban</div></div></header><p>&ldquo;As a nurse working late shifts, There4U is the one app I never leave home without. Setup took five minutes and it&rsquo;s saved me real worry.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-accent">AO</span><div><div class="t4u-name">Amara O.</div><div class="t4u-city">Bloemfontein</div></div></header><p>&ldquo;My daughter uses this for her morning runs. I know she&rsquo;s safe without being intrusive, which is exactly what every parent needs.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-primary">NB</span><div><div class="t4u-name">Nomsa B.</div><div class="t4u-city">Pretoria</div></div></header><p>&ldquo;First-year student, new city, anxious parents. There4U made the whole transition easier. My mom finally sleeps at night.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-secondary">JP</span><div><div class="t4u-name">Jason P.</div><div class="t4u-city">Stellenbosch</div></div></header><p>&ldquo;I cycle solo on remote routes most weekends. One tap and my whole group knows where I am. It&rsquo;s changed how I ride.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-accent">ZK</span><div><div class="t4u-name">Zanele K.</div><div class="t4u-city">Soweto</div></div></header><p>&ldquo;My taxi commute used to stress me out. Now my sister tracks me home every night. Small thing, huge difference.&rdquo;</p></article>
+      </div>
+
+      <!-- Column B: 48s upward scroll (offset tempo) -->
+      <div class="t4u-col t4u-col-b">
+        <!-- 6 originals -->
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-secondary">DK</span><div><div class="t4u-name">David K.</div><div class="t4u-city">Johannesburg</div></div></header><p>&ldquo;Activated my alert during a roadside breakdown at 11pm. My brother was there in 20 minutes. Simple. Lifesaving.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-primary">LS</span><div><div class="t4u-name">Lerato S.</div><div class="t4u-city">Gqeberha</div></div></header><p>&ldquo;The peace of mind for my elderly parents is worth every cent. Instant alerts and instant help, with no fumbling with phones.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-accent">TM</span><div><div class="t4u-name">Thandi M.</div><div class="t4u-city">Oudtshoorn</div></div></header><p>&ldquo;Installed after a scary walk home. I&rsquo;ve never felt safer, and my whole family is on the same alert circle now.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-primary">FH</span><div><div class="t4u-name">Fatima H.</div><div class="t4u-city">Pietermaritzburg</div></div></header><p>&ldquo;Single mom, two kids, endless school runs. There4U keeps my sister in the loop on every trip, just in case.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-secondary">MR</span><div><div class="t4u-name">Michael R.</div><div class="t4u-city">Knysna</div></div></header><p>&ldquo;Weekend hiker here. I used to leave notes on the fridge. Now my wife gets real-time pings. Miles ahead of the old way.&rdquo;</p></article>
+        <article class="t4u-card"><header><span class="t4u-avatar t4u-av-accent">HV</span><div><div class="t4u-name">Hendrik V.</div><div class="t4u-city">George</div></div></header><p>&ldquo;Long fishing trips down the coast used to worry my wife. Now she checks the app, sees I&rsquo;m fine, and lets me fish in peace.&rdquo;</p></article>
+        <!-- 6 duplicates (seamless loop) -->
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-secondary">DK</span><div><div class="t4u-name">David K.</div><div class="t4u-city">Johannesburg</div></div></header><p>&ldquo;Activated my alert during a roadside breakdown at 11pm. My brother was there in 20 minutes. Simple. Lifesaving.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-primary">LS</span><div><div class="t4u-name">Lerato S.</div><div class="t4u-city">Gqeberha</div></div></header><p>&ldquo;The peace of mind for my elderly parents is worth every cent. Instant alerts and instant help, with no fumbling with phones.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-accent">TM</span><div><div class="t4u-name">Thandi M.</div><div class="t4u-city">Oudtshoorn</div></div></header><p>&ldquo;Installed after a scary walk home. I&rsquo;ve never felt safer, and my whole family is on the same alert circle now.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-primary">FH</span><div><div class="t4u-name">Fatima H.</div><div class="t4u-city">Pietermaritzburg</div></div></header><p>&ldquo;Single mom, two kids, endless school runs. There4U keeps my sister in the loop on every trip, just in case.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-secondary">MR</span><div><div class="t4u-name">Michael R.</div><div class="t4u-city">Knysna</div></div></header><p>&ldquo;Weekend hiker here. I used to leave notes on the fridge. Now my wife gets real-time pings. Miles ahead of the old way.&rdquo;</p></article>
+        <article class="t4u-card" aria-hidden="true"><header><span class="t4u-avatar t4u-av-accent">HV</span><div><div class="t4u-name">Hendrik V.</div><div class="t4u-city">George</div></div></header><p>&ldquo;Long fishing trips down the coast used to worry my wife. Now she checks the app, sees I&rsquo;m fine, and lets me fish in peace.&rdquo;</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container" style="text-align:center">
+    <div class="label" style="justify-content:center">Simple Pricing</div>
+    <h2 class="heading lg">Peace of mind shouldn't<br>cost a fortune.</h2>
+    <p class="subtext" style="margin:0 auto 3rem">No hidden fees, no contracts. Cancel anytime.</p>
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <h3>Monthly</h3>
+        <div class="price-amt"><span>R</span>40<span>/mo</span></div>
+        <div class="price-period">billed monthly</div>
+        <div class="price-alerts">10 Alerts / month</div>
+        <ul class="price-list">
+          <li><i class="ph-bold ph-check"></i>1 member</li>
+          <li><i class="ph-bold ph-check"></i>2 emergency contacts</li>
+          <li><i class="ph-bold ph-check"></i>Upgrade anytime</li>
+          <li><i class="ph-bold ph-check"></i>Top-ups available</li>
+        </ul>
+        <a href="there4u-early-access.html" class="btn btn-ghost btn-block">Get Started</a>
+      </div>
+      <div class="price-card pop reveal">
+        <div class="pop-badge">Popular</div>
+        <h3>Annual</h3>
+        <div class="price-amt"><span>R</span>100<span>/yr</span></div>
+        <div class="price-period">billed annually</div>
+        <div class="price-alerts">200 Alerts / year</div>
+        <ul class="price-list">
+          <li><i class="ph-bold ph-check"></i>2 members</li>
+          <li><i class="ph-bold ph-check"></i>4 emergency contacts/member</li>
+          <li><i class="ph-bold ph-check"></i>Best value: save 79%</li>
+          <li><i class="ph-bold ph-check"></i>Top-ups available</li>
+        </ul>
+        <a href="there4u-early-access.html" class="btn btn-primary btn-block">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-bg" id="faq">
+  <div class="container" style="text-align:center">
+    <div class="label" style="justify-content:center">FAQ</div>
+    <h2 class="heading lg">Got questions?</h2>
+    <p class="subtext" style="margin:0 auto 3rem">Everything you need to know about There4U.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How does the WhatsApp alert work?<span class="faq-icon"><i class="ph-bold ph-plus"></i></span></summary>
+        <p>When you tap the button, There4U instantly sends a personalised WhatsApp message to every emergency contact on your list. The message includes your name, medical details, and a GPS link showing your location.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I set it up for my parents?<span class="faq-icon"><i class="ph-bold ph-plus"></i></span></summary>
+        <p>Absolutely. As an admin user, you can register a profile for anyone: a parent, a child, or a partner. Send them a download link or QR code. They'll open the app with everything pre-loaded and ready to go. No login needed.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if I run out of alerts?<span class="faq-icon"><i class="ph-bold ph-plus"></i></span></summary>
+        <p>Top-up bundles are available for both monthly and annual billing, or take advantage of an early renewal. Your profile and contacts remain active regardless.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does the app need to be open?<span class="faq-icon"><i class="ph-bold ph-plus"></i></span></summary>
+        <p>No. The recommended way to use There4U is via the home screen widget. One tap from your home screen triggers the alert, with no need to open the app first. Available on iOS and Android.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my personal data secure?<span class="faq-icon"><i class="ph-bold ph-plus"></i></span></summary>
+        <p>Your data is encrypted and stored securely. We never share your information with third parties. Your details are only transmitted to your chosen emergency contacts when you trigger an alert.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-inner">
+    <h2 class="heading lg">Be ready for<br>the <span style="color:var(--primary)">unexpected</span>.</h2>
+    <p class="subtext" style="margin:0 auto 2.5rem">Download There4U today and give yourself, or someone you love, the peace of mind that help is always one tap away.</p>
+    <a href="there4u-early-access.html" class="btn btn-primary"><i class="ph-bold ph-download-simple"></i> Download There4U</a>
+    <div class="store-row">
+      <a href="there4u-early-access.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATEAAABYCAIAAAASi1cZAAAxcElEQVR42u1deUBV1dY/587IIKNAgAODaCoFKAmiqCimYFqmhNpoFuqjemEm5Zf5XvqarEwtXyr6HNIkB5Q0EnBAmYeUSQYBUSbhMcPlTud8f/ye+50ulysq94q9u/6Cc/fZZw9r7bX2GmnqDtA0TVEUy7ImJibjx48fP368q6urpaWlUCikDGAAA/QTyOXyxsbGkpKSjIyMrKwshULB4/FYlmVZ9j+USAiSZVmapoOCgubNm+fs7CyVSuvq6hobG+VyOcjVAAYwwIODRCKxtra2s7MTCoVFRUU///xzSkoKocH/0CSPx2MYxsLCYtWqVdOmTauurv71119TU1NrampkMplhEQ1ggP4FIyMjJycnf3//WbNmWVhYnDp1aufOnd3d3YQ10hRFWVhYrFu3bty4cadPn96/f39jYyNXoDWAAQzQj0DEVEdHx9dee23q1KlJSUmbN2+WyWQsy1I0TQsEgvXr1589e3bJkiVoyufzDdRoAAPoCGia5vF4AoEAtBYREZGUlBQREQGhlaIoKiQkJCkp6Z133sEjAzUawAD6AZCbQCD4+OOPf/vtN19fX4qieObm5s8++2xVVdWePXsgzhLGagADGECnwDAMTdNKpXLXrl2tra3PP/+8SCTiTZw40cnJKS4urrW1FTpZw0oZwAD6JEs+n3/r1q3ExMTRo0ePGzeO5+3t3dHRkZmZSVSxBjCAAfQJ0LWmpqZSFDV+/HiBs7NzfX19bW2tgSANYICHRZMsy1ZVVTU1NTk7O/PMzMxaWlrgGGAgSwMY4GFBV1dXR0eHubk5j8/nq1QqimMzeSQA2uT/KI4NYIA/C7fk8XiCR27oIEWlUvkfRyT9sndiKBr4RxiMzAzDMAyjt4/C5qZSqQbs+gB/WJYFKxqA8CjRJHijSqViGMbIyGjs2LFisfjy5cv6+TTwm4tqQPoBi38PBeeUSuUAxyI9H1J/ZpqEjK1Sqby9vV999dWZM2eOHDmyoKBg7NixemCVkCtg3hUKhUqlUi6XE6Qn8v+AOr8iIyNdXV3PnDkTGxsLl2adfo5lWSsrq6ioKCMjox07duTl5en6o31hiSBC8i/DMFOnTg0NDa2trf3ss88Gpju34BEiSAcHh7///e8vvvgiBCSKolpbW/Xz6YCAgP/7v/+zsbExNzeXSCQqlaqhoaGgoODcuXMnTpxoaGgYaGTJsuwrr7wyZsyY7u5uvdGkqalpZGQkRVFnz57Ny8t7uA5hkGvUSJRhmAkTJoSHhzc0NHz55Zf6v/v06Sh5VAhy5syZ6enpr776Ko/HUygUcrmcZdna2lpyHOr0Aunq6hoYGOjh4WFiYtLR0aFQKNzd3cPCwn744YecnJwXXnhBpVLx+fzehF7dYaeWzpubm5VKZWdnp5YXtQ+sj4MnbViWbW1thRBxT+Pvy/rc00qC0lxdXSdOnKj2VldXl1KpbGpqAsX2cYL69DnlPRIEuXDhwtOnTzs4OCgUCigSsJQ5OTmUXoJXuru7VSpVfX29h4eHq6urm5vb8OHDFyxYkJ2d7ejoeOjQodDQUDWypGmaz+ezdwBz0aI00vivlifc/jV2zufzBQJBzwOLz+eTIFqWZfGvRv0QadObips0U6lUaIOP9mVHiK6FDEPLocZdSY3N1EZFUdT69euvXr26du1a6o8xFXD+xhNwTtxKtE8QzfQTm8Eb+ATp4+Ozb98+Pp+vVCrJfuOn+Ph47oVBp9wSO93e3s6yrFwur6urO3bsWGBgYFpaGkVRW7ZsGTJkCNwXsfHAVD6fP2TIECsrKyhduKcykEBNcFL7979xrndeJE/Qv7Gx8WOPPQbVV1/kBawbwzBmZmZDhgwxMjLCv2rvQnFlYmJia2trZmYGvYhaG3TFsqytra21tTXDMJ2dnX1EWT6fjz6NjY1tbW1NTEygLOhJb5gsZmdvb4+WfRHd3dzcjIyMWltbWZYlWnruiSCXyxE2bGdnB6pTGzyZoLm5ub29vUgkwr+6JsuBS5NAPmNj4927d+MKRzYMO5SSkpKTk6NPRQJ0PESSEYvFra2tkZGRCoXC1tZ24cKF5ChlGMba2vrTTz+9du1aXV3drVu30tLS3njjDaIooijq7bffzs3N3bdvH6E3CwuLhISEzMzMkSNHQhxgWXbTpk05OTkffvghxjBp0qScnJxt27ZZWlpGR0dXVFQUFRVlZWWFhob2JJuerEmlUs2bNy8hIeHWrVv19fXFxcW7du1ycXEh79I0LRKJwsPD09PTb9++XVdXV1FRcerUKR8fHy7WoquwsLCUlJTr169XV1efPXvWy8urN1G5J65Pnjz52LFjVVVVdXV1ZWVlR44cGT9+PHYWXzExMYmPj8/KynJ0dHzjjTdKS0tLS0vz8vI2bdokkUg0sixMYezYsfn5+UFBQSqVKiQkJCcnp6CgYNKkSVydcFdXl6Oj45EjRyoqKgoLCy9evDhx4kRIBNxBBgYGJiYm1tfX19TUlJWVbdiwQSKR6PQyQlEUdezYsU8++WRgMkmKot577z3wJYYDuEwGBwf3JhD2pxJMIKAoaunSpSzL1tfXW1hYcOVJmqaFQmFBQQHDMAcPHqQoSiQS0TTt4OCQn5/PsmxTU1NMTMyFCxcgd+3atQtIT1HU/PnzWZaVyWTDhg1Db8HBwWhG4uaMjIyqqqpYlg0LC0OboKAglmVLS0tzc3NZli0pKZFKpXhrzpw53AVJSUlhWfYf//gHZoHna9euRePLly/HxMQ0NjayLFtXV+fp6UlENZFIdOPGjdu3b8fExOzbt6+8vJxl2ZaWFjc3N5xH6Ordd98lTmHJyckymUwul4MvhYSE9LY1eLh06VLwrt9///3w4cOVlZUsy3Z1dXGnYGRk1NDQwLLsmTNn8JWamhp8cfv27Rr7B0WNHz++pqamvb1dpVJ1dHTg9Jk+fTraREREsCxbWVlZWVkpk8nKysrQZ3Nzs9oEcciyLPvjjz9u27atvr6eZdmDBw/2Jug+oM5CJBJ9//33O3fuHKA0SU7KGzduMAyjVCoJQXZ3d7Ms+9NPPxGCeYg0ib2Jj49nWTYxMZHcdY8fPw6Ec3BwQMuVK1cqFAqWZZcuXYoezMzMQG/PPfcc2nz//fcqlUqhUJw9exZPwDrq6urMzc3xJCAgAGJeSUnJ6NGjhULh448/XlRUxDAMBkD4DJcmxWIxRVHTpk2DxLtq1Sr05uDgkJOTw7Jseno6ThO86+7ubmpqijZCoRBdffbZZ/gXvAhB8Tt27DAxMaEoyt7e/tKlS0Di3mgSy+Xm5oYrwOeff47nZmZmILyamhobGxuMQSgUFhcXq1QqpVIZFhbG5/PNzMz27NmjUqm6u7tdXFx6U++JRCIej7d3716WZQ8dOsTj8cBXsZVvvfUWBnn06FErKyuBQDB79uympiaWZTdv3ozv0jRtb2/f2NioUCjmzp2Lbp2dnXF2zJo1q3+ZgRpNDlDZFWsdGBg4dOhQrkimVCrFYnFJSUlERATEp4FwfHCFZ6VSOWbMmJCQEJZlN27cWF1dLRaL+Xz+d999l5KSwjDMsmXLQLptbW3A9cmTJ4MtzJs3Lzc3Nzs729/f/7HHHgMF8ni88+fPt7S0gBiUSiW0I3/961+Liopomi4sLNy9ezdN025ubrj79TbUN954g6KotLS07du383g8sVhcXV39t7/9jWVZHx8ff39/ou0oLi5ub28XCAROTk4ODg4lJSUsy3p4eBAECg0NFYlEFRUVf/3rXzs6OkQiUW1t7bvvvgv5sDfrAvbxlVdeMTExKS8v/+ijjyiKkkgkbW1tH3zwgUwms7e3f+aZZ4gMicHs3bv30KFDNE23tbV9+umnCoVCLBZzB6MGOMHJvwzDyGQygioYW1NT06pVq/7973+DDycmJrIs+8QTT5BL06JFi6ysrE6cOHHq1Cm8WF5efuTIEZVKBQFNd+LrAKVJTHjGjBm4fGNllUqlUCgsKSkJCQm5ffs2NQAc3DAAqHBIEiNPT09CcrDcgHedP3+ex+O5uLiYm5srlUqaps+cOUPTtJ+fH0VRHh4e9vb2sbGxcXFxEokED2fMmEFRVFxcnBoSMAxTUVEBxOXxeHV1dUBuIyMjjegC9di4ceMoikpKSgKuy+VyHo+XmZkJMy8wEtoXKyurjz/++MqVK1VVVRUVFS+//DJN0+Cc2I5x48axLHvp0iWpVCoQCHBS1NXVSaVSLcuFd729vVmWzcjI6O7uFggEyA2Vn58PIRnD4C5vWVkZlMM0TTc3N7e3t2OyvRGG2n2P6Oe40NjY2NLSgp94PN7NmzdpmsbqYZC+vr4syz755JPx8fEJCQkJCQnx8fHPPfccn893d3fXqWZxgPoMYMIjR44k6jhAbGzsihUramtrB4KNHiTh6OiITbp69SqeDx48mGXZzs5OqVQKvQhwC6gvFotFIhGeJCUlSaVSDw8PY2NjXHgSExOBQDNmzDh58qSfn19HRweEUjUkAPHgOeEqWtbT2Nh40KBBsFtynyMcYfDgwZBvGYZxdHQ8c+bM2LFjb926tXXr1sLCwpCQkODgYG6sgpmZGU3TLS0tRIS5q4aJvGtiYqL2LsuyCoWio6ODEEZPnRAxnBBb6F0/RP7u2RgUjp/UvO3Q2NLSkqZpW1tbc3Nzkk6uq6ursrLy5s2bur0uPSw2SBaFIBN3afDc0dFRIBDgGpCZmfnNN9/8+OOPkLzBZwiQxdUDHWLkAIVC8Ze//MXU1FShUMTGxqLNv//9b5qmzc3NLSwsoPPACIcOHQpdAogTx3Nqaur06dN9fHwCAwM7Ozt///13gUDQ1dXl5+f31FNPmZmZxcXF1dbWqqWAUPM+uau8wOPxpFIpbnGOjo4QDgmTB/41NDRAp71mzZqxY8empaXNmTMHBGxpaRkcHEyM7BRFdXR0sCxrb2/PMAw2CEPSTpZo09bWxrKsg4MDyBivGBkZ2dra4tKuhcDuQ5ABJ+x5gqutp9rfEGt//PHH8PBwY2NjeEHgUoq/dYds+pZdwe6gaVAqlWCDSqUSdwCovIgh7vDhw9HR0atXr/b39/f19QVBUhQFNSyIkPRDXtcp9+7o6CAfVSgUy5Yti4iIoGl6165d+fn5wM6MjAypVIr7IQ54hUIxaNCg2bNn0zSdnp4uk8mIpf7XX3+lKOrZZ5/18fE5ffp0V1dXW1tbUlKSu7v7woULKYqKjY19cEWfQCBQqVTIJjFnzhyJRALEgmnEyMiou7v7woULaOzt7a1Sqc6dO9fc3GxsbExRlJOTE8XxVaAoKjs7m6bpqVOnDhs2TC6XYwsCAwPRXrtkkZycTNO0r6+vg4MDhF6GYYKCghwcHGiaPnfuXL/cSnBMDxo0CGqze703paWl0TQ9ffp0MzOzzs5OhUKhUCi6u7s7Ojr67qU00PkkN0Bm6NCh48ePf/zxxx0cHEQiEXxH09LSSktLuaT797//Xa0TW1vbp556ys/Pz93d3dLSUqFQtLS03LhxIzc3NyUlpby8nOrhedxf90ZoL3x8fJqamoyNjUeNGrVo0SJc90+fPv3ee+8REev69et79+5dsWLF2rVrr127lpSUZG1t/dlnn40cOVIqlW7evJmbiywhIUGhULzwwgumpqaHDx/G544fPx4cHBwaGtrZ2ZmQkMC1aBMLuBqfxLmmZvcn2g7w6q1bty5dutTd3X379u1RUVFtbW3BwcFRUVE0TUdHR5eVlQmFQoVC0drayufzZ8yYsWPHjvr6+qVLly5btox0jpHs37//vffes7a2/umnn95///2bN2/6+vp+8803XV1d0N9qXEZ4TURHR0dERNjb2+/atWvlypW1tbU+Pj5ffPEFn8//7bffcOvGsLlT4N6Ne/oA9CSqhoYGmqYnTpw4d+7c69evV1VV4a4LxYQa2+Q+xCAPHjwYGRnp5uYWGxu7YcOGwsJClUrl5OTk5OR0+vRp3d6b9GMLIUaLOXPmnDhxoqWlhe0BUqk0KSkpPDzc3t5e7XVjY+M5c+YcOHAANiKN0NHRcerUKRi4+lFVjZG//vrrGj9aWVn5/vvvE+GNiOUmJiZxcXFo09DQAINqS0vL888/zx0bzJulpaXwFIWhBWcWBIFLly6RUwZvBQQEoFvoQmDqxPAUCgWWDu0LCgpYlv3666+59smwsLDOzk7YRWH9g1XAxMSEWAtmzZoFpJfL5dip8+fPsyxbXFzMVZmEhYVhXgT27duXlpZGrKkaLVUY29SpU5FuBsIq/rh06ZK9vT0RCoRCIdrgaIba2dbWFmN76aWXtHyCpmlvb2/u8KCnJRbv27dvQ0uEbr/77juWZfPy8sgOUhTl5+dXUVGB1yEW4W8bG5v+1buq2UL4oaGhDQ0NSUlJurs6Qi83duzYf/3rX+vXrx81apREIiECJ4BlWZFINGLEiJCQkJdfftnDw0MkEonF4rFjx77xxhtfffXV22+/DV0IxF1yNYckybKsRCIZOXLkkiVLvLy8MjIympqaBAJBv3BLMBmVSlVcXHzt2rX8/Py0tLSjR49+/vnn69atgxpd7YInl8sPHz5cUlKiUCgYhiktLT148GBERERycjLX8QgOgw0NDbdu3Tpw4EBKSgq2p62trbW1taioaNeuXeXl5RAxiKZBpVJdvnw5ISGho6ODXJk6OzuTkpLOnTsHyQrUfu3atcTExJKSEupOfrSrV6/GxsZCAm9tbT1//vwnn3zy8ccfkzsSTdNlZWUXLlwQi8VtbW2FhYWrVq365z//yefzU1JSUlNTiefn1atXYUfFUL/++ut169YxDFNZWXn+/PmamhqNIijunBUVFTExMU1NTQqFQiqVpqamfvnll6tXr0byRK53eH5+/tmzZysqKrj31ZycnISEBEQg9PaJmpqa5ORkiURSW1ubnZ19/PhxKGz5fH5LS0tCQsLly5fJRggEgrq6uqSkpPT0dPKhqqqqH3/8sbKysq2trbGxsbS09MyZM19++WVBQQHUGf1Lk3w+f/bs2TweT+d8EifZiy++CAUD5HIuNXJJi3saqQF+0vgieV2hUOAQraurgxpT114+VN88y7U07qld6JczWGO3vRnZexoP+tJtH+fS90W7px7uaQX6/vCua6U7yx/hk7q9T+J+EhER8e2334IgtXjeEMwgCljiqdyX1DtEpoL36cmTJ4ODgy9cuNAvDrEkNIG7iETJ1JsuHuPB3xiGRu0fN7pC7WHPoHgyTW5+A7I+5NbXWw9kMblKVLVRgUsQtkx4rFq+DOKb+p+yMzQNq1Vfci+QOBKsIfpRe0vjFDROX4vGlYg5YO/cGBfuWmlMCAKpgYSkEA2/ro1wAp0yEIVCsWTJkm+//Ra8vo+ucFwj730kwhIKhTKZzNjYODY21t3d/fbt2w8et0p0PPcEahvcl2baH/Y2Eo35LHrroS/JL3o20Dj9vn9U+zB6e0vjEdb3jdDYrcbp97Ym97fvA9QWgpN41KhRO3bswHmjN0lApVKJxeLm5uZ33nkHlkBDjkwDPEKgKz4J1rRlyxYTExOlUqmHex058Ph8/s2bN+fPn4+IZwMY4NECnfAuWOpmz54dFBSkUCj0SZA0TTc1NQUHB+fk5BiqvhvAQJN/0HCsWLFCD0HZPZUTy5cvz8vLEwgE9+S9YQAD/GllV9wkR4wYAWuEPq+RAoHg4MGDx44dg75X11/sedz8L1xciWqA6wuuH2djA00+EE0GBQUNGjRIu/Gjfzkkn8/v7u7euHEjtOp6QM3/KdURSFGL+Ye641Vr0KgNOJrEliBOV2+A6IRz584VFRXpJ4wL+XiMjIy4KX07Ojq0u2I+qjccjnHVwcFh5MiR9vb2pqamCPK4fft2RUXFjRs3Bn4S9P9RmoSiZfTo0foUXEEGJ06c0Hn+Ig6O7t69OygoSC6X4xQQiUTR0dFwf/0zYSemw+fzw8LCXn755QkTJgwePFitjVQqLSoqiouLO3DgQFlZmXYx3lDBTa80ieU2MzOzs7PT5zSg2kXaKF3vN5xCbG1tn3nmGaSiIfDCCy9s2LBBKpX+adAOHrnjxo3bsWMHUh9QFAUnRxL7ilxeXl5eXl5eNE1/9NFHPU8lnJWIYzQQ5F1OfF2oPczNzXGU6kfpCnWrVCrVT0IQkgfAxMQELuaQ61Qq1dChQ5Ez4s9RhA8kNHHixPPnz/v5+SH9PMMwQqEQeUaMjIwkEgliU2QymUwmQ5oSjX7hiIdCflAD4elVdqUoSiQS6d82iFyGeqBJXCAXLFhA/TGBHQS8efPmJSYmPtxSGf0o8gwZMuTIkSMIVUXIOMuyFy5cyMnJaWxsFAgE9vb2I0eOHDdunI2NTWVlZW5urlrSMPQjkUi8vLymTZs2f/78PXv2fPfdd38yCX+g06TeOCQXcGbr+roChLOzs0NeRoFAUFNTk5GRMX/+fDQIDg5+//33/wTiK5jkBx984OTkhDszn8/Py8sLDw9PSUlRa2xjY7Nw4UKSEEytlJWvr+/+/fuR/ZGiKJIvwgD6kF0BiLrS54nOMIxYLEawqa4FV5qmZ8yYYW5uDrZcXFy8Y8cODEOlUjk7O+Pedd/iK0n7S5K1PcjKcLu6pxdVKpWJicnzzz9PwkSam5vnz5+fkpIi+CPweLyGhobvvvtu27Zt1B8d0zF4Ozs7FxcXhEreR/nHflwQbm93rV/Ujx99mDQJztDe3t6XHPX9ewpQFPXkk0/q2tkdOiRwRUz2ypUrFy9ebGtrIzYYkkNZ+5ZzgXAVCIfkgooII+1VcXrrCqUNuF1Rf6xmo51JUhTl7u6ONLMgy7i4uPLyciQo4wKJaeq58hgSaQMCpnuAlhNQ44KQIhH3tMIk8IrEwWt8i9Q46rkL+lET6ER2bW1tbW5utra21ptvHb4SEhLyww8/6M6hBNxjyJAh06ZNI8qe1NRUqVSanZ2NhxRFPf300xKJBGlLexNfe9bqIbnVjI2Nhw0bZm1tTdM0TH/d3d1UL5Vne36CW83a1NR02LBhVlZWDMM0NDRcv34d7k19jCnFGMhH6+rqSALLntPpLeKMVN3iRmYhmFb7oUAsomZmZg4ODlZWVjwer6urq6ampqamBoKYFlt0z6I96NDGxsbV1VUkEhUUFDQ2NnIXkPvRxx57bOjQoebm5li68vJyxBjpw/rd73kGcJYgIwZRS+oagIKdnZ3Ozs66Y5U4m5csWYJcNbCYDx06lKbpDz74AA+BcFOnTqW0ZjnYs2dPZmZmcnIyyu+Q4jM7duwoLy8nyRbkcnlRUdHGjRuRaIfrFIVjSCAQxMTEZGRkXLp0KSsr6+mnn8ZzHx+fvXv3wo6Prrq7u/Py8tavX4+sP9oDA/Dr9OnTualozpw5Q91JYNMX1fSSJUuys7OTk5NROoFsU3l5+eXLl9PT01NSUjIzM1H8g7tleJ3H4z3//PMxMTE3b97kZp9oaWlJSUmJiooCD1ebCPrx8vLKzMxMSUnJyMiIi4uDFcDe3n779u11dXXoB0mDyOv4QyQSLVu2LCkpqbm5mZvm4ubNm3v27PHy8qJ0kLxC5/VCgDfbt2/vWXtHp4Bt++GHH/qIN/d3mcQpRsqWkPyLnp6ekNBAq99++21vmwekyczMJPuNkh6RkZFdXV14grSFXESsrq5++umnuVMj8hhSbAHeffddiqI2bNhASJF0RQLty8rKpkyZQmmttoJBDh8+HDdAKAjkcjny9OEaqUUCQs9r1qwhA+PulFpWl4sXL3JpEov2xBNPJCcnkzaKO0DSiCK51vLly6ke5SUpikKRLHIYmZqajhgxAhUWyNH5wgsvkM9hwB4eHhkZGWhDRFaCWkgs9t577/X9CjCwaPKVV17RM01i7ZRKJUqs9DtZYuGsra2RjRcVbFavXk3dyQqHYjigybKyst7KBJC0rqj6pFKpNm3atHz5cmCeGr5iRuhTLpejngxBX5KJFPWYVSpVZGRkZGQkGUZvXbW3t4OTaxEo8BMyWQKJMeDXX39dTePVGw68//77faHJy5cvU3/MzTdr1izky8OB0jM5E+xe+Bsl0MlI0M+YMWPkcjmm3Nzc7ODgkJ6ejuT0crkc01m0aBGGild8fX2xs+SLnZ2d9fX1yC6Nj0IIioqKovq1fpTOaRIzHD16tJ4JkpTfqqmpQf1G2LL7V+O6aNEiIpPLZLLHH3+cfGj9+vVc8ZV75+zJbE+dOkUop6SkpL29HZytpKRkx44dGzZs2LZt29WrVyE6kqO6paUFwjk6wV6imhW6KiwslEql6KqoqGj79u0bNmz4/vvvr127RroiZecfe+wxLXI+ngcEBOAVki6QZdlz587NnTuXnHo9eSaGt2DBgvj4+BMnTqSnp3P1JXl5eadOnTp9+vSpU6fOnDmzadMmipPwxdvbmxTexUSys7PfeuutgIAAf3//5cuXX758meSzxVzWrFnDlXgpinJ1dZXJZKD/mpoapIPCMUoABc6QjdbJyQmF9FA4sLa2dsWKFa6urtbW1sOHD3/55ZdREg+8mmVZCBr9JcTqo9Yd1peLUvokS5Zly8vLn3zySYqT17S/BNdDhw6RoxQlekjydU9PTzidAVG++uorjacpGv/888+EtskfH330EdfHRSAQREREyGQy5N1Et0ePHlXDv6SkJLWuFArF6tWrYa0lxtuoqChybKGrnTt3akcs/AQRFGkBIcQCp3NzcyMjIx0dHbmNNRqoZ86ciYHhu+Hh4Rp1pPDRu3LlCpcgo6Oj1c5Wmqa/+eYboBZGpVAoPD09ubrfESNGYI9wdHZ1daG3kydPLl682NfXd+rUqUjujmGfOHEC28owTFVVFQrAcMHJyamiogK9Qd7uR7WFPmgSiLh582b9i6+ELJuaml599dWe+PEgq2ZlZYUiqtiYtWvXEi4BhIDDLeF+qIqjEdEPHz5MCAlHb2RkJHUnHS6x+1EU9eabb5KWIAmkDybZw1D9ktvVa6+9ptYVxh8VFYWWYFlSqdTZ2Vm7BIvRohY1915HKLOxsfHTTz8dMmRIzwMIOWbh28SlyXfeeYfP56NKJJkF3g0PD+cSZGpqKsQT9IOs0Gh/9uxZkCX6RAp5QpPDhw8HTRLFL8uyb731lsbZIY01JqVSqXD3EYvFxI6CfYRujzSbMGFCf7FKfdAkBjp58mT980muvodl2V9//TUgIODBg0WA1qGhoQT75XL52LFjQYokJd+GDRu44qtGCQf/Hjx4EC0x1NTUVOpONVLuVoFFAP8ITq9fv557ESI0ia5Onz6tsSs8gW6JoPLbb79916sRfvX394fQCOaDkZNLXVVVFaqbqHWFyc6dO5c7fo0fxRpmZ2cTvQDDMAiL19inl5cXOVxQxwXlrvErlyaxLLt37wbeY92wa9y9gNSKyggSiYTrFCEUCoVC4eDBgyHfoue//e1v/XWr1EdNWFRcSEtLy8vL65f0qvdxKEDMmDVrFo63BxQziKsAtpmm6StXriD5PzmJIQIhSRf+ffbZZ+/KpWEcO3DgANWjKhspE7Jr1y7u5k2aNInqPTnl/v37ufVIuOMnqEkq8Pn6+lJ38xBG7cpLly5NmTIlLCwMalKhUIhzCiTk5OR05MiRDz744P7yocFG7+bmhgqZ2MH8/PyLFy/CkVgNu3g8Xk5OTkZGBrBLqVQaGxsHBARo5Pl8Pl8ul2/evBlmW1A7KQ1iZmbGVXdFR0dDqc51isB519raeuXKFdItLke6cJ8U6I4qFArF3r17IcFSegdwBqVSCYR+kDHAbm5hYREYGEhY7i+//ELTNIosEGopLCzMzc1FXSqKoubMmRMVFQWLv3aZ4vfff9c4SFwRUT6VfMvZ2VksFqM4F5fqEOafl5enMRMHnqSmpiJJCk4WNzc3NZfx3sgSB83hw4cPHz48fvz4xYsXL168GNXp8BPqUtfV1UVHR9+rYR2k9cQTT2DLsA7Jyck4DnoOD+3PnTvn5+dHko9orNyMYPfi4uLi4mK1ZcGp5O7uTir2MQwzZcoUOzs7uED1xAFSJhDWTupe8tk+fJrEWA8ePPjhhx9aWFjoOVkWBsDn8zMyMrKysh6QVyOGcPr06TY2NsASlmWXLVsWGhqqtnkMwwwZMoSgqZub24QJE5KTk7XgKJYFrogaQ5woiqqvr799+/bQoUPx0Nzc3MzMDOUi1bqSy+VdXV1aGHJNTU1LSwsKS1MUZWlpKZFI+uIxj/HDNy0rKysrK+uzzz6D6YXsLMMwX3zxxenTp+vq6u7DBX/48OHcRUCZEy3AbUDTNIhE7aP4t6qqCvjA3QUM28nJiWRwJ5XttR9PmOmgQYMQ2tLvwQa68t8DXtbX1+/Zs0c/CXI0ovsXX3zRl/rBd50LRVEoiUUS3Ts6Oo4aNcrV1dWNA+7u7ubm5qQNTdN9EV/vCnK5nOs/DLmxN+On9m/J5XKZTMbt6p5ETVLnUyAQ1NfXr1mzZsGCBbiJQTK0tLTk2uLvCdTSF6DkjpYdgbMbkVygZ9ZIHhrRD2+hIDzX/HNXzYJQKOTxeEKhUEeXMh0msAJSfvXVV6+++irBVL0xSYFAkJWVFRcX1/NCch+Cq7m5ObcokBaEI1UlsMEhISFRUVEymexBTlM+n891gSClJu+jQ7WyudCm3MfOYnNFItGJEyc2bdr0ySefkCH5+/vDVnF/Z5+aVK8FiFobL5KCYhp7065fIVfuW7dudXZ2aidO5HmB0VUXEXk6pEkSXrh58+aNGzfqLYcdgXXr1j14CnbIvdOmTRsyZAjuYBRF5eXlXb9+veetA/jq5+cH722GYdzc3J566inoKu5bWDA1NbW0tCT/tra2auEhWpCPZVmSAgLQ0tKC6+79kRCiJQ8dOrRu3Tpcd2mahhvqfUy2sbGR+6+trW1vhzgOPgcHB+7Iua/3JboKL6JeILl5RkRE/PLLL7hva19MHREkpes6zRDTt2zZsnjx4jFjxkBjph8muW/fvvj4+H4JZmdZdt68edSdwgcURb3++usZGRm9td+4cSM0kECO+fPnw8TcW+c0TRsbG2s02OBEcHNzs7CwIJJSZWVld3c3dJVqXQmFQiMjo94qutE0jeKfBOEqKiqoB4h1IE7hbW1tEomEW03snvAVLa9fv050sBRFeXp69pZdCc99fHy4HyosLKTupV4g3rpx4wYRvCmKcnFxIS5H1EMC3VIIpt3Z2RkeHq4fiwjIpqamZs2aNQ9uhiGCa1BQEHUnDKqsrOzq1at8TYDrGSo0E/t1SEiIWCwmPFbjVcfLy0ujwQY6lblz53JLwaWnp/e8/KABj8cDKvfsCriO+y3UuRRFpaWlUXcrOKnF3xq/WlhYDB48WI1faakk2bNDvJubmwu5Eb9OmTLFysqq55UHRGhpaRkYGEhxig6jpnXfdxwfLS4urq2tJcuFyFiNQZ59jPkc6DRJWOWlS5c++eQTGEh0fQrQNP3mm2/W19f3Rct/V8GVoqhp06bZ29sTHX18fDxiI1U9AB4e2dnZxcXFeJeIr73ZSPEwPDwcdEu8gmDLkcvlDg4Oy5YtA5GDBfWWhwqwatUqcnEgXYlEIoVC4e7uHhYWhmMLymQ4GPS2SqQkI74OR0XifIN/VSrViy++iMHjrdzcXLUjA1olgsdOTk7kzCIVJlEXOTk5mbpTYc7a2vrNN99kGIbrW4e5MAwTHh4ONTjWITU1taCg4J5OYYyhra0tMTGR4GpAQMBzzz2nUCigyNF4Bulc1tN1nWZykvH5/N9++02n3nZwedMSJ3UfyhWKovbu3QvPFWAAeGZv/ePO/MUXX2Cm8Fz5+uuvyU9qfjzEGRBRZmpgYmKCyAwSxEicbAnec33r0BWCv9TA0tISsRHEiefkyZPaF0okEh06dGj58uU9E7oSeOmll+D1To4kGNO5I/T09OQGCRQXF3N9cblLHRgYSByhlEple3v7xIkTiWqKMFgfHx947RM3YFwuCME4OzsDGfBrbGysxpmiMU5MqLuUSmVTU9Ps2bPvitKPUqxWbycuTdN2dnYVFRV9iXUGCsrvgPaq6QCsfnJyslgsvmtiiL6vlJmZWXV1NQmkqq6uhvZce3V0f39/cBgQCRcLe9Ik6ARucQEBAebm5hKJxMbGZt68eYj/IsjHMAwSzHN90Lk0SbqKiYnx9fVFV3Z2dqGhoYWFhaQrpVIpk8meeOIJSmuQ56hRo3Bzu3Hjxp49e5YvXz516tSxY8c+/vjjEydOfO2113799VeSIwMeZ0hNRPrEKg0ePLi2tpb467Is+8svv/j7+48aNWrSpEkwSxJPtwMHDsB/Dfy5oaFh0aJFRO3M5/MXLlxYX1+PuYDwYmJiyOv3RJPk4bZt27jRWEqlcufOnRCegUsSiWTIkCHe3t6rVq366aefbG1tqf5LBPdwaJJM3sPDo6GhoTduCcwjMUFqAELVSJzYgNLSUuji+kW6wIBDQkIIb2EYBk5wd2XCEokEocagAYZh/P39qTsJZtRoUiaTcWOOq6urS0tL4exOZg3c+vDDD7mz60mTcAojC3jr1q3S0lKEBZKucLisXLlSy0KBpa9YsUIul8P8yI2EJA7oan0mJyebmJio6Twx33/961/Ed58MD2T8zjvvUHfcd/l8vrm5eXZ2NtcZmGXZ/Pz8I0eO/PTTTwg2wnzRW05OjoWFhZrs0HeahI5AIpEgMwaJriRh0wUFBXl5eWVlZU1NTWTW8ON7lGK1tGO5j4/PrVu3uEEGBMicr1279vPPP3/11VeffvrpN998c/LkyaqqKm54LjYMf2AF8/Pzka2wf4Ozdu/erVQqu7u7gUAwiPfFafvbb79F7AVEu88//5zixI4RmkSEcWRkJGJnuTF+MpmMm21g48aNarPj0iS6qq+vX716NWiG2xXGT2iJhGJrn/vx48fJgmMiOD5wQkmlUgQ3oc2RI0fMzc17cg+Q6OjRo0lUJCKV0YNcLkduBK4XhJ2d3blz50hOALW4R7yLv+Pj49VYFomfxHyx+MePH9eCGBBETU1NsSk4NTBZtcMI68CyLEimv2x7D5Mmybq4uLgg1kENamtrt27d6uvr2zPKydTUNDg4OCYmhsR9c4/q6Oho+Iv179FlZWXV2tpKPtTR0YGgJO1CC8aABLDc5B0weGAj1WRXV1fXyZMnk+QUapCfnw99oMbcM1yalMlkKJpQWVmpsavs7GxyH75rLrwxY8Z8//33tbW1bO+gVCovXrwIJ6feGC8ezpgxQ+OoENNM8Jsk41i7du3Nmzd7+25paWlERASXN2qUugnpascN0kNoaCicAXr7rkwmy8zMDAsL0138JH3s2LHCwsJ169bpkyyho5s/f/68efNcXV3lcnlpaenFixfPnj1L3Di5SMNNCuri4hIUFOTt7W1jY9Pd3V1UVHTy5EmUSe/HGBQo3K2srAICAjBaHo/X1NREEvDcFSQSycyZM2HMwEQSEhI6OjqguD948ODixYvhR0HT9IQJE7KysgYPHjx37twpU6aMGDFCLBZ3dHQUFxcnJiYmJCR0d3f3tCJivvHx8aiHLRQKZTKZh4dHSUmJhYXFvHnzJk+ePHz4cIFA0NbWVlRUlJiYmJiYSBzK+zgRKysrb29vT09PFxcXa2trExMTlUrV3t5eU1NTWFiYnp6OaAkoaXvTBuOLVlZWCxYsmDRpkq2tLcMwjY2N169fP3r0aH5+vlr+OHQFv38/Pz9XV1eYW5qamq5du3b58uXz5893dnZya2ByN87MzGzatGnQ6PL5/NraWhiQtFcWou5kzfT09Jw4ceKoUaNsbGzg7t/e3n7z5s3i4uK8vDxiCO0vhwF0JRKJtmzZIhAI9M0n7+pmQVKAalRD93bU9W/OorseaQ8uKajxySeffFL7oatFE8Plk93d3S4uLn3JSdfHbepLY6Jf6cvE+77Od22vi03v4yD71xyixicF1MMAkv+XuuMWS7Lc9uZ2Q2IUcZvHOQoRS0uV0gdfLLXVv6cPqW2w9neJkxD3OL9rGVYtNmG1KMr76ArbhEUgbISU08ITopzry6hI1mNuJxozo5M4VXyaNCDuxHf9qFogWx8FKC6OcTeCO/37SOV+T/BwaFINR++p8rauV0TjQfCAE+z759Smdt8z7TnyfuzqQdbznlwdH+TTDzJmfeKYBiZMGcAABhhIYKBJAxhgYIHAsAQPBbhpiB9QUaGW0diwtgaaNMD9ADIpEjPsg+jxxGIx6QrJ1w3waNMkV91nAP1wSIqiqqurKysrkeeKx+Nx83HcK9y4caOiokIulwsEAnjJGBb5UQSiUqajo6Plcvlbb72F1AkG0M/qI9sqMQnASbVfuoLjq2GRHy18gIPKli1bqqureeXl5ba2ttpLRxig31kl3Djh8YxwhP7qykCQjyiHdHJysrKyKi8v52VlZRkbG0+YMEH/6R4NO9FfQev6iX83gE75pK+vL/J08lJTU2/cuDFnzhyUpDVsqj65JYGB05UB9AxIBeTk5DRjxoyioqL8/Hxea2vriRMnhg0b9tJLL8EB1yDBGsAAeiNIZGlZtmyZqalpTEyMTCbj83i88vLyoUOHoiAZKo3pzaXbAAb43xRWwfxg9Vi5cuWsWbNOnjx57NgxHo8ngEvh1q1bzczMXnnlFRsbm/3795NUmQbKNIABdHRnoSjKwcHhtddemzZtWlJS0s6dO8E2/5PCpKurKyMjw8bGZtasWX5+fmKxuLOzs6ur6yFmuTSAAf6sIJFInJ2dn3nmmZUrV44aNerkyZNbt25FMkSWZf+boBZ615kzZz777LPOzs5SqbSurq6hoUEulxu4pQEM0F8gFottbGzs7OxEIlFRUdHRo0eRmZZrZP5veDVY6qBBg3x8fCZMmODq6mphYSEUCg1mEgMYoF+kVoqilEplQ0NDaWlpenp6dna2XC7nxgNTFPX/NXQrUCP1KTwAAAAASUVORK5CYII=" alt="Download on the App Store"></a>
+      <a href="there4u-early-access.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATAAAABYCAIAAAD9STwnAAA4EklEQVR42u1dd3xWxdKe3VPekh4ChAQCIgKS0HsEAgSpSrn0lgAKClIUP72KXERAELCgYEHpRRG5JIKUCxh6jyCETiiBFAKpJHnbOWf3+2OSw2uaEQKKvvPjp8nJ2VP27LMzO/PMLIECIYQAAOfczc2tZcuWzZo1q1Wrlo+PjyiK4BKXuKQ8RFGUjIyM+Pj42NjYY8eOWSwWhB7nPB+G+D9KKWOMENKlS5devXrVrFkzLy8vNTU1PT3dbrc7N3CJS1xyH4IgkmW5QoUKVapUMZvNV65ciYqK2rVrF+dchxjR0ejj4zN+/Pj27dsnJiZu37798OHDKSkpdrvd1ZUucUk5iizLgYGBrVu37tq1a0BAwO7duxctWpSdna0rRQIAvr6+U6dODQkJ+emnn1avXp2RkeFsx7rEJS4pL9GNTT8/v4iIiG7dup08eXLOnDlZWVn5xqooitOnT9+5c+eQIUPwVEEQXFB0iUsenvkqCAL+HBERsXPnzv/85z+iKFJKAQCef/75mJiYCRMmID5dUHSJSx6BUEoRga+99trPP//cvXt3AKDe3t69evVKSEhYuXIlrixd/huXuOQRCGMM3TnLly9PTEzs3bu3p6cnbdWqVVBQ0JYtW+7evUspdaHRJS55lOtJSmlWVta2bdtq1KjRokUL2rx587y8vGPHjhFCGGOuPnKJSx4xJgkhR48etVqtzZs3F5944omUlJSUlBSXbnSJS/4UwxUAUlJSbt26VbNmTerp6Zmdna0oiqtrXOKSP0tsNlt2dranpyellGqaBq6Qo0tc8qeKpmmUUhdPtUziPFs9Rra9/tiu9cjjIuUGSEIJEAIYNPkbfX4MFqmqqh/BkC6aFc6nlbRkL936KDbOhFfLJ1L9wbYlPaQoioyxQn47/bELHdfv6/LzPX6AJIQQQWCqClAw+ARKOPwNQpqCIGiaxhijlFasWJFSmpmZabPZoIAArPdAKQP3D7mvMRSM5+Mt/mgfIpYQiu7u7h4eHqqqpqen45yCb6SjUX8w55+doe7KK3gMNSQRqKqaAysZa1fSsu9azyQ7HCpQAQQgKucEKFDOOYfH7LuKoqiqar169V588cXOnTvXrFlTFMWbN2/u3bt36dKlBw8e1BPWRFFcsmRJYGAgLgP0JYEoiv/+97/v3LmzdOnSe/k1BUOcMSaK4scff7x161bECaKiTp06n3/++bVr18aMGdO0adMPPvgAVWWhtoIgvP/++3v27Ck0NSCWevToMWrUqJYtW1auXNnhcFy+fHnr1q2LFy9OSEjQMWkymZYuXern57dly5ZPPvnE+Rlatmw5e/bsI0eOvPPOOy5MPlLZuHHjrFmz7tupQ6hAAar361bt5ltutjd9MmdWPPSKV2RjSRAIABVEiRJBII+dxwizQF9++eXc3Fwc4jdu3IiPj7fb7fjrwoULTSYTwk+WZYwbFZVu3bo9/fTTvGR55ZVX9NuhndmyZUvO+dWrVwGge/fupbQdOnSo3goKaI9ms3nlypV4Ql5e3sWLFxMSEvDXO3fu9OvXT7+dp6dnTk4O51xRlCZNmuCl8Go9e/bknMfExJRijbukfGXOnDk//PDDgwGSUACoWKNWwLU0KSNGTJ8IOa8R2xQ3x7t+O1706lJbzh/clOIK8/GxVAFg3LhxOI4XLFhQv359s9ksy3K1atXGjh2bl5cXFxfn5eWFnSZJ0sWLF1VV7d27d8OGDZs0adKoUaOGDRs2bdrUx8fHZDI1adKkadOmDRo0mDZtmqqq69evb9CgAR708/PTOx+HftOmTVVVPXHiBAB4e3vrbRcsWKCq6pIlS7BtkyZNfH19nT+cIAiiKP73v//lnKekpLz00ktVqlQRRdFkMjVq1GjJkiWcc1VVn3/+eTzfw8MjMTERreKDBw+KoqgDsnv37qqqbt682QXIxwqQggAAVSInuWdy+apDSP+JZr9BMt6hGZMF7XWvvHf9vh3i0yAQzWIqCZSCCEDgL41MHH/BwcE2m83hcIwYMaLoOc2aNatYsaJ+siRJly9f5pw/8cQTpV88IiKCc/7ll1+WcutmzZpxzn/99ddCf3399dc55/ixSppExo4di8q8fv36Rc+ZMmUK5zwpKalSpUoIyLS0tIyMjAsXLnDOJ02aBAAGgwEAevTowTnfsmWLC5CPGJDl0NdCxYoOwhUiaJbO3B4OgoULIssWsx05dwc8AXtG+n70nEeQL1E0zgQiin/xz4sT07hx4wwGw/Lly1esWCHLMlqDoihKkmQwGGJjY+/cuXMvX6ZAcDQXndoopXgRPEGSJEop/rf0eZAQoreVZRnNY/2I3hb9RrIsjx8/HgDeeuutuLg4g8FACgRV3+zZs3fv3h0QEDB8+HDdgexwOKZMmWKz2d59991atWq5KCJ/sj548EtwwjklnDgIp9TWCexdgNhBdFAiaXdzMyVL1uSG0r4XfP6vg+xtUFVVowAC+cuiUdM0SZLCw8MBYOXKlUicQLtOVVVFUfQqCqqqOodD0E1iMpnc3NzMZrObm5vRaNSDByjoHUE/qvOREvu2yJnFtkW/S+3atevVq5ecnPzjjz8i0vTVpqZpiMxly5Zxzjt16oSX0jStYsWKO3fuXLBggY+Pz0cffYTUShdL5DH2suYPCi4AUTROib0zZZJm2gZEBVEkGnFkWDMqMsP8NuZhwcaPjuWt+0VVNEopBa4CBw5/Nf+rn59fQECAzWa7efMmxjwAwMvLa9q0aSaTSYeBJEmJiYkzZszQG/7vf//TXaySJG3atGnUqFHOkYaHqtUDAwMB4PLly3l5eUVdo4jM+Ph4Qki1atX00AhjzMPDY9asWf379+/Zs2dERMTKlStdlc0eY0AiKCmnjBNCADhwRztKCTNFcWYkYCCiBRTBnpFrr+tmXt69wvDGto/25v7vAgMQJZFrTON/rehzoWg+/uDm5jZ58uRCZ6anp8+ZM0cPSzifD4+cH6OHRn731QodkWU5Ly9v8uTJ0dHRH3zwQVRUlNVqdWHjcQZkgabknACxc06ptT3hEjH9yCEPuBmIhYgCWDUrSbd38DE/M8A3Ot760T7LiUQAAIECY38dPZmenp6SklK7du1q1aolJSXhEE9PT+/QoQOuGzVNe/LJJz///POkpCRVVfXAQ5cuXS5cuCAIAkIUDdqHrR51mCUnJ3POa9WqZTabkb3gDD80RGvXrs05T0xMxEw8XZ8TQjZt2rRmzZrhw4e/9957GzZscGHjcQck5BeV5CIAcMKIrQ3RRO62kRCFcwMQFQSVMiPJUXKoYhtUw9j9Ce+Vp62f7LMmZBMAEAWiaYSD9ud1B+dcEARFUXbv3l27du1Ro0YdOnRIEARKqd1u37Nnj35mtWrVBEE4d+4cEgNw6NtsNqvV+psym48kqo74v3jx4vnz5+vVq9ezZ89169YZDAaHw6F7ldBkjYyMJITs2rVLP6i/OKX07bff7tq169ixY5FpoE80LnmcnDr6OpIAJUAJCAQEAMIJ0xytuOV5zhkABy4DEA5UE4AQombbcgSbZWIjt70v+b8RbvA1EVWjQEASgf6ZHgUco4sWLXI4HJGRkSNGjFAUReey4TnBwcEzZ84khKxdu9a5bVG99MisVpwyFi5cCADz589v0KCBzmFA542maVOnTg0PD09JSVm9ejUU4akKgpCUlPTWW28ZDIaXXnrJhY3HFpCcF1q2cM45Jxw4EDuxtQFbHyAEiBUAOFXwplyklBElIy+tspYxr637z2N9hzYHkRJFlYjwJ2ISvThnzpx58803RVFcvnz5ggULgoODjUYjpTQwMHD06NE7duyoWrXqd999t3XrVvSOMMY0TWvQoEHDhg0bN26MxIDGjRv7+PgUWlXiyaXPCIifYo+X1FbTNEEQvvnmm40bN1atWvV///vfmDFjAgICnIkBM2fOZIy98sorqampUOCw1W+EV1i+fPnOnTvd3NyKfQaXPF4mq7P1yoERAOBEAWuowERm2gwUXQUMgAAQApzJlDiIlpeTXk80reziNaq+8uGhvG0XAIAIIuEaMI4NHjEmRVH89NNPNU2bO3fupEmTJk2alJCQ4HA4goKCMJa4evXql19+GQpKMHh4eAiCEB0dXehSAwcOXL9+va5aZVkWBMFsNpf2SURREAQPD49Cx41GoyAIJpOplMcGgOHDh+fm5kZERCxevNhqtSYmJhqNxmrVquEyeNy4cVFRUZIkKYpCCPHy8sKJxlmZT5w48ZdffjGbzaU/p0seK0ACAcKBSwAMiMatzQhwbt4KJBe4GYiVcMIIzfcESRQsmoXkqm38pNCBlTdezftwt+VkogZARBG4RjTCHy0q0VWzaNGimJiY0aNHd+7c+YknnhBFMTU19ciRIytXrvzpp5+c/Zk7d+4MDAx0drci/zspKcl5rCckJMTExBw7dqwUazYrK+vnn3+Oj4/XF3545qVLl2JiYs6ePVtSW5waLBZLZGTkhg0bRowY0aJFi5o1a9pstlOnTm3fvv3rr7++evWqIAjobVJV9ccff/T29sYdJvRnvnDhwquvvjpo0KDDhw+DK5fy0QrZuHHjuXPnpk6dej/uB0EATQt4Y+add6ZqGSoXBWd/a/7KkgMABwZEE4n5OHeL5sRCuAmoHbgE+VFI3NWASg6wGzTJw+CWqQmrLyifHMi7nk4AuEC1P8MNq4cQRVH09fWllGZnZ2NIAF2p9z1Yy9LbJTmHSm+L3lTUlm5ubp6enph+hUcwheV3l6OuNMhHL3PmzKlVq1Y5a8h7A6XQDwS4oIClOSgm4v0tEA2YDERz5gQQrtiNAmWUZVizRVGcWN+9d+0KXx3L/eKYJdtKCCUCYZqGqhceCZsA05EwgHH79m19vOpRdedBXIoZWQgtv5spqicoF9J+ZWmLJwiCgNkeeXl5+uSCZKPSb6SvogHAVaT3sXPqkHs+VmBcj+8XfEXKCNEIZZRqIuUCgMatITxrCOcGoAoAByAAHIACUEYEwoAD1ySRcFAy87J8ac77Hdz3vFBpWEtZJEzTqCASQSAU6KPiduluD50X6uwIcT6tWCmKlrLo1Qdpq08lesEBtKKLdQgVeyP9uAuNj6eXtaxDmwJQEFSwhEDGYGAGIAqAUABLHd5AOOeEE0EAlVkzs9LrGq0renhsH+Xd5WmqaVTVKBUo5Y+YpO68nHtc5HF8Zhcgy89Y1f+hkuQc+L2aFIwzzjkBDtQO9rqQ/gJovkDzgBsgnwtQROlRTRAJsYIl+25m2wrKpj5e3/f3alKFqJqigSRRSopr5RKXuABZCJ3ACDABOAFOgFOCuOGcMEq5RIiDW2vyjP7cUQlAA4KALBr1IoxQVSRMJMxiybNYcv9VS9sZ4fvZczWqe9kVyrgkCpS4MOkSFyDLtgDjjPHCy04CwEUQbGB9GjIigJkBOHABCCtmjcoJ4ZwAI0SkoqjkWrJFMm1Y7tFV7v8ZF+DjZVA1jRAQhEeaL4QZhuJvxbWHn0v+dEDyAmO1UOlHDoSgvao7BtGmdfpZAKKAPZCnD+FKRaA2YCYnF5HztTgBgYDIOJeI8EnmgXFxB/3MSTMm3Dn2vemF/hWpYNQ0TgUQBPqwLVjM9EXSjPpb0TQNGaF/Ywqo8wT0kGafojNdUSll7sM8cl0evx4uB0xzSjgAR2Y5AyCEiQQId1pPUk4wHlngiKWEaJxRAAUsT4E2FPy+A+k24TITbMAl4hQNoZwAcE1ksiZ/nLFvXMoRJgNXBEeWtZa/dcks9xf7+sxe7L55dyaAahAEjYPKeLnTezAmif5VLy+vunXr1qlTJyAgADncqamp8fHxZ8+eTU9Ph98GA/8eghPr78YwH/wuZefrFRsKfgQP+VcHZIFWI8ApIpBwUkyUkHPOGECB9uAiEA24CMQB1iCeOoxUXg5yOmieQO0AGnLrOFGByBpQWSVfpu0ZdeuIClTgQIlGBWAOwu25rRrbN33lGbXbf+7nlqNxOQBMFgWVQYG1zB98lOgbLnTv3n3IkCEdOnQICAgoeubt27f37du3du3aTZs2If/usR4chcRkMo0bN87d3R0JPWvWrMF05/L14r788suVK1culGLqLOnp6efOnTtx4kR2djY4kTfwSapXrz5ixAgMpebm5i5atEiv8PBPAeS9z8FJPnFcL7PrBEYc2vnoyDdzCXAGjAA4wFaF3xoJ/t+BfKeA7ArAKeWiRpmbCh9lHBiVdFijkiBohDD8O6UAhDpyCSV3+4Tf7d6m4qofDXO/unvlpg2ACpRqTH1AQOpBvGeffXb69OmhoaF4HM1UZ/aMKIqVKlXq169fv379Dh06NGXKlL179/6d1KMsyzNmzNAJrsePH0d+Xzly0Dnnb731VvXq1X/3zBs3bqxbt27BggUpKSl6RVlN02rWrDl9+nQ8x2azLV261G63P0alZculpg5wDoRTygnlABoHztGtSjghnORXMWcAXMAjwIBoACoHBsAYqDJwjeRWheSBxF6FgMZB4CAInGpU8dD4l3diXko+pBBKqEo4g/yrIt6ZBAoRucPCDDxldETmoU3u0ydV8nSTNUYfsKIWskklSfr000937NgRGhqqqqrNZlNVVRRFo9FoKhCj0SiKoqZpdrtdUZTQ0NCYmJhp06aZzea/zS7xnPO0tDRVVa1Wq6qqerJl+UpGRoaqqtiNdrvdVpwoihIUFPTmm28eP368Z8+eWJMamyuKon+jtLS0xy4GW36rXg7A8sOOcC8sSe6pRyBOKpMAJ8BwWSnl09AFO7cEQuIQUnUdla9TIIooeCr8q9Q9g1NiFUqpwAh3jnEQAA4EOOGUawKhnIKaaatktr37jnvfnt4jXs35Jc5BKSni6f0Di0ZfX9/169eHh4frewoYjUYAuHjx4okTJxISEnJzc93c3IKCgho2bBgSEoILGxys7733Xmpq6uLFix9BWZ1H6dTBnOyH6tTBZUIpt1AUhXMeGBgYHR09aNCg9evXS5KEpQ8QnP9cp04++w132UE3BudYFpkXQgK6eBgDzvOVKKpXPJWLQFSwVYaEwTRotWq65WODhWkHByfGKoJMBQ1TtvKvQ35jUeENCaOSwJgGampuSB3bhiW+z/RQUtJtlBJ08f5RS9Xd3X3Tpk3PPPOMw+HAwo0AsHHjxkWLFh0+fBjTkXWRZblFixZjx44dMmQIlmxcsWLF2rVrXVzt+xA0QT/77LPdu3fLsoxIQ45uUFBQnz59QkND0X8jCMKyZcvi4uIuXLjwd5jyyuEajHAGwPk9Xw7Xl5QFGhJ9sDguGSPojs3nwOIylApMYSABUcS8SkpihHfQsq+ylg1IvKQSd4FaCdPy/bgECKY/O+0QRwhSzjHWwmVJdGTxGjVze3elX6wBQSCqxv/oPK2q6uLFixGNGO24devWyy+//OOPP+rnOGceK4py4MCBAwcOrF27dunSpTExMSNHjgTXfjX3ax4TQg4ePFg0xRQAPvzww//7v/+bN28e8v7d3NxmzJjRv39/FyD1RSSGNAp8Ofm5V+TeGpUXqDZGCKNACpmvAJxolApMER2Cw8B9bxm/XJE6oNFtex0B7DZRoyBov9GK/LcBx/xftILrEc5FAMYpRlsogPpH0RgZGTlkyBAdjVeuXOnevfulS5fQZiuWYo4Q3bp1a8uWLdPS0vTdeFwAuz9xc3NDC9bZWY29+uGHH1aqVOmNN95AD+Lzzz//1FNPXb58+XGvs14uT1+ANlKQ3FiA0AJ3K4f8rT1wcFLOCbB8EBfkZ3HggmCT7CbR5+7dr76fO2BvbO73tenFQGogHLR8pyzeIX+nEPJbNBagm4OiKYYKWvJVQ/R2jRCR8z+w2sH4oa+v7+zZs/XSbJmZmX369Ll06ZIkSToHoFhDC42oGzduYNZvGdGISyaU+1iblVfz8loWOl/wQa6Js14hUVUVF/Pz5s3LyMhAuBoMhhYtWkCZNz7AJ8TyZX8pl1v5ADJfZSE1557Nmo9L0AA04CqARgAByDhBJ5DGgYHINQIgag6HkfplpC5dM6f/2d12L5Mpzd/xbWXtmic3Ec6AaBIpbmcQNJU5cA5E1YAKIHsbLsfLA8ZYUm4TQjn7I8nNSMQZNmxYQECAvqfi22+/HRcXJ8tyWSrt62XCy5KCrFN/nOuR65vePOzmWNVSb+7c1pkxU/YhW+h5cEYuuufCgy6SGAOAtLS0U6dOQUGhzapVq5bxlfWEB70mPYLT+TUppc7EoNJd8WU88xGYrAWGKAfOGUY7mG6vcqrDgHDgjBBC8oGDkGW8wCXEjVZmNRl8s1OXrprf8/xJzexuUDg3ZxmyvSwrapPhF+TaFkVRRSLk55HofceBcOCEqIwAFSQfkpXOv1qqfvQVT7srUEFlf9C9iT503BUHYx6nTp1atmyZIAhld/SXRTEWov5UrlzZaDRaLJbU1NScnBz9Y5fkEHJu7u3tXalSJZPJlJube/v27bI3xxnH39+/YsWKjLHU1NS0tDT47b6uZZ3aKUVGIT6Pv7+/LMvZ2dnJyck4iz0MV3OhwrNl6XB85cDAQH9/f4PBkJube+vWLefsc+yxkjJFi50dytFpJz64bnRKuPtN5RtC0P/J7sU/GAfmVEmAAAAQxolKrG5ClbTEpSsXdLt8wGH2lBkDrIElE49s99zVdWHwTaH+HWZX86daziEfiaAxDpxKXjKz8dVryKyv1UvXZACHTIU/6svB71G3bt2GDRvq33jZsmWKopTkQ0fjp4xfTu8pNLRkWe7fv//AgQObNGni5+cnSRKy8H755Zc1a9ZER0eXRPfBsWU0GgcMGDBw4MBGjRr5+fmJouhwOG7dunX8+PE1a9Zs3rwZKTVFYYDXNJvNERERAwcObNCggZeXF+c8PT396NGjCxcu3LVr17///e+goCDU9vPmzbt582YpI14fx3369ImMjMTdwURRtFqt169f37p16xdffHH9+vXyoi5hh/v4+OAmX6iXkpOTfxeNPj4+I0eO7Nu3b3BwsJeXF36UtLS0X3/99fvvv1+7dq3dbseHnDRpUnBwsMPhMBgMly5dmj9/flGTB9+6W7duffr0URQFVeXs2bOvXbt2/568ctiO7tUZYhIncTY4p+b/O6vAGRXiNIhjcEqDXzU4wSCWQSyD4xoc1+CoAkc1eojDEVXeZ4NjLHDLrZ0DJvEmHe1tOmmtn+WhnXhoOG/9LG/1rNa2I2/RJTestX1pJR5LtQPAD1F2BNgxosSC/TjlFyi/aNyx2L19QwFAABBlmVAiESLiDpZ/yJ0DAMOHD+ecOxwOxpiiKCEhIWVHXVmiKYjtdu3anThxQmfbY6gd2T8o+/fvx31UC80F+JAdO3Y8depUKc337NnToEEDKFLvGIM3HTt2PHPmjH6yoihYfhZ/nTt37pUrV/S/Nm7cGPVeUlIS9gznvHPnzuC0x+tTTz21a9euQhfExTbnPCMjY9SoUfgupY80fCmbzcY5HzlypCAIBoNBcBLcgwwA3n33XbwRBn7r1asHAGFhYXgQN8lE1GEHPvvss/Hx8foTOhwOpB/oR3755RfscELIxIkTnffGrVevXtExgOtk548YHx9vNpvvb+WM29GVg5cVWTMAlEBBJWyWT2oFRgBD+VyvdoULTiIwANFutoNFNgSlpixfNavj9ThmNsiMg04tJwwIUI1yg91k8bKtqsMjQW6Qyewa46LCuEki4Gb49Vc69yvbuhgVAKigAQOHAwCU+wZMrVq1dM/7rVu3rl+/Xuxsh7NgnTp1ateurarq724sd+TIkYyMDHThDhs2bNmyZViOkTGmjzk82W63U0rbtGmzd+/eQYMGbdmyRVd0+MOLL764ePFi3OIKCqpLOjcXBCEsLGz//v19+/bdtWuXrsGwLvvw4cOXL1+uG+GyLOuYR7PzzTffxO0x8aVKWTnjRerXr799+/aAgAD9dZwnEZvN5uPjs3TpUk9PzwULFpRdT1oslpLKw77wwgtTp05FwGMt9nPnzkGR+kAoqqqGhYVFR0ebzWZ8KUmSENUoeLBJkya7du0KDw8/efLkN998M27cuJo1ayqKYjKZRo4c+cYbbyDrw1nltmnTpmHDhjh3y7I8ffp0i8XyIIZAuXBZWb5HBfT0jgKGK7tXda7gbAGTsxjhsh2skqFGZvzqZQva3DytGmSxeFOccSZxmZosUt7KWjD4utD8jgiK6Ga4niDMX8GWb7BaFSoLAnDFUR6LlAoVKujrk6ysLL1OVLHRkeHDh7/zzjtluey//vWvqKgoTdPCw8NXrlxJCEFLmBBy5cqVAwcOpKWlValSpV27dlWrVkXl7O7uvn79+rZt2544cUIvrtWtW7dvvvkGT5AkiRBy+fLlgwcPpqenBwYGtmvXLiAgQNM0RVE8PT03bNjQpk2bM2fO6M3DwsJWrFiBETwkMFy8ePHAgQNZWVk1a9bs0KGDt7c3mmo41n/XevL19d2wYUNAQADSJwwGw/Xr17dt25aYmBgYGNi9e/caNWogcj755JMLFy5s3779d9eTeMdGjRolJycbDAadPg4A1atX79u3L24pi/wBRVH+85//FGslYhMfH5/vvvvObDajD1wQhJMnTx4+fDg7O7tq1art27evVq0aqlkfH58VK1a0bt3aYrEsW7Zs7ty52AlDhw6dPXt2ZmZmobuMGjUK1abBYLhx40Z0dPQfSlh5OCbrxPekGxxOO+CMBmc0EqeR0/mWKv2F01hOYhkcY3BMg6MqOarSQ5wc4ob9Chzj1TZdP9brBd6snb1NBxbamYeGF/+vdThr1dER1l5tHp7zTHu+IiDngNvsscaK3iIAFSiRREqo8OC7puO8/vnnn+tWU1xcXEmDEk+eOnWq3W7Pzc0tiXWpUytHjx6Nhh9ut+xwOJD7OnnyZOeSxN7e3jNmzEAfIBqHR48e1Xd39fHxSUhI0C1qm802YcIEZPOh+Pn5vf/++zhYcTcB3K4c7SsPD49Lly7pd7darePHj3du/sQTT0RFRaENjE5Ixhgu1Yo1WQHg448/xu5Cg3nevHloKKK4u7svWrSIMYYPc/nyZTc3t1KMOjRZMbbBSxZFUfQNMMeMGYN6HgDatm3rbLJ6e3tjPBNnQ2wyfvx4Z/Xo5+eHr4BmP+d88ODBhJCAgAAsn4lP/uKLL+ofHR/e398/IyNDP2Hq1KlF1xd/1GQtF2c0IRwoJwCEIGtcI8AoMMp4AQ+H408gayBQu8zy7KL4VELyhqXvNb8ZrxkNMqOk+F128jnqKqVUEQQ3cFPkdfNNoQO0KV8qd7I0zIlTVMaZBuUUgsecRhRPT8/SC3ibTCZZlt3c3AzFiY4EQRBwxAwfPhw3KkY/+4gRIz7++GOr1aqHGbKysqZNm/b6669jQ0VRWrRo0aNHDxygI0aMCAoKQhcCY2zYsGELFy5EGxXd7mlpae+8885bb72FN1VVNTQ0tGvXrgityMjIp556Cu8OAMOGDcMEJd1xf+3aNbRync2zUjwrAQEBI0eOxMCgIAgffvjhm2++mZOTgy+LXuvjx4+jLWC325988slhw4ZhfOV3PwTyywuJzWbDB5YkKTs7e8SIEV9//TUy+0tyw+bl5W3cuBEJd/369Vu0aJGzEZ6WljZ58uS1a9ei3kaaAec8OTl59erVel7riy++6Gz5A8CAAQN8fHxUVZUkKSsra9myZQ+qHsuLXM7RcAUBeEFask4oL6h2hdERhYLEVLvg9uTtS9+t/KBpSrxiFiVWeqFR0IgmUQrM8PPt5A9vXtueYwVgssAVxh8GZ/vq1au6H79KlSpBQUHnz58vdgtUADh79uyWLVuQ0FM0gtK2bVs0gNH6BYCBAwdiEEySpPXr13/33XcY3tQ/JI7sTz75pFevXmFhYTiUhw0bFh0dLQjCoEGD9OZr167dsGFD0eaU0rlz5/bq1at169aI1aFDh/7000+U0iFDhujNv/322//+979IddDXPLj+ee2112JjY53VSEmA7NSpE5q4siwnJCS89957OIIdDkdwcPCQIUOGDh1avXp1fW0JAEOGDEGT+3c/RCkPkJmZGRUVNXfu3EuXLuG8UwrCMfyoaVpsbGxcXNygQYOaN29eo0YNg8GQk5Nz8eLFbdu2rVixYsiQIThLPvXUU9jqyy+/HDNmDNrMLVq0aNOmzf79+3GqEkVxxIgRULD12Lp165KTkx88tFPO2R6c/zZyzwsi8lQFjRKgst1hM7uFXL383fL3Q9LjFYOnqCpAeXHxFMKBa6CJgiAS05mc7HkJZ77LvK0CF6nMgTq08s/9xVFy8uRJjEbi5Ne+ffvz588Xjelh13/77bfffvttSRe8cOGCn58fWjgJCQkmkyk4OBgD+gCwfPlynFOdoY7ahhCyatWqsLAw/Llp06aiKPr5+aG7D5svW7YMkwALNce/rlq1qnXr1mgcNmvWjFLq7++PHmM8YcWKFfhSzs1VVcW9ho4cORIWFoaLtFJ6rFWrVnr4MSoqKjc3193dvUuXLpGRkZ07d0YE6tA6derUunXrcPPJ0gGJnbBjx46zZ89KkqSfzDnPzMw8e/bs4cOHcZuGsmAAl+seHh5vv/326NGj/fz8Cp0wbdq0S5cu6aiWZRl9qhcvXty0adPAgQNtNpvRaBwzZsy+ffvQbGnXrl2jRo1whDgcji+++KJcSMvlyGUlhFGs0EHulerIR5dJER0CyHbNajbWuXr5u1UzQ9KuqAZ3CRy/3egq3wfLKDhAlTkRiTHJZv008fLy2zfTCKNEEDlT2UPJxNNnu3Pnzp0/fz44OFh36H399dcl9XWxERHUriEhIbVq1cLZ1GKxnD9/vmrVqp6enkhesdlsuJwremUECW7jgUPEz8/Pzc3Nz88PE/bxgvHx8XqV8aIzxenTp/XmFStWNJvNfn5+Hh4e2Dw3N/fChQvFJubjw8fFxYWFhRV7fWcJDAzUe4BS+sYbb4wePRo1jI6inJwcVEG7du0qC9VJ/xBLliz54YcfSudUlUUjcc4DAgKio6ObN2+OXmiEnPNHrFOnDtoOehP8LgsXLhwwYIAkSZzznj17VqtWLTExEUcFOsaMRuO2bdvi4uLKJa2nnExWVlAvB18iP6mKIDgJ4w6RyXZmNRoax8etXf3+03eSVYOnyB1FalJR4ETjQDVmlM25VrY09erHyVdvqApQUeJEBe1hl8TAwMCqVav0ZIKmTZsOHTp01apVGKUo+rGLjglKqaqqffr0EQQBP/+ZM2fS09OrV6+Onw0VY+mDCWtP4LjRQ3C6qayqKj5MSTNFoeZ6+hiej1G40kMOZWHJ6Dw7zvnEiROd9Rul9Pz582vXrl23bt2VK1d0k7gkJnBRcXd3x5VtoShCSeT+kry1aJ83b97cZrOJomgwGLKzs2NjYxMSEhhjgYGBjRs39vf3L/RUaGscOnRoz549HTp0sNvtHh4ekZGRs2bNql69Oq4z8YssWrToPt2iRRcCD2VQ5y8aGWGMaMAYF22a1WBoevXkuhUznk677TCaBa7mJ2cRLFpHgAuMUYVrgihxIn6fcrNd3P5Xb1y8wZggUJFrKn8UOb7ITVm2bNnt27dx4tc0bf78+U8++SSGGcriqlUUpWrVquPGjdPr+UdFRQEA7tWDmDSZTBUrVizW34gHq1Spoqu7vLw8q9V69+5d9Mdwzt3c3LB5sfqZEILcTmyem5uLzdEiZYwhWa/Yu6NyCAoKKn2Q6Tu96+DUB7Tdbt+4cWPv3r2bNGny/vvvX7lyBX1auNgru13HGFOLk7JDGucLXI3jQlcUxa+++qp+/fqdOnV64YUXRo8e3b1795CQkHfffbdoXTK0QnEbXOxnTKnr27evl5eXw+EQRfH48eO7d+8ur1Im5cE+4ZwwQJo4cAAGhOWnV8iMUsqMzGb3MIadO71u2ZzaGWmqLMlMcSqDxYFThYICCpWIJMkH0lJ7nj026HLcSVueIAgigKYxFe5VsXuoglTj9PT0mTNn6pt+V6pUKSoqKjAwEDFZkhWHzgNVVd3d3VevXu3n54dr0czMzJUrVwJAYmLizZs30S9PKe3cubOeUFLUaOzRo4duvl6+fNlqtd6+fRvtJYRlly5dSmn+3HPP6c0vXbqkKEpycnJSUhKqfUEQwsPDi3o7cQiazea2bdtCGZInkN6tw/js2bMzZ85s0qRJ3759f/zxR5vNhspZD7T8KTUysZ9Rb+/Zs2fs2LE3b97U/dJGozE9PR25gUXdBJhPh0tZVVVr1qzZt2/fPn366FPSokWLfnel/UgBybEuANJrGM9PuwJONKoSjWqKzeAeeiZu9Zr3auWkqAaDWKAb85trgo1qEhDJIJ7NyhwR92vHC79syc0UqUAJaFqBYnyESYU4br744ouffvpJz7eqX7/+vn372rdvjw7DQvU/9bQJVVVr1669c+fO9u3bozZAn2dKSoosy3a7fceOHXouyMSJE5HdIsuyc3REUZTg4ODIyEhdwW7ZsgUV3c8//6wD4NVXX61cuXKh5liWslGjRkOGDNH9Q5s3b0Y1u3PnTh08r732WoUKFQo1Rw/K2LFjAwMDS6cf4VS1Y8cOhDfea+nSpdOmTbt48aIsy5IkodMSIy5vvPFGcHDwIy5lgg/p6+urv8i+ffsIISaTSYeozWbz9PScOnVqSbOb3W7//PPP9X5bvHhxixYt0FN97dq1jRs34hxXPk/84MQA/1emi5c4HLPBcQbHNDimkSMqOazBYU3eb4Pj/NmvjyR26MdbtHeEdmNt2heE+zvx1uFKqzAW2omHPXerUfirAdW9BQoAEiUyIQL8mdt2oCno6+t78uRJzrlOelRVdcmSJc2aNSu2FZY8y8jIQB2I8eIdO3bg0ETlEBISgqRTvODhw4eLFlkLCQm5cOECXkRV1czMzKpVq+rkFWyLaN+/f3/RtKOGDRs6R//T09P9/f2xOfK8kGjKOf/5558rV65cqHmfPn2sViuGUspCDNi8eTN2kaZpubm5vXr1KtqZ8+fPxxpZY8eONRqNpQw2Zy5rZGRk2UPt2L2FiAEYc1q8eDGSKDjnBw4cKIQ6b2/vLVu24MfFXtXVvr588PLySkpKQhNap8Jyzt9+++0HIQMUJQaUByDHzZAucnrYDkc1OKLCUVU6pAmHHea9djjGw5fE3uz4L97iGcczXVhoZ/ZMRx7akYd2VFs+q7YO52275TZ/9tNqtWvi2oxQkRakpf3ZWaN64Pvo0aM6NQQtQIxoff7555MnTx47duykSZPmz5+/a9eunJwc/WvhBzty5EiFChX0pRoOGmTS2O12/Lq3bt169913Q0ND69Sp065duzlz5mRlZTlD+rXXXtMdMwDwySefODNjkpKSpkyZ0rp16zp16oSFhc2bN+/u3bs4vLD5+PHjwYkFjtjQp5hr1669+eabLVu2rFu3bufOnZcuXarnAZcFkJTS4ODg3NxcJOvhX7/44otOnTrVrVu3UaNGkZGRBw8exOP4wFimsSTbtXwB6evrCwD9+vXTpyechvr37x8SEtK8efOJEyfi5IV/KgpI/QFmzZqlXwSJRPpMVy7unIcBSAZHVXJIEw8rwiELHONdvjxxp20v3ipUfaZbvlYMfVZtHe4I7cTDwrVWndfWatzA6AYAIAqSIP3VqiUiADw9PVetWqUjzWq16kkMRQV5JPhzdHQ0ksj0KVnfFATpaejqdM4/cL4OjqpvvvlGH23Y3GAwoFJypo8hxpx/xrGFDgmd8IUm8datW0u5u36wKCATExORKcYYQ0AiIwfZDs6DXif36dfEy8bGxlarVq2UQfzrr78yxqxWK/KK7gOQSEtgjCUnJyN1zmAwHDhwwHka0rGHgvoT/8oY+/XXX4s6yYKCgnJzc50pjdi35bUqLjfqXP5WHYwB14ADJ1xSuCaY+hzbvfSH6X5KJiOeAthx30eNM0E0SKK0905Wj7hjQ+NPnrZbJCpKGlOZ8lerPoNrjLt370ZERAwYMOD06dOSJBmNRgwN22w2q5PgRzIYDLIsp6SkvPrqq717987OznYOT+mp9AMHDvzqq68kSZJlGUcDJhw4HA5UDpj/8cEHH4wePVq/AjZ3OBwDBgxYvnw50sf05pj8gc1xWThr1qwJEyZgDEZvrqpqv379MIqDBd0Q/Hh3ZJyfO3fu2rVruk9Ln1CQy47/1UtIC4Lw/fff9+/fPz09HT1eCD9cWeHFZVmWZXnbtm3dunW7efNmKdEa51vch6cEH0y/CN7FbrcPHTr0/Pnz6GXVZyKc0QAgJSXl9ddflyQJuf4Gg8F5vsBhcOPGDSTl4yvb7fbFixeXfwWzciCXvzxDOsfpAQs5pIoHFXmfFY7wbl/+nP5MV96irSO0C3+mk9aqva1VZ/5MOA/rFNegTYR3ZUP+BURJN1D/qsWEdWqLwWAYOnTo1q1bMzMzS1KPJ06cmDJlir+/P5Scu6x3dY8ePWJiYpy1HIrVat2yZUtYWJg+PRfbvHfv3nv37nXO6EOxWCybN29GN2lRXaQ/0uDBg2NjYwu1tdvta9eurVy58uHDh3WKua4hcfOSW7duZWRkdOzY0TkOCQBPPvnkN998g+WJC8mpU6deeuklZ1VWUp/s27cvPT09JSUlIyNj8ODBf1RDtm7dOj09PTU1FXccQAsF/1ShQoWFCxfiCt9ZDhw4UK9evaeffjo1NfXmzZupqakxMTGFPhw+wwcffIBfh3OOcaxyLE2CGpJs3Ljx3LlzU6dOvR+sCwJomv/LM9MmTGVpdhAFkTGHQe51dNey7z7zVfNUWRI1VQMgIFCRJVn4pzeufJ1+PZsBpRTYowlklBthQPcQBgYGhoSE1KlTp0qVKrIsOxyOzMzMq1evnjlzRq8OWjqly3m/kODg4JYtWz755JNYwuPSpUtHjx69dOlSKRdxbl6/fv0WLVrUrFnTaDTm5eVdvHjx6NGj8fHxUEBMLTY2g6YXpbRFixYtW7YMDAwEgKtXr+7btw8TCy9cuIDkFYfDERISEh8fL4qip6ennvty9+5d55om+r2qVKnSsmXLkJAQb29vVVWTkpJiY2OPHTumxwZKp7P4+PhgoJVSmpOTg6qs7J9JkiRvb2/0TjPGsrKy8Ha6lVG1atVWrVrVqVNHluWMjIxffvnlwIEDAGA0GvWMM03T8vLynPeJAIDKlSufO3cO2eSiKIaHh8fExJRjXZI5c+bUqlWrPDTkmPfEM5zst5r3WuAoH/jploxnntNadbC36aSEdmShnXjbrndbd/y4as0g0QAAlBJJII9jtT5Ulb87KZa9KlQp26phHKLcmzufj5H6Yi9bqVIl3QpISUnx8fEpywgpfSu+P32XPt3SKclZUMoHBQCMi+CK4MiRI2X5QPehIcsjQVmQCeeiRiwm45CDm7/+4Qs3brFIRFYkUZSB2dbdSnz/xpUzditQURSoxpj6eBby1llyxRa6d66mUfaAZ1Hw6G6Gcm+OWsLT0/O555575ZVXtm/fPnPmTKPR6Ex8kSTJarXqacqSJMXHx+uJuc6vXCwFt9jO0V3TZYRNKbd4kCvgMxR6PN13VVJDVJgeHh6jR4/We2DhwoVICS73mvQPCkgC4Mi6JanEIkpD92/4auM3Jq5ZBNHMJZDYnvSkmdevx1iyAUCklLG/yeZsZR9eZXQdPch3LWNzRGPbtm3XrVuHe+k1adLk8OHDu3bt0leq6ND39fWdPn06ApsQsm3bNigoj1AWhDxg5zy4j6T0K5TyeMU2xBcfPHhwUFAQzlBXr15FMsDDIDk8mM5lHACU49vl3JwXD0cv/uFrs6ZyWTYLplOZtmFnT3c5dyrGkoMlL1XXBhd/9iRCCDl//rzNZkPHrMFgiIqKmjBhgo+PDy4pZVkOCwvbsWNH3bp1NU2TJCknJ2fNmjW/u/D7G4umaQaD4dVXX9VnqMWLFyMh+WHUpH8wDckZIZATf7HhGwPedTe4UYmLcC0vb/nN65+m3cxlnBIiAVM16oLiXwGQWE8gIiIiJibGYDBgzZ7PPvvs7bffPnfunKqq1atXr1u3LgBg4FsUxffee+/GjRt/m927/jA8RFFV1eeff/7pp5/G4E16evqqVase3vbY4gN/ZkIJPX1kezezW0OTZ6bdEWu7e1tTCBFkwhTOFYBy313cJfc92QuCcPDgwaFDh65evdpoNGIcvEqVKphZAgDOqf2LFy/++OOPS6qO8U8QRN2ECROQDIBpXLdu3XqIe2M/kJcVACiRKDqvCrBNJQOVjOXEJ3JJuQt6Glu1aoWMtmIlNTX19ddfh1Iduf+QjurTp48zoadu3brlVaS3kJSTl5VxDQgHTolGcZcNrjg4cArAXID86+rJI0eOtGnT5vnnn//Xv/7VqFGjChUqUEpzc3MvX768a9eu77//HrcKL1Tg4x+oHhMTEwcPHoylOtLS0jDO/PD6pBzCHqxgu1YG/F6SFO6O7JK/KibR6bpp06ZNmzZRSrHett1u12P9/9h1o/OqGwCOHz9+/Phx/eDD3u1TdI3Of+z0r5temDaVv+CgFDlA/3A03luTUersUH143YJQF/+sJG6X/BU0gD689IVi+e7l9PeYuR5Bh+DkyBijOTk5Xl5esiy7Nvr9h4Oz2Pp3Lnk0YjAYvLy87t69S69du4Ze74fkO3KJS1xSukmMBc0qVap07do1Ghsb6+7u3rRp00JMRZe4xCWPQHDp2Lx5czc3t9jYWHro0KGEhIQePXp4eXkVWzbXJS5xycNDI2PMx8ene/fu165dO3LkCM3Ozo6Ojq5RowZu4l3uSSUucYlLSjJW0X87YsSIqlWrRkdH5+TkCJTSK1eu1KhR49lnn9U07fTp00h6dKlKl7jkIWlFTBzFrLeIiIj+/fvv2bMHKbIi+r4/++wzT0/PUaNG+fn5rVmzJiMjQ2/s6kGXuKS8xJmF5+fnFxER0b179xMnTmC1ZQAQUHVaLJZjx45VqlSpa9eurVu3NhgMFosFN5R2daJLXFKOYjAYgoKCunbtOn78+CZNmsTExHz44YdYDI3z/JL/oOeDd+nSpVevXjVr1rRarSkpKWlpac51U1ziEpfct6UKALIs+/n5+fv7G43Gq1evRkVFYS15nZF3LycDD3HO3d3dmzdv3qxZs1q1alWoUAErDrk61CUueXBMqqqakZERHx+PFNm8vDx9Xwk85/8Bie+CN48Zp2AAAAAASUVORK5CYII=" alt="Get it on Google Play"></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner footer-layout">
+    <div class="footer-top">
+      <img src="assets/there4u-logo-nav.png" alt="There4U">
+      <p>Emergency alert technology that puts your safety first. One tap. Instant help. Always there for you.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#how">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="there4u-company.html#about">About Us</a>
+        <a href="there4u-company.html#contact">Contact</a>
+        <a href="there4u-company.html#press">Press</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="there4u-legal.html#privacy">Privacy Policy</a>
+        <a href="there4u-legal.html#terms">Terms of Service</a>
+        <a href="there4u-legal.html#cookies">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom" style="max-width:var(--max-w);margin:0 auto">
+    <span>&copy; 2026 There4U. All rights reserved.</span>
+    <span>Made with care in South Africa 🇿🇦</span>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+const hbtn=document.getElementById('hbtn'),mob=document.getElementById('mob');
+function closeM(){hbtn.classList.remove('active');mob.classList.remove('open');document.body.style.overflow=''}
+hbtn.addEventListener('click',()=>{
+  const o=hbtn.classList.toggle('active');
+  mob.classList.toggle('open');
+  document.body.style.overflow=o?'hidden':'';
+});
+
+// Navbar scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50),{passive:true});
+
+// Reveal
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// Phone rotation
+const scrApp=document.getElementById('scrApp'),scrWidget=document.getElementById('scrWidget');
+const d0=document.getElementById('d0'),d1=document.getElementById('d1');
+let showing=true;
+function updClock(){
+  const n=new Date(),h=String(n.getHours()).padStart(2,'0'),m=String(n.getMinutes()).padStart(2,'0');
+  const el=document.getElementById('wClock');if(el)el.textContent=h+':'+m;
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const mos=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const dl=document.getElementById('wDate');if(dl)dl.textContent=days[n.getDay()]+', '+n.getDate()+' '+mos[n.getMonth()];
+}
+updClock();
+setInterval(()=>{
+  showing=!showing;
+  scrApp.classList.toggle('visible',showing);scrApp.classList.toggle('hidden',!showing);
+  scrWidget.classList.toggle('visible',!showing);scrWidget.classList.toggle('hidden',showing);
+  d0.classList.toggle('on',showing);d1.classList.toggle('on',!showing);
+  if(!showing)updClock();
+},4500);
+
+// FAQ
+document.querySelectorAll('.faq-item').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    const i=d.querySelector('.faq-icon i');
+    if(i){i.className=d.open?'ph-bold ph-minus':'ph-bold ph-plus'}
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>There4U: Company</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+<style>
+  /* ── There4U Design Tokens ── */
+  :root {
+    --primary: #F55E00;
+    --primary-hover: #D24F00;
+    --accent: #FF8C42;
+    --bg-base: #0A0A0B;
+    --bg-surface: #141415;
+    --bg-surface-2: #1C1C1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A5;
+    --text-dim: #6B6B70;
+    --border: rgba(255,255,255,0.08);
+    --max-w: 800px;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-base);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Navigation ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,11,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+  }
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav .brand {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav .back-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .nav .back-link:hover { color: var(--primary); }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-bar-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tab-btn:hover { color: var(--text-secondary); }
+  .tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+
+  /* ── Content ── */
+  .page-content {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+  .page-section { display: none; }
+  .page-section.active { display: block; }
+
+  /* ── Typography ── */
+  .page-label {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+  .page-title {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+  .page-intro {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2.section-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2.5rem 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  h2.section-heading:first-of-type { margin-top: 0; }
+
+  h3.sub-heading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  p { margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--text-secondary);
+  }
+  li { margin-bottom: 0.4rem; }
+  li::marker { color: var(--primary); }
+
+  strong { color: var(--text-primary); font-weight: 600; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Info card ── */
+  .info-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .info-card p { margin-bottom: 0; font-size: 0.9rem; }
+
+  /* ── Value cards (About page) ── */
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .value-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: border-color 0.25s;
+  }
+  .value-card:hover { border-color: rgba(245,94,0,0.25); }
+  .value-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(245,94,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+  .value-card h4 {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .value-card p {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ── Timeline (About page) ── */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary), var(--primary-hover), rgba(245,94,0,0.2));
+    border-radius: 1px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg-base);
+    border: 2px solid var(--primary);
+  }
+  .timeline-item.future::before {
+    border-style: dashed;
+    border-color: var(--text-dim);
+  }
+  .timeline-date {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+  .timeline-item.future .timeline-date {
+    color: var(--text-dim);
+  }
+  .timeline-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ── Contact cards ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .contact-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.25s;
+  }
+  .contact-card:hover { border-color: rgba(245,94,0,0.25); }
+  .contact-card .cc-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(245,94,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 1.15rem;
+    color: var(--primary);
+  }
+  .contact-card h4 {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .contact-card p {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .contact-card a {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  /* ── Contact form ── */
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  .form-group label {
+    display: block;
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: var(--primary);
+  }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-select { appearance: none; cursor: pointer; }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 0.85rem 2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .form-btn:hover { background: var(--primary-hover); }
+
+  /* ── Press: article card ── */
+  .press-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.25s;
+  }
+  .press-card:hover { border-color: rgba(245,94,0,0.25); }
+  .press-card-header {
+    background: linear-gradient(135deg, rgba(245,94,0,0.08), rgba(245,94,0,0.02));
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .press-source-badge {
+    background: rgba(245,94,0,0.12);
+    border: 1px solid rgba(245,94,0,0.2);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .press-source-badge span {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+  }
+  .press-meta h3 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+  }
+  .press-meta .press-date {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+  .press-card-body {
+    padding: 1.5rem;
+  }
+  .press-card-body p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .press-card-body .press-quote {
+    border-left: 3px solid var(--primary);
+    padding-left: 1.25rem;
+    margin: 1.25rem 0;
+    font-style: italic;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ── Brand assets download row ── */
+  .brand-assets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+  .asset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.7rem 0.75rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    text-align: center;
+  }
+  .asset-btn:hover {
+    border-color: rgba(245,94,0,0.3);
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .page-footer p {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .page-content { padding: 2rem 1.25rem 4rem; }
+    .tab-btn { padding: 0.85rem 1rem; font-size: 0.8rem; }
+    .values-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .brand-assets { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://there4u.app/" class="brand">There4U</a>
+    <a href="https://there4u.app/" class="back-link">&larr; Back to Home</a>
+  </div>
+</nav>
+
+<!-- Tabs -->
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" data-tab="about">About Us</button>
+    <button class="tab-btn" data-tab="contact">Contact</button>
+    <button class="tab-btn" data-tab="press">Press</button>
+  </div>
+</div>
+
+<div class="page-content">
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- ABOUT US                                                -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="page-section active" id="about">
+  <div class="page-label">Company</div>
+  <h1 class="page-title">About There4U</h1>
+  <p class="page-intro">Built in South Africa. Designed for the people who matter most.</p>
+
+  <h2 class="section-heading">Our Story</h2>
+  <p>There4U began with a simple observation: the people who need personal safety technology the most (elderly parents, young dependents, vulnerable family members) are often the least equipped to set it up for themselves. Every existing solution asked the wrong person to do the hard work.</p>
+  <p>We built There4U to flip that equation. The person who cares does the setup. The person who needs protection just presses a button. One tap. Instant help. That's it.</p>
+  <p>Founded in Cape Town, South Africa, There4U is a personal-safety app that delivers one-tap emergency alerts over WhatsApp, the messaging platform billions of people already use. When triggered, the app sends a personalised message containing the member's name, medical details, and live GPS location to every emergency contact on file. No fumbling. No logins. No delays.</p>
+
+  <h2 class="section-heading">What Makes Us Different</h2>
+  <p>Most safety apps require every user to create an account, remember a password, and manage their own setup. That's fine if you're tech-savvy. It's a non-starter if you're a 78-year-old grandparent who struggles with smartphones.</p>
+  <p>There4U uses a <strong>delegated registration model</strong>. A Main Member (typically an adult child, a partner, or a parent) handles all the setup, billing, and configuration. The person they're protecting receives a WhatsApp link, taps it, and is instantly connected. No registration. No passwords. No payment details. Just safety, ready to go.</p>
+  <p>We also made a deliberate choice to deliver alerts through WhatsApp rather than building a proprietary messaging system. Your emergency contacts already check WhatsApp, and an alert sent on a channel people actually use is an alert that actually works.</p>
+
+  <h2 class="section-heading">Our Mission</h2>
+
+  <div class="info-card">
+    <p><strong>To become the default personal-safety layer for families and close-knit groups worldwide, making sure no one is ever truly unreachable when it matters.</strong></p>
+  </div>
+
+  <h2 class="section-heading">Our Vision</h2>
+  <p>A world where every person has a simple, reliable way to summon help and let the people who care about them know where they are, regardless of technical ability, location, or income level.</p>
+
+  <h2 class="section-heading">Our Values</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon"><i class="ph ph-lightning" style="color:var(--primary);font-size:1.25rem"></i></div>
+      <h4>Radical Simplicity</h4>
+      <p>Complexity is the enemy of safety. Every design decision must reduce friction, especially for the most vulnerable users.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><i class="ph ph-lock-key" style="color:var(--primary);font-size:1.25rem"></i></div>
+      <h4>Privacy as a Right</h4>
+      <p>We collect the minimum data necessary and give users full control over what they share. No tracking. No profiling. No selling.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><i class="ph ph-handshake" style="color:var(--primary);font-size:1.25rem"></i></div>
+      <h4>Warmth Over Surveillance</h4>
+      <p>There4U is about care and connection, not monitoring and control. Our brand, copy, and interactions reflect this distinction.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><i class="ph ph-globe-hemisphere-west" style="color:var(--primary);font-size:1.25rem"></i></div>
+      <h4>Global Equity</h4>
+      <p>Safety technology should be accessible across markets, income levels, and payment infrastructures. We're building for everyone.</p>
+    </div>
+  </div>
+
+  <h2 class="section-heading">Our Journey</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Q1 2026</div>
+      <div class="timeline-text">There4U founded in Cape Town. Product vision, brand identity, and design system established.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Q2 2026</div>
+      <div class="timeline-text">Product requirements and business plan finalised. Architecture and development framework selected.</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="timeline-date">Q3 2026</div>
+      <div class="timeline-text">MVP feature-complete. Closed beta launch in South Africa with initial test accounts.</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="timeline-date">Q4 2026</div>
+      <div class="timeline-text">Public launch on the App Store and Google Play in South Africa.</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="timeline-date">2027</div>
+      <div class="timeline-text">Expansion to Ireland, the UAE, Kenya, and India. New features including scheduled Check-ins.</div>
+    </div>
+  </div>
+
+  <h2 class="section-heading">Built in South Africa, For the World</h2>
+  <p>South Africa is our home and our launch market: a country where WhatsApp is universal, smartphones are widespread, and personal safety is something every family thinks about. The same anxieties that drive our product here (a parent living alone, a teenager walking home, a commuter on a long drive) are felt by families everywhere.</p>
+  <p>We're starting here because we know this market and its needs. But There4U is designed from the ground up for global reach, with multi-market payment support, POPIA and GDPR compliance, and a product architecture that works as well in Dublin as it does in Durban.</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- CONTACT US                                              -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="page-section" id="contact">
+  <div class="page-label">Get in Touch</div>
+  <h1 class="page-title">Contact Us</h1>
+  <p class="page-intro">We'd love to hear from you, whether you have a question, want to partner with us, or just want to say hello.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="cc-icon"><i class="ph ph-envelope-simple" style="font-size:1.25rem"></i></div>
+      <h4>General Enquiries</h4>
+      <p>Questions about There4U?</p>
+      <a href="mailto:hello@there4u.app">hello@there4u.app</a>
+    </div>
+    <div class="contact-card">
+      <div class="cc-icon"><i class="ph ph-lifebuoy" style="font-size:1.25rem"></i></div>
+      <h4>Support</h4>
+      <p>Need help with the app?</p>
+      <a href="mailto:support@there4u.app">support@there4u.app</a>
+    </div>
+    <div class="contact-card">
+      <div class="cc-icon"><i class="ph ph-newspaper" style="font-size:1.25rem"></i></div>
+      <h4>Press &amp; Media</h4>
+      <p>Journalist or content creator?</p>
+      <a href="mailto:press@there4u.app">press@there4u.app</a>
+    </div>
+    <div class="contact-card">
+      <div class="cc-icon"><i class="ph ph-handshake" style="font-size:1.25rem"></i></div>
+      <h4>Partnerships</h4>
+      <p>Want to work together?</p>
+      <a href="mailto:partners@there4u.app">partners@there4u.app</a>
+    </div>
+  </div>
+
+  <h2 class="section-heading">Send Us a Message</h2>
+  <p>Fill in the form below and we'll get back to you as soon as we can.</p>
+
+  <div style="margin-top:1.25rem">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="cf-name">Your Name</label>
+        <input type="text" id="cf-name" class="form-input" placeholder="Full name">
+      </div>
+      <div class="form-group">
+        <label for="cf-email">Email Address</label>
+        <input type="email" id="cf-email" class="form-input" placeholder="you@example.com">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cf-subject">Subject</label>
+      <select id="cf-subject" class="form-select">
+        <option value="" disabled selected>Select a topic</option>
+        <option value="general">General enquiry</option>
+        <option value="support">App support</option>
+        <option value="press">Press &amp; media</option>
+        <option value="partnership">Partnership opportunity</option>
+        <option value="privacy">Privacy &amp; data request</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="cf-message">Message</label>
+      <textarea id="cf-message" class="form-textarea" placeholder="How can we help?"></textarea>
+    </div>
+    <button class="form-btn" type="button">Send Message →</button>
+  </div>
+
+  <h2 class="section-heading">Where We Are</h2>
+  <p>There4U is headquartered in <strong>Cape Town, South Africa</strong>. We're a remote-first team building for a global audience.</p>
+  <p>For formal correspondence, please use our email addresses above. Response times are typically within one business day.</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PRESS                                                   -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="page-section" id="press">
+  <div class="page-label">Media</div>
+  <h1 class="page-title">Press</h1>
+  <p class="page-intro">News, announcements, and resources for media coverage of There4U.</p>
+
+  <h2 class="section-heading">Latest</h2>
+
+  <!-- Placeholder press release -->
+  <div class="press-card">
+    <div class="press-card-header">
+      <div class="press-source-badge">
+        <span>Press Release</span>
+      </div>
+      <div class="press-meta">
+        <h3>Cape Town Startup There4U Reimagines Personal Safety With One-Tap WhatsApp Emergency Alerts</h3>
+        <div class="press-date">19 April 2026 &nbsp;·&nbsp; Cape Town, South Africa</div>
+      </div>
+    </div>
+    <div class="press-card-body">
+      <p><strong>Cape Town, South Africa, 19 April 2026:</strong> There4U, a new personal-safety app built in South Africa, today announced its founding and upcoming public launch, scheduled for Q4 2026. The app delivers one-tap emergency alerts over WhatsApp, sending a personalised message with the user's name, medical details, and live GPS location to their chosen emergency contacts, instantly.</p>
+
+      <p>What sets There4U apart from existing safety apps is its delegated registration model: a primary user (the "Main Member") handles all setup, billing, and configuration, while the person they're protecting (an elderly parent, a young child, a partner) simply taps a link, installs the app, and is immediately ready to call for help. No account creation. No passwords. No friction.</p>
+
+      <div class="press-quote">"We asked ourselves a simple question: why do safety apps make the most vulnerable person do the hardest work? There4U flips that. The person who cares does the setup. The person who needs protection just presses a button."</div>
+
+      <p>The app uses WhatsApp as its sole alert channel, a deliberate choice in markets like South Africa, where WhatsApp is the dominant messaging platform. Alerts are sent automatically through the WhatsApp Cloud API, meaning there are no per-message carrier fees and no proprietary messaging layer to learn.</p>
+
+      <p>There4U launches with two subscription plans tailored to the South African market: a Monthly plan at R40 and an Annual plan at R100 covering two members and up to four emergency contacts each. The Annual plan is positioned as the default for households (a parent and adult child, or a couple) at roughly R8 per month.</p>
+
+      <p>The company is headquartered in Cape Town, with expansion into Ireland, the UAE, Kenya, and India planned for 2027. The app is built with privacy at its core, complying with South Africa's POPIA and the EU's GDPR from day one.</p>
+
+      <p>There4U enters closed beta in Q3 2026 with 50–100 accounts in the South African market, followed by a public launch on the App Store and Google Play in Q4 2026.</p>
+
+      <p><strong>About There4U</strong><br>
+      There4U is a personal-safety mobile application that delivers one-tap WhatsApp emergency alerts. Built on a delegated registration model, the app allows a primary account holder to set up and manage safety coverage for themselves and a loved one, without requiring the protected person to create an account, remember a password, or handle any setup. Founded in Cape Town, South Africa, There4U is designed for global reach with multi-market payment support and regulatory compliance. For more information, visit <a href="https://there4u.app">there4u.app</a>.</p>
+
+      <p style="color:var(--text-dim); font-size:0.85rem; margin-top:1.5rem"><strong>Media contact:</strong> <a href="mailto:press@there4u.app">press@there4u.app</a></p>
+    </div>
+  </div>
+
+  <h2 class="section-heading">Brand Assets</h2>
+  <p>Download official There4U brand assets for use in media coverage. Please don't modify, recolour, or distort the logos.</p>
+
+  <div class="brand-assets">
+    <a href="#" class="asset-btn"><i class="ph ph-power"></i> Logo (Dark BG)</a>
+    <a href="#" class="asset-btn"><i class="ph ph-power"></i> Logo (Light BG)</a>
+    <a href="#" class="asset-btn"><i class="ph ph-power"></i> Power Icon</a>
+  </div>
+
+  <div class="info-card">
+    <p><strong>Brand colours:</strong> Blaze Orange <span style="color:var(--primary)">#F55E00</span> on Onyx <span style="color:var(--text-dim)">#0A0A0B</span>. The power icon is a core brand element representing empowerment and activation: "switching on connection."</p>
+  </div>
+
+  <h2 class="section-heading">Key Facts</h2>
+  <ul>
+    <li><strong>Founded:</strong> 2026, Cape Town, South Africa</li>
+    <li><strong>Product:</strong> One-tap WhatsApp emergency alert app with delegated registration</li>
+    <li><strong>Launch market:</strong> South Africa (Q4 2026)</li>
+    <li><strong>Expansion markets:</strong> Ireland, UAE, Kenya, India (2027)</li>
+    <li><strong>Pricing:</strong> R40/month (1 member) or R100/year (2 members)</li>
+    <li><strong>Alert channel:</strong> WhatsApp (no SMS, no proprietary messaging)</li>
+    <li><strong>Compliance:</strong> POPIA (South Africa), GDPR (EU)</li>
+  </ul>
+
+  <h2 class="section-heading">Media Enquiries</h2>
+  <p>For press enquiries, interview requests, or access to additional brand materials, please contact us at <a href="mailto:press@there4u.app">press@there4u.app</a>. We aim to respond to all media enquiries within 24 hours.</p>
+</div>
+
+</div><!-- /.page-content -->
+
+<!-- Footer -->
+<footer class="page-footer">
+  <p>&copy; 2026 There4U. All rights reserved. &nbsp;·&nbsp; Made with care in South Africa 🇿🇦</p>
+</footer>
+
+<script>
+  // Tab switching
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sections = document.querySelectorAll('.page-section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Hash navigation
+  function activateFromHash() {
+    const hash = window.location.hash.replace('#', '');
+    if (['about', 'contact', 'press'].includes(hash)) {
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      document.querySelector(`[data-tab="${hash}"]`).classList.add('active');
+      document.getElementById(hash).classList.add('active');
+    }
+  }
+  activateFromHash();
+  window.addEventListener('hashchange', activateFromHash);
+</script>
+</body>
+</html>

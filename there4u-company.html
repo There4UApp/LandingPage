@@ -372,104 +372,6 @@
   }
   .form-btn:hover { background: var(--primary-hover); }
 
-  /* ── Careers: empty state ── */
-  .empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: var(--bg-surface);
-    border: 1px dashed rgba(245,94,0,0.2);
-    border-radius: 12px;
-    margin: 2rem 0;
-  }
-  .empty-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: rgba(245,94,0,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.25rem;
-    font-size: 1.75rem;
-    color: var(--primary);
-  }
-  .empty-state h3 {
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  .empty-state p {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-    max-width: 400px;
-    margin: 0 auto 1.5rem;
-    line-height: 1.6;
-  }
-  .notify-form {
-    display: flex;
-    gap: 0.5rem;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .notify-form .form-input {
-    flex: 1;
-    font-size: 0.85rem;
-    padding: 0.7rem 1rem;
-  }
-  .notify-btn {
-    background: var(--primary);
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 8px;
-    padding: 0.7rem 1.25rem;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s;
-  }
-  .notify-btn:hover { background: var(--primary-hover); }
-
-  /* ── Careers: future roles ── */
-  .roles-preview {
-    margin-top: 2.5rem;
-  }
-  .role-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-  .role-left h4 {
-    color: var(--text-primary);
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.15rem;
-  }
-  .role-left p {
-    color: var(--text-dim);
-    font-size: 0.8rem;
-    margin: 0;
-  }
-  .role-badge {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-dim);
-    background: var(--bg-surface-2);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 0.3rem 0.75rem;
-    white-space: nowrap;
-  }
-
   /* ── Press: article card ── */
   .press-card {
     background: var(--bg-surface);
@@ -585,7 +487,6 @@
     .contact-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .brand-assets { grid-template-columns: 1fr 1fr; }
-    .notify-form { flex-direction: column; }
   }
 </style>
 </head>
@@ -604,7 +505,6 @@
   <div class="tab-bar-inner">
     <button class="tab-btn active" data-tab="about">About Us</button>
     <button class="tab-btn" data-tab="contact">Contact</button>
-    <button class="tab-btn" data-tab="careers">Careers</button>
     <button class="tab-btn" data-tab="press">Press</button>
   </div>
 </div>
@@ -765,79 +665,6 @@
 </div>
 
 <!-- ════════════════════════════════════════════════════════ -->
-<!-- CAREERS                                                 -->
-<!-- ════════════════════════════════════════════════════════ -->
-<div class="page-section" id="careers">
-  <div class="page-label">Join Us</div>
-  <h1 class="page-title">Careers at There4U</h1>
-  <p class="page-intro">We're building something that matters. When the time is right, we'd love you to be part of it.</p>
-
-  <div class="empty-state">
-    <div class="empty-icon"><i class="ph ph-power" style="font-size:1.75rem"></i></div>
-    <h3>No Open Positions Right Now</h3>
-    <p>We're currently in our early build phase and don't have any open roles, but that's going to change. Leave your email below and we'll let you know when we start hiring.</p>
-    <div class="notify-form">
-      <input type="email" class="form-input" placeholder="your@email.com">
-      <button class="notify-btn">Notify Me</button>
-    </div>
-  </div>
-
-  <h2 class="section-heading">What We'll Be Looking For</h2>
-  <p>As There4U grows from founder-led to a team, we'll be looking for people who care about building products that genuinely help people. Here's a preview of the roles we expect to open first:</p>
-
-  <div class="roles-preview">
-    <div class="role-card">
-      <div class="role-left">
-        <h4>Mobile Engineer (React Native)</h4>
-        <p>Cross-platform development, native module integration, home-screen widgets</p>
-      </div>
-      <div class="role-badge">Coming Soon</div>
-    </div>
-    <div class="role-card">
-      <div class="role-left">
-        <h4>Backend Engineer</h4>
-        <p>API development, authentication systems, database design, webhooks</p>
-      </div>
-      <div class="role-badge">Coming Soon</div>
-    </div>
-    <div class="role-card">
-      <div class="role-left">
-        <h4>Product Designer (UI/UX)</h4>
-        <p>Mobile-first design, dark-mode aesthetics, accessibility, design system</p>
-      </div>
-      <div class="role-badge">Coming Soon</div>
-    </div>
-    <div class="role-card">
-      <div class="role-left">
-        <h4>Growth &amp; Marketing Lead</h4>
-        <p>ASO, content marketing, community partnerships, paid acquisition</p>
-      </div>
-      <div class="role-badge">Coming Soon</div>
-    </div>
-    <div class="role-card">
-      <div class="role-left">
-        <h4>Privacy &amp; Compliance Specialist</h4>
-        <p>POPIA, GDPR, and multi-market data protection frameworks</p>
-      </div>
-      <div class="role-badge">Coming Soon</div>
-    </div>
-  </div>
-
-  <h2 class="section-heading">What It's Like Here</h2>
-  <p>There4U is still early. That means you won't be joining a machine; you'll be helping build one. A few things that define how we work:</p>
-  <ul>
-    <li><strong>Remote-first.</strong> We're headquartered in Cape Town, but we build for a global market and hire for talent, not geography.</li>
-    <li><strong>Small team, big ownership.</strong> Every person has direct impact. No layers of approval. Ship things that matter.</li>
-    <li><strong>Safety is the mission, not a feature.</strong> We're not building another social app. The thing we make helps people when they need it most.</li>
-    <li><strong>Privacy by default.</strong> We don't track what we don't need. That applies to our users and to how we run the company.</li>
-  </ul>
-
-  <div class="info-card">
-    <p><strong>Can't wait?</strong> If you're excited about what we're building and want to reach out early, send us an email at <a href="mailto:careers@there4u.app">careers@there4u.app</a> with a bit about yourself and what you'd love to work on.</p>
-  </div>
-</div>
-
-<!-- ════════════════════════════════════════════════════════ -->
 <!-- PRESS                                                   -->
 <!-- ════════════════════════════════════════════════════════ -->
 <div class="page-section" id="press">
@@ -933,7 +760,7 @@
   // Hash navigation
   function activateFromHash() {
     const hash = window.location.hash.replace('#', '');
-    if (['about', 'contact', 'careers', 'press'].includes(hash)) {
+    if (['about', 'contact', 'press'].includes(hash)) {
       tabs.forEach(t => t.classList.remove('active'));
       sections.forEach(s => s.classList.remove('active'));
       document.querySelector(`[data-tab="${hash}"]`).classList.add('active');

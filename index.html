@@ -463,7 +463,7 @@ body::after{
 .picker-tab{font-family:var(--font-display);font-weight:600;font-size:0.8rem;color:var(--text-3);padding:0.55rem 1.2rem;border-radius:100px;cursor:pointer;border:none;background:transparent;transition:color 0.3s var(--ease-out),background 0.3s var(--ease-out);white-space:nowrap}
 .picker-tab:hover{color:var(--text-1)}
 .picker-tab.active{background:var(--primary);color:#fff}
-.picker-panel{display:none;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;text-align:left}
+.picker-panel{display:none;grid-template-columns:auto auto;justify-content:center;gap:2.5rem;align-items:center;text-align:left}
 .picker-panel.active{display:grid;animation:panelIn 0.5s var(--ease-out)}
 @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .picker-num{font-family:var(--font-display);font-weight:800;font-size:5.5rem;line-height:1;color:var(--primary);opacity:0.9;letter-spacing:-0.03em}

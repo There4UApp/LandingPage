@@ -493,37 +493,7 @@ body::after{
 .emerg-bg{background:var(--bg-surface)}
 .emerg-layout{display:flex;flex-direction:column;gap:3rem}
 .emerg-text .detail{color:var(--text-3);font-size:0.88rem;line-height:1.7;margin-top:1rem}
-.ecard{
-  background:var(--bg-base);border:1px solid var(--border-orange);
-  border-radius:24px;padding:1.75rem;max-width:360px;margin:0 auto;
-  box-shadow:0 12px 40px rgba(0,0,0,0.3);
-}
-.ecard-head{
-  text-align:center;margin-bottom:1.25rem;padding-bottom:0.75rem;
-  border-bottom:1px solid var(--border);
-}
-.ecard-head svg{display:block;margin:0 auto 0.5rem}
-.ecard-title{font-family:var(--font-display);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);font-weight:600}
-.ecard-time{font-size:0.55rem;color:var(--text-3);margin-top:0.15rem}
-.ecard-block{margin-bottom:1rem}
-.ecard-lbl{
-  font-family:var(--font-display);font-size:0.55rem;letter-spacing:0.1em;
-  text-transform:uppercase;color:var(--primary);font-weight:600;
-  margin-bottom:0.5rem;display:flex;align-items:center;gap:0.35rem;
-}
-.ecard-lbl i{font-size:0.75rem}
-.ecard-row{
-  display:flex;justify-content:space-between;
-  padding:0.35rem 0;border-bottom:1px solid rgba(255,255,255,0.03);
-  font-size:0.78rem;
-}
-.ecard-row .l{color:var(--text-3)}
-.ecard-row .v{color:var(--text-1);font-weight:500;font-family:var(--font-display);text-align:right}
-.ecard-contact{
-  background:rgba(245,94,0,0.04);border-radius:12px;padding:0.65rem;margin-top:0.35rem;
-}
-.ecard-contact-name{font-family:var(--font-display);font-weight:600;font-size:0.8rem}
-.ecard-contact-num{font-size:0.7rem;color:var(--text-3)}
+.ecard-img{max-width:360px;width:100%;margin:0 auto;border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,0.3)}
 
 /* ===== PRICING ===== */
 .price-grid{
@@ -941,35 +911,7 @@ body::after{
       <p class="detail sr-only">The display stays active and prevents the app from closing, ensuring critical information remains visible to paramedics or first responders.</p>
     </div>
     <div>
-      <div class="ecard reveal">
-        <div class="ecard-head">
-          <svg viewBox="0 0 256 256" width="28" height="28" fill="none" style="margin:0 auto 0.4rem;display:block">
-            <path d="M128 24v80" stroke="#F55E00" stroke-width="22" stroke-linecap="round"/>
-            <path d="M176.77 55.23A96 96 0 1 1 79.23 55.23" stroke="#F55E00" stroke-width="22" stroke-linecap="round" fill="none"/>
-          </svg>
-          <div class="ecard-title">There4U: Emergency Alert Active</div>
-          <div class="ecard-time">Alert triggered • 14:32 SAST</div>
-        </div>
-        <div class="ecard-block">
-          <div class="ecard-lbl"><i class="ph ph-user"></i> Personal Details</div>
-          <div class="ecard-row"><span class="l">Full Name</span><span class="v">Sarah van der Merwe</span></div>
-          <div class="ecard-row"><span class="l">Age</span><span class="v">34</span></div>
-          <div class="ecard-row"><span class="l">Location</span><span class="v">Claremont, Cape Town</span></div>
-          <div class="ecard-row"><span class="l">Medical Aid</span><span class="v">Discovery Gold</span></div>
-          <div class="ecard-row"><span class="l">Conditions</span><span class="v">Asthma, Penicillin allergy</span></div>
-        </div>
-        <div class="ecard-block">
-          <div class="ecard-lbl"><i class="ph ph-siren"></i> Emergency Contacts</div>
-          <div class="ecard-contact">
-            <div class="ecard-contact-name">James van der Merwe</div>
-            <div class="ecard-contact-num">+27 82 555 1234</div>
-          </div>
-          <div class="ecard-contact" style="margin-top:0.3rem">
-            <div class="ecard-contact-name">Dr. Naidoo (GP)</div>
-            <div class="ecard-contact-num">+27 21 683 9900</div>
-          </div>
-        </div>
-      </div>
+      <img class="ecard-img reveal" src="assets/there4u-emergency-card.png" alt="There4U emergency alert screen showing personal details and emergency contacts for Sarah Matthew">
     </div>
   </div>
 </section>

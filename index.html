@@ -310,96 +310,16 @@ body::after{
   animation:fadeUp 0.8s 0.4s var(--ease) both;
 }
 .phone-wrap{position:relative}
-.phone{
-  width:240px;height:490px;border-radius:38px;position:relative;
-  background:#111113;
-  border:2.5px solid #2a2a2e;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.04),
-    0 20px 60px rgba(0,0,0,0.6),
-    0 40px 80px rgba(0,0,0,0.3),
-    inset 0 1px 0 rgba(255,255,255,0.06);
-  overflow:hidden;
+.phone-screens{
+  position:relative;width:240px;
+  filter:drop-shadow(0 20px 60px rgba(0,0,0,0.6));
 }
-/* Top bar (dynamic island style) */
-.phone-island{
-  position:absolute;top:10px;left:50%;transform:translateX(-50%);
-  width:90px;height:26px;background:#000;border-radius:20px;z-index:10;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+.hero-screen{
+  width:100%;height:auto;display:block;
+  opacity:0;transition:opacity 0.8s var(--ease);
 }
-/* Side buttons */
-.phone::before{
-  content:'';position:absolute;right:-3.5px;top:110px;
-  width:3px;height:40px;background:#2a2a2e;border-radius:0 2px 2px 0;
-}
-.phone::after{
-  content:'';position:absolute;left:-3.5px;top:90px;
-  width:3px;height:28px;background:#2a2a2e;border-radius:2px 0 0 2px;
-}
-/* Screen inner area */
-.phone-screen{
-  position:absolute;inset:0;border-radius:36px;overflow:hidden;
-  transition:opacity 0.8s var(--ease);
-}
-.phone-screen.hidden{opacity:0;pointer-events:none}
-.phone-screen.visible{opacity:1}
-
-/* App screen */
-.scr-app{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:2rem;background:var(--bg-base);height:100%;
-}
-.scr-app .pwr-btn{
-  width:110px;height:110px;border-radius:50%;position:relative;
-  display:flex;align-items:center;justify-content:center;
-  background:radial-gradient(circle at 45% 40%,rgba(245,94,0,0.1),transparent 70%);
-}
-.scr-app .pwr-btn svg{filter:drop-shadow(0 0 18px rgba(245,94,0,0.35))}
-.scr-app .pwr-btn::before{
-  content:'';position:absolute;inset:-12px;border-radius:50%;
-  border:1.5px solid rgba(245,94,0,0.1);
-  animation:ring 3s ease-out infinite;
-}
-.scr-app .pwr-btn::after{
-  content:'';position:absolute;inset:-24px;border-radius:50%;
-  border:1px solid rgba(245,94,0,0.05);
-  animation:ring 3s 0.8s ease-out infinite;
-}
-@keyframes ring{0%{transform:scale(1);opacity:1}100%{transform:scale(1.3);opacity:0}}
-.scr-app .scr-label{
-  margin-top:1.5rem;font-family:var(--font-display);font-size:0.55rem;
-  color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;
-}
-
-/* Widget screen */
-.scr-widget{
-  display:flex;flex-direction:column;padding:3.5rem 1rem 2rem;
-  background:linear-gradient(170deg,#151520,#0c0c10);height:100%;
-}
-.scr-widget .w-time{
-  font-family:var(--font-display);font-size:3rem;font-weight:300;
-  letter-spacing:-0.02em;margin-bottom:0.1rem;text-align:center;
-}
-.scr-widget .w-date{font-size:0.65rem;color:var(--text-3);margin-bottom:2rem;text-align:center}
-.scr-widget .w-card{
-  background:rgba(30,30,36,0.8);border-radius:18px;padding:0.9rem;
-  border:1px solid var(--border-orange);
-  display:flex;align-items:center;gap:0.7rem;
-  backdrop-filter:blur(8px);
-}
-.scr-widget .w-icon{
-  width:44px;height:44px;min-width:44px;border-radius:12px;
-  background:var(--bg-base);border:1px solid rgba(245,94,0,0.1);
-  display:flex;align-items:center;justify-content:center;
-}
-.scr-widget .w-icon svg{width:24px;height:24px}
-.scr-widget .w-name{font-family:var(--font-display);font-size:0.75rem;font-weight:600}
-.scr-widget .w-desc{font-size:0.55rem;color:var(--text-3)}
-.scr-widget .w-tag{
-  margin-top:1rem;font-size:0.5rem;color:var(--text-3);
-  font-family:var(--font-display);letter-spacing:0.1em;text-transform:uppercase;
-  text-align:center;
-}
+.hero-screen:not(:first-child){position:absolute;inset:0}
+.hero-screen.active{opacity:1}
 
 /* Phone rotation dots */
 .phone-dots{
@@ -410,29 +330,6 @@ body::after{
   background:rgba(255,255,255,0.12);transition:all 0.4s var(--ease);
 }
 .phone-dots span.on{background:var(--primary);width:16px;border-radius:3px}
-
-/* Float badges */
-.fbadge{
-  position:absolute;
-  background:rgba(14,14,16,0.88);backdrop-filter:blur(16px);
-  border:1px solid var(--border);border-radius:14px;
-  padding:0.55rem 0.85rem;display:flex;align-items:center;gap:0.5rem;
-  animation:float 5s ease-in-out infinite;white-space:nowrap;
-  box-shadow:0 8px 24px rgba(0,0,0,0.4);
-}
-.fbadge.f1{top:15%;right:-12px;animation-delay:0s}
-.fbadge.f2{bottom:20%;left:-16px;animation-delay:2s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.fbadge-icon{
-  width:26px;height:26px;border-radius:7px;
-  display:flex;align-items:center;justify-content:center;
-}
-.fbadge-icon.grn{background:rgba(34,197,94,0.12)}
-.fbadge-icon.grn i{color:#22C55E;font-size:0.85rem}
-.fbadge-icon.blu{background:rgba(59,130,246,0.12)}
-.fbadge-icon.blu i{color:#3B82F6;font-size:0.85rem}
-.fbadge-txt{font-family:var(--font-display);font-size:0.65rem;font-weight:600;line-height:1.3}
-.fbadge-sub{font-size:0.55rem;color:var(--text-3);font-weight:400}
 
 /* ===== TRUST ===== */
 .trust{
@@ -698,12 +595,7 @@ body::after{
   .hero-grid{grid-template-columns:1fr 1fr;text-align:left;gap:5rem}
   .hero-content{margin:0}
   .hero-btns{justify-content:flex-start}
-  .phone{width:280px;height:570px;border-radius:44px}
-  .phone-island{width:100px;height:28px;top:12px}
-  .phone-screen{border-radius:42px}
-  .scr-app .pwr-btn{width:130px;height:130px}
-  .scr-app .pwr-btn svg{width:80px;height:80px}
-  .scr-widget .w-time{font-size:3.5rem}
+  .phone-screens{width:280px}
   .emerg-layout{flex-direction:row;align-items:center;gap:5rem}
   .emerg-layout>div{flex:1}
   .price-card:hover{transform:translateY(-6px)}
@@ -751,48 +643,17 @@ body::after{
     </div>
     <div class="hero-phone">
       <div class="phone-wrap">
-        <div class="fbadge f1">
-          <div class="fbadge-icon grn"><i class="ph-bold ph-check-circle"></i></div>
-          <div><div class="fbadge-txt">Alert Sent</div><div class="fbadge-sub">WhatsApp delivered</div></div>
+        <div class="phone-screens">
+          <img class="hero-screen active" src="assets/home-screen.png" alt="There4U home screen with tap-to-alert widget">
+          <img class="hero-screen" src="assets/alert-screen.png" alt="There4U emergency alert active screen showing personal and contact details">
+          <img class="hero-screen" src="assets/notification-screen.png" alt="Emergency alert notification on lock screen">
+          <img class="hero-screen" src="assets/whatsapp-screen.png" alt="WhatsApp emergency alert message with location">
         </div>
-        <div class="fbadge f2">
-          <div class="fbadge-icon blu"><i class="ph-bold ph-map-pin"></i></div>
-          <div><div class="fbadge-txt">Location Shared</div><div class="fbadge-sub">GPS coordinates sent</div></div>
-        </div>
-        <div class="phone">
-          <div class="phone-island"></div>
-          <!-- App Screen -->
-          <div class="phone-screen scr-app visible" id="scrApp">
-            <div class="pwr-btn">
-              <svg viewBox="0 0 256 256" width="72" height="72" fill="none">
-                <path d="M128 24v80" stroke="#F55E00" stroke-width="22" stroke-linecap="round"/>
-                <path d="M176.77 55.23A96 96 0 1 1 79.23 55.23" stroke="#F55E00" stroke-width="22" stroke-linecap="round" fill="none"/>
-              </svg>
-            </div>
-            <div class="scr-label">Tap to alert your contacts</div>
-          </div>
-          <!-- Widget Screen -->
-          <div class="phone-screen scr-widget hidden" id="scrWidget">
-            <div class="w-time" id="wClock">09:41</div>
-            <div class="w-date" id="wDate">Friday, 10 April</div>
-            <div class="w-card">
-              <div class="w-icon">
-                <svg viewBox="0 0 256 256" width="24" height="24" fill="none">
-                  <path d="M128 24v80" stroke="#F55E00" stroke-width="22" stroke-linecap="round"/>
-                  <path d="M176.77 55.23A96 96 0 1 1 79.23 55.23" stroke="#F55E00" stroke-width="22" stroke-linecap="round" fill="none"/>
-                </svg>
-              </div>
-              <div>
-                <div class="w-name">There4U</div>
-                <div class="w-desc">Tap to alert your contacts</div>
-              </div>
-            </div>
-            <div class="w-tag">Home screen widget</div>
-          </div>
-        </div>
-        <div class="phone-dots">
-          <span class="on" id="d0"></span>
-          <span id="d1"></span>
+        <div class="phone-dots" id="heroDots">
+          <span class="on"></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
@@ -1111,24 +972,16 @@ document.querySelectorAll('.picker-tab').forEach(tab=>{
 });
 
 // Phone rotation
-const scrApp=document.getElementById('scrApp'),scrWidget=document.getElementById('scrWidget');
-const d0=document.getElementById('d0'),d1=document.getElementById('d1');
-let showing=true;
-function updClock(){
-  const n=new Date(),h=String(n.getHours()).padStart(2,'0'),m=String(n.getMinutes()).padStart(2,'0');
-  const el=document.getElementById('wClock');if(el)el.textContent=h+':'+m;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const mos=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const dl=document.getElementById('wDate');if(dl)dl.textContent=days[n.getDay()]+', '+n.getDate()+' '+mos[n.getMonth()];
-}
-updClock();
+const heroScreens=document.querySelectorAll('.hero-screen');
+const heroDots=document.querySelectorAll('#heroDots span');
+let heroIdx=0;
 setInterval(()=>{
-  showing=!showing;
-  scrApp.classList.toggle('visible',showing);scrApp.classList.toggle('hidden',!showing);
-  scrWidget.classList.toggle('visible',!showing);scrWidget.classList.toggle('hidden',showing);
-  d0.classList.toggle('on',showing);d1.classList.toggle('on',!showing);
-  if(!showing)updClock();
-},4500);
+  heroScreens[heroIdx].classList.remove('active');
+  heroDots[heroIdx].classList.remove('on');
+  heroIdx=(heroIdx+1)%heroScreens.length;
+  heroScreens[heroIdx].classList.add('active');
+  heroDots[heroIdx].classList.add('on');
+},3000);
 
 // FAQ
 document.querySelectorAll('.faq-item').forEach(d=>{

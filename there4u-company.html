@@ -371,6 +371,14 @@
     margin-top: 0.5rem;
   }
   .form-btn:hover { background: var(--primary-hover); }
+  .form-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .cf-error {
+    display: none;
+    color: #FF5A5A;
+    font-size: 0.85rem;
+    margin: -0.75rem 0 1rem;
+    font-weight: 500;
+  }
 
   /* ── Press: article card ── */
   .press-card {
@@ -642,7 +650,11 @@
       <label for="cf-message">Message</label>
       <textarea id="cf-message" class="form-textarea" placeholder="How can we help?"></textarea>
     </div>
-    <button class="form-btn" type="button">Send Message →</button>
+    <p class="cf-error" id="cf-error"></p>
+    <button class="form-btn" type="button" id="cf-submit" onclick="handleContactSubmit()">Send Message →</button>
+    <div class="info-card" id="cf-success" style="display:none">
+      <p><strong>Thanks, your message is ready to send.</strong> Your email app should have opened with the details pre-filled and addressed to hello@there4u.app. If it didn't, email us directly at <a href="mailto:hello@there4u.app">hello@there4u.app</a>.</p>
+    </div>
   </div>
 
   <h2 class="section-heading">Where We Are</h2>
@@ -756,6 +768,63 @@
   }
   activateFromHash();
   window.addEventListener('hashchange', activateFromHash);
+
+  // Contact form
+  function handleContactSubmit() {
+    const btn = document.getElementById('cf-submit');
+    const errMsg = document.getElementById('cf-error');
+    const nameEl = document.getElementById('cf-name');
+    const emailEl = document.getElementById('cf-email');
+    const subjectEl = document.getElementById('cf-subject');
+    const messageEl = document.getElementById('cf-message');
+
+    const name = nameEl.value.trim();
+    const email = emailEl.value.trim();
+    const subjectLabel = subjectEl.options[subjectEl.selectedIndex]?.text || '';
+    const message = messageEl.value.trim();
+
+    errMsg.style.display = 'none';
+
+    if (!name) { showContactError('Please enter your name.'); nameEl.focus(); return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showContactError('Please enter a valid email address.'); emailEl.focus(); return; }
+    if (!subjectEl.value) { showContactError('Please select a topic.'); subjectEl.focus(); return; }
+    if (!message) { showContactError('Please enter a message.'); messageEl.focus(); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    document.getElementById('cf-success').style.display = 'block';
+
+    setTimeout(() => {
+      const subject = encodeURIComponent(`There4U Contact Form: ${subjectLabel}`);
+      const body = encodeURIComponent(
+`New Contact Form Message
+=========================
+
+Name:      ${name}
+Email:     ${email}
+Subject:   ${subjectLabel}
+
+Message:
+${message}
+
+Submitted: ${new Date().toLocaleString('en-ZA', { timeZone: 'Africa/Johannesburg' })}
+Source:    there4u-company.html#contact
+
+=========================
+This message was generated automatically from the There4U contact form.`
+      );
+      window.location.href = `mailto:hello@there4u.app?subject=${subject}&body=${body}`;
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    }, 300);
+  }
+
+  function showContactError(msg) {
+    const errMsg = document.getElementById('cf-error');
+    errMsg.textContent = msg;
+    errMsg.style.display = 'block';
+  }
 </script>
 </body>
 </html>

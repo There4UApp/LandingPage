@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "there4u-landingpage",
+ "name": "landingpage",
   "main": "src/index.js",
   "compatibility_date": "2026-08-01",
   "assets": {
